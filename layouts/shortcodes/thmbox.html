@@ -1,0 +1,7 @@
+<blockquote 
+    class="{{ with .Get "class" }}{{.}}{{end}}">
+    <p>
+        <b>{{.Get "class"}}{{if isset .Params "name"}} ({{.Get "name"}}){{end}}.</b>
+        {{ .Inner | markdownify }}
+    </p>
+</blockquote>

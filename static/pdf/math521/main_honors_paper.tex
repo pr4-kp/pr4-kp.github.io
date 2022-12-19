@@ -1,0 +1,432 @@
+\documentclass{scrartcl}
+\usepackage{bookmark}
+\usepackage[utf8]{inputenc}
+\usepackage{pramanahonors}
+\hypersetup{pdfencoding=unicode}
+\newcommand{\qedwhite}{\hfill \ensuremath{\Box}}
+
+
+\title{G\r{a}rding's Inequality}
+\author{Pramana Saldin}
+\date{Fall 2022}
+
+\begin{document}
+\newgeometry{margin=1in}
+
+\maketitle
+
+\begin{abstract}
+    \begin{center}
+        \textbf{Abstract}
+    \end{center}
+    This is an expository paper on the prerequisites for 
+    G\r{a}rding's inequality. Proposed in \cite{original-garding} by Lars G\r{a}rding, this inequality has applications in the study of weak solutions to elliptic partial differential equations. 
+    
+    This will begin by introducing Lebesgue integration, a stronger form 
+    of Riemann integration, and continue into function spaces, specifically $L_p$ and Sobolev spaces. Then we will discuss differential operators. Finally, we will state G\r{a}rding's inequality and give one application. 
+    Discussion of applications is adapted from 
+    \cite{renardy2004introduction}.
+\end{abstract}
+\tableofcontents
+\restoregeometry
+
+\section{Lebesgue integration}
+
+\subsection{A motivating example}
+
+The typical Riemann integration we use works for many functions, but
+not for all. Consider the \textit{Dirichlet function} 
+\begin{equation}
+    \label{eq:dirichleteq}
+    1_\QQ = \begin{cases}
+        1 &\text{if } x\in \QQ \\
+        0 &\text{if } x\notin \QQ,
+    \end{cases}
+\end{equation}
+on the interval $[0,1]$.
+Since rationals and irrationals are dense in 
+the reals, all upper Darboux sums will come out to $1$, and 
+all lower Darboux sums will come out to $0$. We conclude that 
+the function is not Riemann integrable. The \textit{Lebesgue integral} 
+seeks to give a larger space of integrable functions, 
+including Equation \ref{eq:dirichleteq}.
+
+\subsection{The Lebesgue outer measure}
+
+This definition comes from Prof. Rycroft and 
+\cite{nlab:lebesgue_measure}.
+
+\begin{definition}
+    For an open interval $I=(a,b)$, let $\pa{I} = b-a$.
+    The \vocab{Lebesgue outer measure} for a subset $E$ of the real 
+    numbers, denoted $\lambda(E)$, is defined as 
+    \[
+        \lambda(E) := \inf\ps{\sum_{j=1}^{\infty}\pa{I_j}: (I_j)_{j\in \NN} \text{ such that } B \subseteq \bigcup_{i=1}^\infty I_j}.
+    \]
+\end{definition}
+Sets used in the Lebesgue integral must satisfy the \vocab{Cath\'edory criterion}:
+\[
+    \lambda(B) = \lambda(A\cap B) + \lambda(A\cap B^C), \quad \text{for all }A \subseteq\RR.
+\]
+
+\subsection{The Lebesgue integral}
+
+While Riemann integrals start with splitting the \textit{domain} into smaller and smaller intervals, the Lebesgue integral 
+splits the \textit{range} into smaller and smaller intervals.
+
+Formally, we define \textit{indicator functions} as 
+\[
+    1_S(x) = \begin{cases}
+        1 &\text{if }x\in S \\
+        0 &\text{if }x\notin S.
+    \end{cases}
+\]
+Then we can create \textit{simple function} in terms of sums of 
+these indicator functions and for subsets $S_i \subseteq \RR$,
+\[
+    s(x) = \sum_{n}a_n1_{S_n}.
+\]
+For this simple function, we can define an integral as 
+\[
+    \int s d\lambda = \sum_{n}\lambda(S_n)a_n.
+\]
+\begin{definition}
+    Given that a function is non-negative, we then define the 
+    \vocab{Lebesgue integral} as 
+    \[
+        \int fd\lambda := \sup\ps{\int sd\lambda:0\leq s\leq f, s \text{ is a simple function}}.
+    \]
+    If we want to deal with functions with positive and negative ranges, 
+    then we can just apply the Lebesgue integral to each part separately.
+\end{definition}
+
+\begin{example}
+    For the Dirichlet function,
+    \begin{align*}
+        \int_{0}^{1}1_\QQ(x) d\lambda(x) &= \lambda([0,1]\cap \QQ)\cdot1  + \lambda([0,1]\setminus \QQ)\cdot 0 \\
+        &= 0\cdot 1 + 1\cdot 0 \\
+        &= 0.
+    \end{align*}
+    This matches with out intuition of the ``amount'' of rationals 
+    compared to irrationals on the interval $[0,1]$.
+    \qedwhite
+\end{example}
+
+\begin{theorem}
+    Functions that are Riemann-integrable on a 
+    closed interval are Lebesgue-integrable.
+\end{theorem}
+
+\section{The Lp space of functions}
+
+\subsection{Normed vector spaces}
+
+\begin{definition}
+    A \vocab{norm} is a way of formalizing ``length'' in certain spaces. It 
+    is denoted $\pn{\cdot}$. 
+    There are 4 properties a norm must satisfy:
+    \begin{enumerate}
+        \item $\pn{x} \geq 0$.
+        \item $\pn{x}=0\implies x=0$.
+        \item For a scalar $\alpha$, $\pn{\alpha x} = \pa{\alpha}\pn{x}$.
+        \item The \vocab{triangle inequality} holds: $\pn{x+y} \leq \pn{x} + \pn{y}$.
+    \end{enumerate}
+\end{definition}
+A vector space equipped with a norm is a \vocab{normed vector space}. 
+We also have an induced distance function by the norm, 
+$d(x,y) = \pn{y-x}$. Therefore, a normed space automatically a metric space.
+
+\subsection{The Lp space and norm}
+
+\begin{definition}
+    The \vocab{Lebesgue space ($L^p$ space)} is the space of functions 
+    from a set that can be assigned a Lebesgue measure $\Omega \subseteq\RR^n$ to $\RR$ or $\CC$ 
+    such that the following norm converges:
+    \[
+        \pn{f}_{L^p} := \pp{\int_\Omega\pa{f}^pd\mu}^{\frac{1}{p}}
+    \]
+    We call this the \vocab{$L^p$ norm} of $f$. 
+    The $L^p$ space of functions $f:\Omega\to \RR$ is denoted $L^p(\Omega)$.
+\end{definition}
+
+\sidenote{
+\begin{remark}
+    Most of the norm properties are immediately satisfied, except for the triangle inequality, $\pn{x+y} \leq \pn{x} + \pn{y}$, which follows from \textit{Minkowski's inequality}.
+\end{remark}}
+
+\begin{proposition}
+    The Lebesgue space is a vector space, with
+    \[
+        (f+g)(x) = f(x) + g(x) \in L^p
+    \]
+    \[
+        (\lambda f)(x) = \lambda f(x) \in L^p
+    \]
+\end{proposition}
+
+\subsection{Bilinear forms and inner products}
+
+\begin{definition}
+    A \vocab{bilinear form} on a vector space $V$ is a function $B[\cdot,\cdot]:V\times V \to K$ \sidenote{$K$ is the field which $V$ is a vector space over. Usually $K$ is $\RR$ or $\CC$.}
+    such that $\pv{x,y}$ is linear in $x$ and $y$. In symbols, 
+    \[
+        B[ax_1 + bx_2, y] = a\cdot B[x_1,y] + b\cdot B[x_2,y], 
+    \]
+    \[
+        B[x, ay_1+by_2] = a\cdot B[x,y_1] + b\cdot B[x,y_2].
+    \]
+\end{definition}
+
+\begin{definition}
+    An \vocab{inner product} is an bilinear form $\pv{\cdot, \cdot}$ such 
+    that 
+    \begin{enumerate}
+        \item $\pv{ax_1 + bx_2, y} = a\pv{x_1,y} + b\pv{x_2,y}$, $\pv{x, ay_1+by_2} = a\pv{x,y_1} + b\pv{x,y_2}$.
+        \sidenote{
+        \begin{remark}
+            The complex conjugate is not useful in $\RR$, but if the function is mapping to $\CC$, it is commonly called a \textit{Hermitian inner product}, and it makes use of the complex conjugate.
+        \end{remark}
+        }
+        
+        \item \textit{Reflexive:} $\pv{y,x} = \ol{\pv{x,y}}$, where $\ol{z}$ denotes the \textit{complex conjugate} of $z$.
+
+        \item \textit{Positive Definite:} $\pv{x,x} = 0$ if $x = 0$, and $\pv{x,x}>0$ if $x\neq 0$.
+    \end{enumerate}
+    A vector space equipped with an inner product is an \vocab{inner product space}.
+\end{definition}
+
+\begin{example}
+    $L^2$ has an induced inner product with respect to a measure $\mu$:
+    \[
+        \pv{f,g}_{L^2} = \int_\Omega f gd\mu.
+    \]
+    In fact, $L^2$ is the only $L^p$ space with this property.
+    \sidenote{
+    \begin{remark}The inner product induces a norm, which therefore induces a metric.
+    \[
+        \pn{x} = \sqrt{\pv{x,x}}.
+    \]
+    \[
+        d(x,y) = \sqrt{\pv{x-y,x-y}}.
+    \]
+    \end{remark}
+    }
+\end{example}
+
+\section{Sobolev spaces of functions}
+
+\subsection{Weak differentiation}
+
+Let $\Omega$ be an open, connected subset of $\RR$. 
+Let $\phi$ be a differentiable 
+function on $[a,b]$ such that $\phi(a)=\phi(b) = 0$. 
+Then by integration by parts, 
+\[
+    \int_a^b f\phi'dx = \left[f(x)\phi(x)\right]_{a}^{b} - \int_a^b f' \phi dx = - \int_a^b f' \phi dx.
+\]
+Even when $f'$ does not exist, we may be able to show that some function 
+can take the place of $f'$. To generalize, let $\Omega$ be an open, connected
+subset of $\RR^n$ (we call this a \vocab{domain}). If there exists a function $g_i$ such that 
+\[
+    \int_\Omega f\partial_i\phi dx = -\int_\Omega g_i\phi dx,
+\] 
+for all $\phi$ that are continuous, smooth (infinitely differentiable),
+and the set of all values $x$ such that $\phi(x)\neq 0$ is compact,
+then define the \vocab{weak derivative} as $\partial_if := g_i$.
+
+\begin{definition}
+    A \vocab{multi-index} is shorthand for writing partial derivatives.
+    A multi-index $\alpha$ is a tuple of numbers that correspond to how many 
+    times each dimension is partially differentiated.
+    $\pa{\alpha}$ gives the order of the partial derivative.
+\end{definition}
+
+For higher weak derivatives, if the integrable function $u$ has 
+\[
+    \int_\Omega u\partial^\alpha\phi  = (-1)^{\pa{\alpha}} \int_\Omega v\phi,
+\]
+for some integrable function $v$, and for all $\phi$ as defined before,
+then it is \vocab{$\alpha$-times weakly differentiable}.
+
+\subsection{Sobolev spaces}
+
+\begin{definition}
+    For a domain $\Omega$ in $\RR^n$, 
+    the \vocab{Sobolev space $W^{k,p}(\Omega)$} is the space 
+    of functions $f\in L^{p}(\Omega)$ 
+    that are \textit{weakly} differentiable up to $k$ times. 
+    \sidenote{
+    \begin{remark}
+        When $p=2$, the Sobolev space may be written as $H^k(\Omega)$.
+        Since $H^k(\Omega) \subseteq L^2(\Omega)$, there exists an 
+        induced inner product on $H^k(\Omega)$.
+        This is an example of a \vocab{Hilbert space}, which is an 
+        inner product space that is a complete metric space.
+    \end{remark}
+    }
+    Moreover, we require that each of the derivatives also has a finite $L^p$ norm and be continuous.
+\end{definition}
+
+Sobolev spaces admit the norm 
+\[
+    \|f\|_{W^{k,p}} := \left (\sum_{i=0}^k \left \|f^{(i)} \right \|_{L_p}^p \right)^{\frac{1}{p}} = \left (\sum_{i=0}^k \int \left |f^{(i)}(t) \right |^p\,dt \right )^{\frac{1}{p}}.
+\]
+
+\subsection{The k-extension property}
+While there is a general definition for topological vector spaces,
+we examine the specific definition for $X,Y$ as normed vector spaces.
+
+\begin{definition}
+    A linear operator $L:X\to Y$ is \vocab{bounded} if 
+    there exists $M>0$ such that for all $x\in X$,
+    \[
+        \pn{Lx}_{Y} \leq M\pn{x}_X.
+    \]
+\end{definition}
+
+\begin{definition}
+    If there exists a bounded linear operator 
+    $E:W^{k,2}(\Omega) \to W^{k,2}(\RR^n)$ 
+    such that $Eu$ with its domain restricted to $\Omega$ equals $u$ 
+    for all functions $u$ in 
+    $W^{k,2}(\Omega)$, then $\Omega$ satisfies the 
+    \vocab{$k$-extension property}.
+\end{definition}
+
+The $k$-extension property is a classification of 
+domains that is a necessity for
+G\r{a}rding's inequality and many other results in PDE analysis.
+
+\section{Differential Operators}
+
+\subsection{Elliptic operators}
+
+\begin{definition}
+    Let $\alpha$ represent a multi-index.
+    Let $L$ be a partial differential operator, defined for a function 
+    $u$ with domain $\Omega$ in $\RR^n$. 
+    \[
+    Lu = \sum_{\pa{\alpha}\leq m} a_\alpha(x)\partial^\alpha u.
+    \]
+    $L$ is \vocab{elliptic} if for every $x\in \Omega$ and every non-zero 
+    $\xi \in \RR^n$, 
+    \[
+        (-1)^k\sum_{\pa{\alpha}=2k} a_\alpha(x)\xi^\alpha > 0
+    \]
+    It can be shown that the order of the PDE must be even to be elliptic 
+    ($m=2k$). We then make a stronger condition, \vocab{uniform 
+    ellipticity}, for an operator of order $2k$:
+    \[
+        (-1)^k \sum_{\pa{\alpha}=2k} a_\alpha(x)\xi^\alpha > C\pa{\xi}^{2k}.
+    \]
+    for a positive constant $C$ and for every $\xi\in\RR^n$.
+\end{definition}
+
+\subsection{Induced bilinear forms}
+
+Differential operators induce their own bilinear form.
+In order to construct a bilinear form for a differential operator $L$,
+we perform integration by parts on $L$:
+\[
+    \int_\Omega \phi Ludx = \sum_{0\leq \pa{\sigma},\pa{\gamma}\leq k}\int_\Omega a_{\sigma \gamma}(x)\partial^\gamma u \partial^\sigma \phi dx,
+\]
+for mutli-indices $\gamma$ and $\sigma$.
+We define the induced bilinear form by $L$ as 
+\[
+    B[u,v] := \sum_{0\leq \pa{\sigma},\pa{\gamma}\leq k}\int_\Omega a_{\sigma \gamma}(x)\partial^\gamma u \partial^\sigma v dx
+\]
+
+% $u\mid_\Omega$, $\partial \Omega$,
+% $\Omega \subseteq \RR^n$
+
+\section{G\r{a}rding's inequality}
+
+\subsection{Inequality statement}
+
+\begin{theorem}
+    [G\r{a}rding's inequality]
+    \label{thm:gardinginequality}
+    Let $\Omega \subseteq \RR^n$ be a bounded domain that 
+    has the $k$-extension property.
+    Let $u$ be a function in $W^{k,2}(\Omega)$ and 
+    $L$ be a uniformly elliptic differential operator 
+    of order $2k$, written as
+    \[
+        (Lu)(x)=\sum _{{0\leq |\alpha |,|\beta |\leq k}}(-1)^{{|\alpha |}}\partial^{{\alpha }}\left(A_{{\alpha \beta }}(x)\partial^{{\beta }}u(x)\right).
+    \]
+    If $\pa{\alpha} = \pa{\beta} = k$, then require $A_{\alpha\beta}$
+    to be bounded and continuous on the closure of $\Omega$. 
+    If $\pa{\alpha},\pa{\beta}\leq k$, then require 
+    $A_{\alpha\beta}\in L^{\infty}(\Omega)$.
+    If all of the above are satisfied, then 
+    there exists constants $C>0$ and $G\geq 0$ such that
+    \[
+        B[u,u]+G\|u\|_{{L^{{2}}}}^{{2}}\geq C\|u\|_{{W^{k,2}}}^{{2}}{\text{ for all }}u\in W^{k,2}_0(\Omega),
+    \]
+    where $B[u,v]$ is a bilinear form induced by the differential operator 
+    $L$, and $W^{k,2}_0(\Omega)$ is the space of functions $u\in W^{k,2}(\Omega)$ such that $u$ evaluates to $0$ on the boundary of $\Omega$.
+\end{theorem}
+
+G\r{a}rding's inequality relates
+the $L^2$ and Sobolev norm of a function $u$ with the induced bilinear form 
+of a uniformly elliptic differential operator.
+
+\subsection{Application: A Dirichlet boundary problem}
+
+A Dirichlet boundary problem is a common type of 
+elliptic boundary-value problem.
+Consider a bounded region $\Omega \subseteq \RR^n$, a function $f$, and an elliptic operator $L$ of order $2k$. The solution to a Dirichlet boundary problem we will be studying 
+is a function $u(x,y)$ that satisfies 
+\[
+\begin{cases}
+    L u = f &\text{ in }\Omega \\
+    u = 0 &\text{ on }\partial \Omega.
+\end{cases}
+\]
+Here $\partial \Omega$ denotes the \textit{boundary} of $\Omega$:
+the closure minus the interior of a set.
+
+There are three levels of solutions to the Dirichlet problem to discuss.
+First are the \vocab{classical solutions}, which require 
+the function $u$ to be continuous, $2k$ times differentiable, 
+and all of its derivatives to also be continuous.
+
+Lightening our criterion to allow for weak derivatives, 
+there are \vocab{strong solutions}, which loosen the requirement 
+of $u$ to being $\sim 2k$ times \textit{weakly} differentiable. 
+
+Finally, $u$ is a \vocab{weak solution}
+of this Dirichlet problem if $B[v,u] = \int_{\Omega}fvdx$ for every
+ $v\in W_0^{k,2}(\Omega)$.
+Even fewer weak derivatives are required, 
+effectively reducing the ``smoothness'' needed for a function 
+to be considered a solution.
+
+As a general hierarchy, 
+\[
+    \ps{\text{classical sol'ns}} \subseteq \ps{\text{strong sol'ns}} \subseteq \ps{\text{weak sol'ns}}.
+\]
+
+Since our classification of weak solutions to the boundary problem requires 
+the induced bilinear form $B$, it should be clear that the G\r{a}rding 
+inequality is useful here.
+Indeed, the G\r{a}rding inequality is used to show the existence of weak solutions to this Dirichlet problem.
+\begin{theorem}
+    \label{thm:uniqueweaksolns}
+    Let $L$ be a differential operator of order $2k$ that satisfies the 
+    conditions of \ref{thm:gardinginequality}.
+    Then there exists $\lambda \geq 0$ such that 
+    for $\lambda_0 \geq \lambda$, the Dirichlet problem for 
+    the operator $L+\lambda_0$ has a unique weak solution.
+\end{theorem}
+
+\begin{remark}
+    The proof for \ref{thm:uniqueweaksolns} requires both the G\r{a}rding 
+    inequality and the \textit{Lax–Milgram lemma}, a result that 
+    guarantees the existence of unique weak solutions to the Dirichlet problem.
+    This result was proven in \cite{LaxMilgram+1955+167+190}.
+\end{remark}
+\clearpage
+\bibliographystyle{alpha}
+\bibliography{honors_refs}
+\end{document}

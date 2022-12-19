@@ -1,0 +1,47 @@
+baseURL = "https://example.com"
+languageCode = "en-us"
+title = "pramana's blog"
+theme="archie"
+copyright = "© Athul"
+pygmentsstyle = "monokai"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+[params]
+	mode="auto"
+	useCDN=false
+	subtitle = "A mathematics blog on anything I'm studying"
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/PramanaSaldin"
+
+[[params.social]]
+name = "Mathstodon"
+icon = "twitter"
+url = "https://mathstodon.xyz/@pramana"
+
+[[menu.main]]
+name = "all posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "about"
+url = "/about"
+weight = 100
+
+[[menu.main]]
+name = "tags"
+url = "/tags"
+weight = 4
+
+[[menu.main]]
+name = "notes"
+url = "/notes"
+weight = 2
+
+[[menu.main]]
+name = "course guide"
+url = "/courses"
+weight = 4
