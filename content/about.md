@@ -10,11 +10,3 @@ I'm Pramana, an undergraduate at UW-Madison. I'm going to major in mathematics. 
 You can reach me at 
 
 saldin [at] wisc [dot] edu
-
-TODO:
-
-- [x] Add theorem boxes
-- [ ] Automatic numbering of thmboxes
-- [ ] Implement macros
-- [ ] Finish class before writing course guides
-- [ ] Finish class and upload notes
