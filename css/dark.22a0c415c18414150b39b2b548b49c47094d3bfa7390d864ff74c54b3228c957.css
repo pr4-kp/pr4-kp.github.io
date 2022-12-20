@@ -30,9 +30,15 @@ pre {
   overflow-x: auto;
   padding: 1em;
 }
-/* blockquote {
-  border-color: blue;
-} */
+blockquote {
+  color: white;
+}
+
+.Definition,
+.Proof {
+    border: none;
+    border-left: 3px solid white;
+}
 
 h1,
 h2,
