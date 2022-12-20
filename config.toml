@@ -6,20 +6,10 @@ copyright = "© Athul"
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
-[params]
-	mode="auto"
+[Params]
+	mode="toggle"
 	useCDN=false
 	subtitle = "A mathematics blog on anything I'm studying"
-
-[[params.social]]
-name = "GitHub"
-icon = "github"
-url = "https://github.com/PramanaSaldin"
-
-[[params.social]]
-name = "Mathstodon"
-icon = "twitter"
-url = "https://mathstodon.xyz/@pramana"
 
 [[menu.main]]
 name = "all posts"
