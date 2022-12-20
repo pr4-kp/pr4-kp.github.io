@@ -9,7 +9,7 @@ pygmentscodefencesguesssyntax = true
 [Params]
 	mode="toggle"
 	useCDN=false
-	subtitle = "A mathematics blog on anything I'm studying"
+	subtitle = "A **mathematics blog** on anything I'm studying"
 
 [[Params.Social]]
 name = "GitHub"

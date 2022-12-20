@@ -12,7 +12,7 @@
 					{{- end -}}
 				</div>
                 
-                <p>You can read my blog posts below or check out my <a href="/notes">notes</a>.</p>
+                <p>You can read my blog posts below or check out the <a href="/notes">notes</a>.</p>
 
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}

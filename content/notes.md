@@ -1,10 +1,7 @@
 +++
 title = "notes"
 description = "Repository of all my notes for my classes"
-date = "2022-12-05"
 +++
-
-This is my compilation of notes for my college classes.
 
 # MATH 521: Analysis I
 - Notes (PDF)(TeX)
@@ -17,3 +14,6 @@ This is my compilation of notes for my college classes.
 
 # MATH 475: Introduction to combinatorics
 - Notes (Chapter 14:  Burnside's Lemma and Polya Counting) ([PDF](/pdf/math475/main_475.pdf))
+
+# MATH 531 (UWM): Modern Algebra
+- Notes ([PDF](/pdf/math531uwm/MATH-531-Notes.pdf))
