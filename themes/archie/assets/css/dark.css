@@ -73,13 +73,15 @@ h6::before {
   content: "###### ";
 }
 
-a {
-  border-bottom: 3px solid var(--darkMaincolor);
-  color: inherit;
+a, #dark-mode-toggle {
+    border-bottom: 3px solid var(--darkMaincolor);
+    color: inherit;
 }
-a:hover {
-  background-color: var(--darkMaincolor);
-  color: black;
+
+a:hover, #dark-mode-toggle:hover {
+    background-color: var(--darkMaincolor);
+    /* color: black; */
+    cursor: pointer;
 }
 
 .site-description a {
@@ -110,9 +112,7 @@ a:hover {
 .highlight {
   background-color: #333;
 }
-.soc:hover {
-  color: black;
-}
+
 .draft-label {
   color: var(--darkMaincolor);
   background-color: blue;

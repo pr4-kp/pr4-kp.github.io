@@ -11,6 +11,17 @@ pygmentscodefencesguesssyntax = true
 	useCDN=false
 	subtitle = "A mathematics blog on anything I'm studying"
 
+[[Params.Social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/PramanaSaldin/"
+
+[[Params.Social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://mathstodon.xyz/@pramana/"
+
+
 [[menu.main]]
 name = "all posts"
 url = "/posts"
