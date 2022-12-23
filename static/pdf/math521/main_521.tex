@@ -1,0 +1,3640 @@
+\documentclass[11pt]{scrartcl}
+\usepackage[sexy]{pramananotes}
+\usepackage[margin=1.5in]{geometry}
+\usepackage[utf8]{inputenc}
+\numberwithin{equation}{section}
+
+\title{MATH 521 - Analysis I Notes}
+\author{Pramana Saldin}
+\date{Fall 2022}
+\begin{document}
+\maketitle
+\begin{abstract}
+    The real numbers, elements of set theory, metric spaces and basic topology, sequences and series, limits, continuity, differentiation, integration, sequences and series of functions, uniform convergence.    
+\end{abstract}
+\tableofcontents
+\clearpage
+\section{September 8th, 2022}
+Office hours: Tuesday 9-10PM (Zoom), Thursday 2:30-3:30PM (in-person), 725 Van Vleck.
+\subsection{The natural numbers}
+\begin{axiom}
+    [Peano axioms]
+    The Peano axioms are:
+    \begin{enumerate}[N1.]
+        \item $1 \in \NN$.
+        \item If $n\in\NN$ then its successor $n+1\in\NN$.
+        \item $1$ is not the successor of any element in $\NN$. 
+        \item If $n$ and $m$ have the same successor, then $n = m$.
+        \item A subset of $\NN$ which contains $1$, and $n + 1$ whenever it contains $n$ must equal to $\NN$.
+    \end{enumerate}
+\end{axiom}
+\begin{claim}
+    \label{cl:n5necessary}
+    N5 is necessary.
+\end{claim}
+\begin{subproof}
+Suppose that N5 is false. Then $\exists S \subset \NN$ s.t. $1 \in S$, and if 
+$n \in S \implies n+1\in S$, but $S \neq \NN$. Now consider the set $T$:
+\[ T = \left\{n \in \NN\mid n\notin S\right\},\]
+call $n_0$ the smallest number in $T$. Since $n_0\neq1$, $n_0$ is the successor to some $n_0-1$, but $n_0-1\in S$, since it is smaller than $n_0$. But its successor is in $S$ too.
+\end{subproof}
+\subsection{Addition and multiplication in the rationals}
+We need a set $F$ with a group structure.
+\begin{enumerate}
+    \item[A0] $\forall a,b, a+b\in F$
+    \item[A1] $a+(b+c) = (a+b)+c\forall a,b,c$
+    \item[A2] $a+b=b+a$
+    \item[A3] $a+0=a$
+    \item[A4] $\forall a, \ \exists-a$ s.t. $a + (-a) = 0$.
+\end{enumerate}
+This suffices for a commutative group. Then the multiplication properties:
+\begin{enumerate}[1.]
+    \item[M0] A0 for $\times$
+    \item[M1] A1 for $\times$
+    \item[M2] A2 for $\times$
+    \item[M3] $a\cdot1 = a$
+    \item[M4] $\forall a\neq0\exists a^{-1} s.t. aa^{-1}=1$.
+\end{enumerate}
+Along with the distributive law: $a(b+c) = ab +ac$ creates a field structure. 
+For example, $\QQ$, the set of rational numbers is a field.
+\subsubsection{Finding root 2}
+If we want a number $d$ s.t. $d\cdot d = 2$. In $\QQ$ we can get close... 
+\begin{align*}
+    1.4142^2 &= 1.99996164\dots \\
+    1.4143^2 &= 2.00024449\dots
+\end{align*}
+however it isn't possible, since
+\begin{claim}
+    $\sqrt2$ is not rational.
+\end{claim}
+\begin{subproof}
+    Suppose $\sqrt2 = \frac{p}{q}, p \in \ZZ, q \in \NN$ and $(p,q) = 1$.
+    \begin{align*}
+        \sqrt{2} &= \frac{p}{q} \\
+        2 &= \frac{p^2}{q^2} \\
+        2q^2 &= p^2,
+    \end{align*}
+    which implies that $p$ is even. Then $p = 2k$ for some $k \in \ZZ$.
+    This means that $2k^2 = q^2$, so then $q$ is even as well. But that contradicts the assumption that $(p,q)=1$.
+\end{subproof}
+\begin{definition}
+    A number is \vocab{algebraic} if it satisfies a polynomial
+    \[ a_nx^n + a_{n-1}x^{n-1}+\cdots+a_1x+a_0 \quad a_i \in \ZZ, \ a_n \neq 0, \ n \geq 1.\]
+\end{definition}
+$\sqrt2$ satisfies $x^2- 2=0$, therefore it is algebraic.
+\clearpage
+\section{September 13th, 2022}
+\subsection{Rational zeros theorem}
+\begin{theorem}
+[Rational zeros theorem]
+    \label{thm:ratzthm}
+    If $r=\frac{p}{q}$, where $(p,q)=1$, and $q \neq 0$, and $r$ satisfies a polynomial, then $q \mid a_n$ and $p \mid a_0$.
+\end{theorem}
+\begin{proof}
+    Substitute in the solution $\frac{p}{q}$:
+    \begin{align*}
+        a_n \left(\frac{p}{q}\right)^n + a_{n-1} \left(\frac{p}{q}\right)^{n-1}+\cdots+a_0 &=0 \\
+        a_n p^n + a_{n-1} p^{n-1}q+\cdots+a_0q^n &=0 \\
+        a_np^n &= -q\underbrace{[\cdots]}_{\text{integer}}
+    \end{align*}
+    Since $(p,q)=1$, we know that $q\mid a_n$.
+    Similarly, 
+    \[ a_0q^n = -p\underbrace{[\cdots]}_{\text{integer}}.\qedhere\]
+\end{proof}
+\begin{example}
+    [Golden ratio]
+    The polynomial with the golden 
+    ratio as a root is $f(x) = x^2-x-1$. Can the golden ratio be rational? If so, then $r=\frac{p}{q}$ and $p\mid a_0$ and 
+    $q\mid a_n$, or $q\mid1, p\mid1$. So $p=\pm1,q=\pm1$, or $r=\pm1$.
+    We verify none satisfy $f$, so the golden ratio is not rational.
+\end{example}
+\subsection{Order structure}
+
+\begin{axiom}
+    [Order axioms]
+    We create an order on the set ``$\leq/\geq$'' such that $\forall a,b,c\in F$,
+    \begin{itemize}
+        \item[O1] Either $a\geq b$ or $b\geq a$.
+        \item[O2] If $a\geq b$ and $b\geq a$, then $a=b$.
+        \item[O3] If $a\leq b$ and $b\leq c$, then $a \leq c$.
+        \item[O4] If $a\leq b$, then $a+c\leq b+c$.
+        \item[O5] If $a\leq b$ and $0\leq c$, then $ac \leq bc$. 
+    \end{itemize}
+    We let $a<b$ be defined as as $a\leq b$ and $a\neq b$.
+\end{axiom}
+
+\begin{example}
+    [Axiom results]
+    We can use these axioms to prove things we take for granted 
+    in ordered fields.
+    \begin{enumerate}
+        \item $a+c = b+c \implies a=b$. \\
+        Using A4, $\exists(-c)$ s.t. $c+(-c)=0$ 
+        \begin{align*}
+            a + c + (-c) &= b + c + (-c)  \\
+            a + (c+(-c)) &= b + (c +(-c)) \\
+            a + 0 &= b+ 0 \\
+            a &= b
+        \end{align*}
+        \item $a\cdot0=0$.
+        \begin{align*}
+            a \cdot 0 &= a\cdot(0 + 0) \tag{A3}\\
+            &= a\cdot0 + a\cdot0 \tag{DL}\\
+            0 &= a\cdot 0.
+        \end{align*}
+        \item $(-a)b=-ab$.
+        \begin{align*}
+            a+(-a) &= 0\\
+            ab + (-a)b &= (a+(-a))b \tag{DL} \\
+            &= 0 \cdot b \\
+            &= 0 \\
+            (-a)b &=-ab
+        \end{align*}
+        \item $(-a)(-b) = ab$ 
+        \begin{align*}
+            (-a)(-b) + (-ab) &= (-a)(-b)+(-a)b \\
+            &= (-a)(-b+b) \tag{DL} \\
+            &= (-a)(0) \\
+            &= 0 
+        \end{align*}
+        Since $ab + (-ab)=0$, then $(-a)(-b) = ab$. 
+        \item If $0<a$, then $0<a^{-1}$.\\
+        Suppose that $0<a$, but $a^{-1}\leq 0$. Then
+        \begin{align*}
+            (a^{-1})+(-a^{-1}) &\leq 0 + (-a^{-1}) \tag{O4} \\
+            -a^{-1}&\geq 0
+        \end{align*}
+        Then $0 \leq a \text{ and } 0 \leq -a^{-1}$
+        \begin{align*}
+            0&\leq a\cdot-a^{-1} = -1\\
+            0&\leq -1,
+        \end{align*}
+        contradiction.
+    \end{enumerate}
+\end{example}
+Absolute value is defined how you would expect. 
+Note that $\pa{a} \geq 0$, $\pa{ab} = \pa{a}\pa{b}$.
+\begin{theorem}
+    [Triangle inequality]
+    \label{thm:tri_ineq}
+    If $a=A-B$, and $b=B-C$,
+    \[ \pa{a+b} = \pa{A-C} \implies \pa{A-C} \leq \pa{A-B}+\pa{B-C},\]
+    or 
+    \[\mathrm{dist}(A,C) \leq \mathrm{dist}(A,B) + \mathrm{dist}(B,C).\]
+\end{theorem}
+
+\begin{proof}
+    \[ -\pa{a} \leq a \leq \pa{a},\quad -\pa{b}\leq b\leq \pa{b},\]
+    implies
+    \[ -\pa{a}-\pa{b}\leq -\pa{a}+b\leq a+b \leq \pa{a}+b\leq \pa{a}+\pa{b}, \]
+    so 
+    \[ -\pa{a}-\pa{b}\leq a+b \leq \pa{a}+\pa{b} \implies \pa{a+b} \leq \pa{a}+\pa{b}.  \qedhere\]
+\end{proof}
+
+\subsection{Intervals}
+\begin{definition}
+    Let $S$ be non-empty subset of $\RR$. If there exists $s_0\in S$ 
+    such that $s\leq s_0$ for all $s\in S$, then $s_0$ is called the 
+    \vocab{maximum} of $S$, denoted $s_0 = \max{S}$.
+    Similarly, the smallest element it is the 
+    \vocab{minimum} of $S$, denoted $\min{S}$.
+\end{definition}
+\begin{definition}
+    Finite subsets always have a maximum and minimum.
+    Suppose $a < b$. Then the \vocab{open interval} between $a$ and $b$ is 
+    \[ (a,b) = \left\{x\in\RR \mid a <x<b\right\}. \]
+    The \vocab{closed interval} is 
+    \[ [a,b] = \left\{x\in\RR \mid a\leq x\leq b\right\}. \]
+    A \vocab{semi-open interval} is $(a,b]$.
+\end{definition}
+Note that $\min[a,b] = a$, $\max[a,b] = b$.
+\begin{proposition}
+    [Open intervals have no max nor min]
+    The open interval $(a,b)$ does not have a maximum nor minimum.
+\end{proposition}
+\begin{proof}
+    For an interval $(0,1)$, suppose that $\lambda=\max(0,1)$. So $\lambda\geq x$ and $1 > x$ $\forall x\in(0,1)$. Consider $1>\frac{\lambda+1}{2} > \lambda$, so 
+    we have found a higher "maximum".
+    Similar argument for no minimum, and works for any open interval $(a,b)$.
+\end{proof}
+\clearpage
+\section{September 15th, 2022}
+\subsection{Least upper bound and greatest lower bound}
+\begin{definition}
+    $S$ is \vocab{bounded} (above) if $\exists x$ s.t. $x\geq s \ \forall s \in S$.
+\end{definition}
+\begin{definition}
+    Let $S$ be a non-empty subset of $\RR$.
+    If $S$ is bounded above and $S$ has a least upper bound, then 
+    we call it the \vocab{supremum} of $S$, $\sup{S}$. \\
+    If $S$ is bounded below and $S$ has a greatest lower bound, then 
+    we call it the \vocab{infimum} of $S$, $\inf{S}$.
+\end{definition}
+Note that if $\max S$ exists, then $\max S = \sup S$. Also $\sup[a,b] = \sup(a,b) = b$.
+\begin{example}
+    [Sample sup/inf proof]
+    $\sup(0,1) = 1$. 
+    $1 \geq x$ for $x \in (0,1)$. Suppose that $t$ is an upper bound, for 
+    $(0,1)$ and $t<1$. Consider $x = \frac{1+t}{2}$, then $x \in (0,1)$,
+    but $x>t$.
+\end{example}
+\subsection{The real numbers}
+\begin{axiom}
+    [Completeness axiom]
+    Every non-empty subset $S$ of $\RR$ that is bounded above has 
+    $\sup S \in \RR$.
+\end{axiom}
+\begin{corollary}
+    [Completeness axiom below]
+    Every non-empty subset $S$ of $\RR$ that is bounded below has 
+    a greatest lower bound $\inf S$.
+\end{corollary}
+\begin{proof}
+    Define $-S = \left\{-s \mid s \in S\right\}$. Since $S$ is bounded below,
+    $\exists m \in \RR$ s.t. $m\leq s \ \forall s \in S$.
+    Then $-m\geq -s \ \forall s \in S$. Therefore $-m \geq u \ \forall u \in -S$, showing the existence of $\sup -S$.
+
+    I claim $\inf S = -s_0$. 
+    \begin{itemize}
+        \item First we show that $s_0$ is a lower bound. 
+        For all $s\in S$, $-s\in -S$, so 
+        \[
+            -s\leq s_0 \implies s\geq -s_0.
+        \]
+
+        \item Then we show for any other lower bound $t$, $t\leq -s_0$. 
+        This implies that $-t\geq -s \ \forall s\in S$, or $-t\geq x \forall x \in -S$, so $-t$ is a upper bound for $-S$.
+        So 
+        \[ 
+            -t\geq\sup(-S) = s_0 \implies -t\geq s_0 \implies t \leq -s_0. 
+        \]
+    \end{itemize}
+    Thus, $\inf S = -s_0$.
+\end{proof}
+\begin{proposition}
+[Archimedian property]
+    \label{prop:archprop}
+    If $a>0$ and $b>0$, then $\exists n\in\NN$ s.t. $na > b$.
+\end{proposition}
+\begin{proof}
+    (intuitive)
+    a bathtub and a spoon
+\end{proof}
+\begin{proof}
+    Assume that it fails. So $\exists a>0, b>0$ such that 
+    $b$ is an upper bound for the set 
+    $S = \left\{an \mid n \in \NN\right\}$.
+    Let $s_0 = \sup S$, which must exist by the Axiom of completeness.
+    $a>0 \implies s_0-a<s_0$. Since $s_0$ is the least upper bound, $s_0-a$
+    can't be an upper bound. Meaning there is some $n_0\in\NN$ s.t. 
+    $s_0-a<n_0a$. Therefore $s_0 <(n_0+1)a$, but 
+    $(n_0+1)a \in S$, so $s_0$ is not an upper bound.
+\end{proof}
+\begin{proposition}
+    [Denseness of $\QQ$]
+    \label{prop:denseq}
+    If $a,b\in\RR$, $\exists r\in\QQ$ s.t. $a<r<b$.
+\end{proposition}
+\begin{proof}
+    Show there is $a<\frac{m}{n}<b$ for $m,n\in\ZZ, n\neq 0 \iff na < m <nb$.
+    We have that $b-a>0$, so \cref{prop:archprop} says that $\exists n$ s.t.
+    $n(b-a) >1$. So $\exists k \in \NN$ s.t. $k>\max \left\{\pa{an},\pa{bn}\right\}$, so that 
+    \[ -k <an <bn < k.\]
+    Consider $S = \left\{j\in\ZZ\mid-k\leq j\leq k, an < j\right\}$,
+    and look at $m = \min S$.
+    So $m-1\leq an$ and
+    \[ m = (m-1) + 1\leq an+1<an+(bn+an) = bn. \qedhere \]
+\end{proof}
+\subsection{Infinity}
+$\infty$ and $-\infty$ are useful \textit{symbols}, 
+but they are not in $\RR$.
+We can extend ordering to $\RR\cup \left\{-\infty, \infty\right\}$ 
+by saying $-\infty \leq a \leq \infty \ \forall a\in \RR$.
+\begin{example}
+    [Unbounded intervals]
+    Consider 
+    \[ [a,\infty) = \left\{x\in\RR\mid a\leq x\right\}\]
+    \[ (a,\infty) = \left\{x\in\RR\mid a< x\right\}.\]
+\end{example}
+
+Moreover, $\sup S= \infty$ if $S$ is not bounded above, and 
+$\inf S = -\infty$ is $S$ is not bounded below.
+
+\subsection{Sequences and convergence}
+\begin{definition}
+    A \vocab{sequence} is a function from 
+    $\left\{n \in\ZZ\mid n\geq m\right\}$ to $\RR$.
+    Usually $m=0,1$. We denote sequences as 
+    \[ \left(s_1,s_2,\dots\right) \text{ or } (s_n)_{n\in\NN}.\]
+\end{definition}
+\begin{definition}
+    $s_n$ \vocab{converges} to $s$ if $\forall\varepsilon > 0$,
+    $\exists N$ such that $n>N \implies \pa{s_n-s} < \varepsilon$.
+    If this is satisfied, write 
+    \[ 
+        \lim_{n\rightarrow\infty} s_n = s. 
+    \]
+    $N$ can be forced to be an integer.
+    $\varepsilon$ can be any positive real number, but typically we use 
+    it for cases where it is small.
+\end{definition}
+\begin{proposition}
+    Limits are unique. 
+\end{proposition}
+\begin{proof}
+    Suppose $a_n \rightarrow a$ and $a_n\rightarrow b$, but $b\neq a$.
+    WLOG $a<b$, let $d=b-a$. Let 
+    $\varepsilon = \frac{d}{3}$. Thus $\exists N_1$ s.t. 
+    $\forall n>N_1, \pa{a_n-a} < \frac{d}{3}$, and $\exists N_2$ s.t. 
+    $\forall n>N_2, \pa{a_n-b} < \frac{d}{3}$, but then 
+    \begin{align*}
+        \pa{a-b} &= \pa{(a-a_n)+ (a_n-b)} \\
+        &\leq  \pa{a-a_n} + \pa{a_n-b} \\ 
+        &< \frac{2d}{3}, 
+    \end{align*}
+    which is a contradiction.
+\end{proof}
+\clearpage
+\section{September 20th, 2022}
+\subsection{Divergence}
+A sequence that does not converge \vocab{diverges}.
+\begin{example}
+    $s_n = (-1)^n$ diverges.
+    \begin{proof}
+        Suppose that $s_n\rightarrow a$. Then 
+        $\exists N$ s.t. $n>N\implies \pa{s_n-a}<\half$.
+        Choose $n_1$ even and $n_2$ odd. $n_1,n_2>N$.
+    
+        Note $2=\pa{s_{n_1} - s_{n_2}} = \pa{(s_{n_1} - a) - (s_{n_2} - a)}
+        \leq \pa{(s_{n_1} - a)} + \pa{(s_{n_2} - a)} < \half + \half = 1$,
+        which is a contradiction.
+    \end{proof}
+\end{example}
+
+\begin{example}
+    Let $(s_n)$ be a convergent seq. s.t. $s_n\neq 0 \ \forall n \in \NN$,
+    and 
+    \[ \lim_{n\rightarrow \infty}s_n = s \neq 0.\] 
+    Then $\inf \left\{\pa{s_n}\mid n \in \NN\right\}>0$.
+
+    Choose $\eps$ so that seq. will lie in a region $\eps$ from 
+    $0$. Let $\eps = \frac{\pa{s}}{2}$. 
+    There exists $N$ s.t. 
+    $n>N \implies \pa{s_n-s}<\eps$.
+    \begin{align*}
+        \pa{s} &= \pa{s_n+s-s_n} \\
+        &\leq \pa{s_n} + \pa{s-s_n}.\\
+        \implies \pa{s_n} &\geq \pa{s}-\pa{s-s_n} \\
+        &> \pa{s}-\frac{\pa{s}}{2}\\ 
+        &= \frac{\pa{s}}{2}.
+    \end{align*}
+    Let $m =\min \left\{\frac{\pa{s}}{2}, \pa{s_1},\pa{s_2},\dots, \pa{s_N}\right\}$. $\pa{s_n} \geq m$ for all $m\in \NN$.
+    Therefore $m$ is a lower bound for $\inf\left\{\pa{s_n}\mid n \in \NN\right\}\geq m > 0$.
+\end{example}
+\begin{theorem}
+    [Sandwich lemma]
+    \label{thm:sandle}
+    Suppose that $(a_n),(b_n),(s_n)$ are sequences so that 
+    \[ a_n\leq s_n \leq b_n \ \forall n. \]
+    Suppose that $s=\lim_{n\rightarrow \infty} a_n = \lim_{n\rightarrow \infty} b_n.$ Then $\lim_{n\rightarrow \infty} s_n =s$. 
+\end{theorem}
+\begin{proof}
+    We want to show that $s-\eps<s_n<s+\eps$ eventually.
+    
+    Choose $\eps>0$, then $\exists N_1$ s.t. 
+    $n>N_1 \implies \pa{a_n-s}<\eps \implies a_n>s-\eps$.
+    Choose $N_2$ for $b$ as well, so that
+    $n>N_2\implies b_n<s+\eps$. Choose $n>N_1$ and $n > N_2$. Then 
+    \[ s-\eps < a_n \leq s_n \leq b_n < s+ \eps 
+    \implies \pa{s_n-s} < \eps. \qedhere \]
+\end{proof}
+\begin{proposition}
+    Convergent sequences are bounded.
+\end{proposition}
+\begin{proof}
+    Let $(s_n)_{n\in\NN}$ have $\lim_{n\rightarrow\infty =s}$.
+    Then $\exists N$ s.t. $n>N\implies \pa{s_n-s}<1$.
+    By the triangle inequality,
+    \begin{align*}
+        \pa{s_n} &\leq \pa{s}+\pa{s_n-s} \\
+        &<\pa{s}+1.
+    \end{align*}
+    Choose $M = \max \left\{\pa{s}+1, \pa{s_1},\pa{s_2},\dots\right\}.$
+    Then $\pa{s_n}\leq M\forall n \in \NN$, so $(s_n)$ is bounded.
+\end{proof}
+\subsection{Useful limit properties}
+\begin{proposition}
+    [Scalar limits]
+    If $s_n\rightarrow s$  and $k \in \RR$,  then $ks_n \rightarrow ks$
+    as $n\rightarrow\infty$.
+\end{proposition}
+\begin{proof}
+    If $k=0$, then $ks_n = 0$, which is immediately true.
+    
+    If $k\neq 0$, then choose $\eps >0$. Then $\exists N$ s.t. 
+    $n>N \implies \pa{s_n-s}<\frac{\eps}{\pa{k}} \implies 
+    \pa{k_{s_n}-ks} < \eps.$
+\end{proof}
+\begin{proposition}
+    Is $s_n\rightarrow s$, and $t_n\rightarrow t$, then
+    \begin{enumerate}
+        \item $s_n+t_n \rightarrow s+t$ as $n\rightarrow \infty.$
+        \item $s_n\cdot t_n \rightarrow s\cdot t$ as $n\rightarrow \infty.$
+        \item if $s_n\rightarrow s$ and $s_n\neq 0 \ \forall n$ and $s\neq0$,
+        then $\frac{1}{s_n}\rightarrow \frac{1}{s}$.
+    \end{enumerate} 
+\end{proposition}
+\begin{proof}
+    (1) Let $\pa{s_n-s},\pa{t_n-t}<\frac{\eps}{2}$, and the result follows.
+
+    (2) We want $\pa{s_nt_n -st} < \eps$.
+    \begin{align*}
+        \pa{s_nt_n -st} &= \pa{s_nt_n-s_nt+s_nt-st} \\
+        &\leq \pa{s_nt_n-s_nt}+\pa{s_nt-st} \\ 
+        &= \pa{s_n}\pa{t_n-t}+\pa{t}\pa{s_n-s}.
+    \end{align*}
+    Since $s_n\rightarrow s$, it is bounded. So $\pa{s_n}<M$ for some $M$.
+    Choose $\eps>0$:
+    \begin{itemize}
+        \item $\exists N_1$ s.t. $n>N_1\implies \pa{t_n-t}<\frac{\eps}{2M}$
+        \item $\exists N_2$ s.t. $n>N_2\implies \pa{s_n-s}<\frac{\eps}{2 (\pa{t} + 1)}$ (since $\pa{t}$ may be $0$).
+    \end{itemize}
+    Set $N=\max \left\{N_1,N_2\right\}$. For $n>N$,
+    \begin{align*}
+        \pa{s_nt_n -st} &\leq\pa{s_n}\pa{t_n-t}+\pa{t}\pa{s_n-s} \\
+        &< M\cdot\frac{\eps}{2M} +  \frac{\eps}{2(\pa{t}+1)}\pa{t}. \\
+        &< \eps.
+    \end{align*}
+    
+    (3) Let $\eps>0$. Since $(s_n)$ is bounded, 
+    $\exists m>0$ s.t. $\pa{s_n}\geq m$.
+    $\exists N \in \NN$ s.t. for $n>N \implies \pa{s-s_n} < \eps M \pa{s}$.
+    \begin{align*}
+        \pa{\frac{1}{s_n}-\frac{1}{s}} &= \pa{\frac{s}{s\cdot s_n}-\frac{s_n}{s_n\cdot s}} \\
+        &=\frac{\pa{s-s_n}}{\pa{s_n\cdot s}} \\
+        &\leq \frac{\pa{s-s_n}}{m\pa{s}} \\
+        &< \eps. \qedhere
+    \end{align*}
+\end{proof}
+
+We can combine all the properties to relate how limits of the 
+combination of two sequences will end up.
+For example, $\lim_{n\rightarrow\infty} \frac{t_n}{s_n} = \lim_{n\rightarrow\infty} t_n \cdot\frac{1}{s_n} = t \cdot \frac{1}{s} = \frac{t}{s}$.
+
+\clearpage
+\section{September 22nd, 2022}
+\subsection{Convergent sequences example}
+
+\begin{example}
+    $\lim_{n\rightarrow\infty}a^n = 0 \text{ if } \pa{a} < 1$.
+    \begin{proof}
+        If $a=0$, obvious. Otherwise let $\pa{a}=\frac{1}{1+b}$.
+        Note that 
+        \[ (1+b)^n = 1+nb+\cdots \geq 1 +nb > nb \text{ for } n\in\NN,\]
+        by the binomial theorem. Then 
+        \[ \pa{a^n-0}=\pa{a^n}=\frac{1}{(1+b)^n} < \frac{1}{nb}. \]
+        For $\eps > 0$, By letting $N=\frac{1}{\eps b}$, then 
+        $\pa{a^n-0}<\eps \forall n > N$.
+    \end{proof}
+\end{example}
+
+\subsection{Divergence to infinity}
+
+\begin{definition}
+    [Infinite limits]
+    Write that 
+    \[ \lim_{n\rightarrow \infty}s_n = \infty \]
+    if $\forall M>0$, there exists $N$ s.t. 
+    \[ n>N \implies s_n>M. \]
+    Write that 
+    \[ \lim_{n\rightarrow \infty}s_n = -\infty \]
+    if $\forall M<0$, there exists $N$ s.t. 
+    \[ n>N \implies s_n<M. \]
+    In both of these cases $s_n$ \vocab{diverges to $\pm\infty$}.
+\end{definition}
+
+\begin{definition}
+    $(s_n)$ has a \vocab{limit} if it converges or diverges to $\pm\infty$.
+\end{definition}
+
+\begin{example}
+    $\lim_{n\rightarrow\infty}n = \infty$ and 
+    $\lim_{n\rightarrow\infty}-n = -\infty$.
+\end{example}
+
+\begin{proposition}
+    Let $(s_n)$ and $(t_n)$ so that $s_n$ diverges to infinity, and 
+    $\lim t_n > 0$.
+    Then $\lim s_n t_n = \infty$.
+\end{proposition}
+
+\begin{subproof}
+    Split into cases:
+    \begin{itemize}
+        \item \textbf{Case 1: }$\lim t_n=t \in\RR$. Then 
+        $\exists N_1$ s.t. $n>N_1\implies \pa{t_n-t}<\frac{t}{2}
+        \implies t_n>\frac{t}{2} =: \lambda$.
+        \item \textbf{Case 2: }$\lim t_n=\infty$. Then
+        $\exists N_1$ s.t. $n>N_1\implies t_n>1 := \lambda$.
+    \end{itemize}
+    Choose $M>0$, since $s_n\rightarrow \infty$, there exists $N_2$ s.t.
+    $n>N_2$ s.t. $s_n >\frac{M}{\lambda}$. Set $N=\max \left\{N_1,N_2\right\}$, then $n>N \implies t_ns_n > \lambda \cdot\frac{M}{\lambda}=M$.
+\end{subproof}
+
+\subsection{Monotonic sequences}
+\begin{definition}
+    A seq. $(s_n)$ is \vocab{non-decreasing} if $s_n\leq s_{n+1} \forall n$,
+    and \vocab{non-increasing} if $s_n\geq s_{n+1} \forall n$.
+
+    A seq. that is either non-decreasing or non-increasing is
+    \vocab{monotonic}.
+\end{definition}
+\begin{example}
+    [Monotonic sequences]
+    $s_n=n$ is an unbounded monotonic sequence. \\
+    $s_n=1-\frac{1}{n}$ or $s_n=\frac{1}{n}$ are bounded monotonic sequences.
+\end{example}
+
+\begin{theorem}
+    \label{thm:bddmonotonicconv}
+    All bounded monotonic sequences converge.
+\end{theorem}
+
+\begin{proof}
+    Let $(s_n)$ be a non-decreasing seq.
+    It is easy to show that the limit is $\sup\ps{s_n\mid n\in \NN}$
+    by supremum properties.
+\end{proof}
+
+\begin{proposition}
+    If $s_n$ is an unbounded non-decreasing sequence, then 
+    $\lim_{n\rightarrow\infty} s_n = \infty$.
+\end{proposition}
+\begin{proof}
+    $\left\{s_n\mid n\in\NN\right\}$ is bounded below by $s_1$,
+    and unbounded above. For any $M>0, \exists N\in\NN$ s.t.
+    $s_N>M$. Since the sequence is non-decreasing, 
+    $n>N$, $s_n\geq s_N>M$ for all  as well.
+\end{proof}
+\begin{corollary}
+    If $(s_n)$ is monotonic, it either converges, or diverges to $\pm\infty$.
+    Thus $\lim s_n$ is always meaningful.
+\end{corollary}
+\subsection{Liminf and limsup}
+\begin{definition}
+    For a sequence $(s_n)$, we define associated sequences $(u_N)$, $(v_N)$ as 
+    \[ u_N = \inf \left\{s_n\mid n>N\right\}, \]
+    \[ v_N = \sup \left\{s_n\mid n>N\right\}. \]
+    Then $u_1 \leq u_2\leq u_3 \leq \cdots$, 
+    so $(u_N)$ is a non-decreasing sequence, and 
+    $v_1 \geq v_2\geq v_3 \geq \cdots$, so $(v_N)$ is a non-increasing seq.
+    Define the \vocab{$\limsup$} and \vocab{$\liminf$} as
+    \[ 
+        \limsup_{n\rightarrow \infty} s_n := \lim_{N\rightarrow\infty}v_N 
+        \quad \text{ and }\quad 
+        \liminf_{n\rightarrow \infty} s_n := \lim_{N\rightarrow\infty}u_N. 
+    \]
+    These are useful, since $(u_N)$ and $(v_N)$ are both monotonic,
+    therefore 
+    $\limsup_{n\rightarrow \infty} s_n$ and 
+    $\liminf_{n\rightarrow \infty} s_n$ both exist.
+\end{definition}
+\begin{example}
+    For $s_n=(-1)^n$ and
+    \[ u_N = \inf \left\{s_n\mid n>N\right\} \qquad 
+    v_N = \sup \left\{s_n\mid n>N\right\}, \] 
+    \[ \liminf_{n\rightarrow\infty} s_n = \lim_{N\rightarrow\infty}u_N = -1\qquad 
+    \limsup_{n\rightarrow\infty} s_n = \lim_{N\rightarrow\infty}v_N = 1, \]
+\end{example}
+\begin{theorem}
+    For a sequence $(s_n)$,
+    \begin{enumerate}
+        \item If $\lim s_n$ exists, then $\liminf s_n = \lim s_n =\limsup s_n$,
+        \item $\liminf s_n =\limsup s_n \implies \lim s_n$ is defined,
+        and $\liminf s_n = \lim s_n =\limsup s_n$.
+    \end{enumerate}
+\end{theorem}
+This can be proven with \cref{thm:sandle}.
+
+\subsection{Cauchy sequences}
+
+\begin{definition}
+    A sequence $(s_n)$ is \vocab{Cauchy} if 
+    $\forall \eps>0$, $\exists N$ s.t. $m,n>N$, then 
+    $\pa{s_n-s_m}<\eps$.
+\end{definition}
+\clearpage
+\section{September 27th, 2022}
+\subsection{Cauchy results}
+
+\begin{theorem}
+    [Convergence is Cauchy]
+    \label{thm:Cauchy1way}
+    Convergent sequences are Cauchy sequences.
+\end{theorem}
+
+\begin{proof}
+    Suppose $\lim s_n=s$. Then 
+    \begin{align*}
+        \pa{s_n-s_m} &= \pa{s_m-s+s-s_n} \\
+        &\leq \pa{s_n-s} + \pa{s_m-s}.
+    \end{align*}
+    Choose $\eps >0$. $\exists N$ s.t. for $m,n>N$, $\pa{s_m-s},\pa{s_n-s}<\frac{\eps}{2}$,
+    so \[ \pa{s_n-s_m} \leq \pa{s_n-s} + \pa{s_m-s} < \frac{\eps}{2} + \frac{\eps}{2} = \eps. \qedhere\]
+\end{proof}
+
+\begin{theorem}
+    [Cauchy is bounded]
+    \label{thm:cauchybdd}
+    Cauchy sequences are bounded.
+\end{theorem}
+\begin{proof}
+    Fix $\eps=1$ to find $n \in \NN$ s.t. 
+    $m,n > N\implies \pa{s_n-s_m}<1.$ Then $n>N \implies \pa{s_{N+1}-s_n}<1 \implies \pa{s_n} < \pa{s_{N+1}} + 1$.
+    
+    Let $\pa{s_n}$ is bounded by 
+    $M = \max \left\{\pa{s_1},\pa{s_2},\dots,\pa{s_N}, \pa{s_{N+1}+1}\right\}$. 
+\end{proof}
+\begin{theorem}
+[Cauchy is convergence]
+    \label{thm:cauchyconv}
+    Cauchy sequences are convergent sequences (converse of \cref{thm:Cauchy1way}).
+\end{theorem}
+\begin{proof}
+    Choose $\eps>0$. $\exists N$ s.t. $m,n>N\implies \pa{s_n-s_m}<\eps\implies s_n<s_m +\eps$, so 
+    $s_m + \eps$ is upper bound for $\left\{s_n\mid n>N\right\}$.
+    Then $v_N = \inf \left\{s_n\mid n>N\right\} \leq s_m+\eps$ for $m > N$.
+    Then $v_N-\eps$ is a lower bound for $\sup\left\{s_m\mid m>N\right\}$,
+    so $v_N < \sup \left\{s_m\mid m>N\right\} = u_N$.
+
+    Thus,
+    \[ \limsup s_n \leq v_N \leq u_N + \eps \leq (\liminf s_n) + \eps \]
+    for arbitrarily small $\eps>0$, and $\liminf s_n = \limsup s_n$,
+    and the sequence converges.
+\end{proof}
+\subsection{Subsequences}
+\begin{definition}
+    A \vocab{subsequence} of seq. $(s_n)_{n\in\NN}$ has the form 
+    $(t_k)_{k\in\NN}$ where for each $k$, the is a positive integer 
+    $n_k$ so that 
+    \[ n_1 < n_2 <\cdots,< n_k<n_{k+1}<\cdots\]
+    and $t_k = s_{n_k}$.
+    
+    A \vocab{selection function} may be defined as 
+    $\sigma : \NN \rightarrow \NN: \sigma(k) = n_k \text{ for } k \in \NN$
+    so that $t_k = t(k) =  s \circ \sigma (k) = s(\sigma(k)) = s(n_k) = s_{n_k}$.
+\end{definition}
+\begin{example}
+    Let $s_n = n^2(-1)^n : (-1,4,-9,16,-25,\dots)$.
+    The positive terms are a subsequence. This is given by 
+    $\sigma(k) = n_k=2k$, or $s_{n_k}=(2k)^2(-1)^{2k} = 4k^2$.
+\end{example}
+
+\begin{proposition}
+    Suppose a sequence $(s_n)$ has $s_n>0\ \forall n \in \NN$,
+    and $\inf \left\{s_n\mid n\in \NN\right\} = 0$.
+    Then there exists a subsequence $(s_{n_k})$ with limit $0$.
+\end{proposition}
+
+\begin{proof}
+    Elements are arbitrarily close to $0$ by
+    $\inf \left\{s_n\mid n \in\NN\right\} = 0$. 
+    We take a subsequence bounded by $\pp{\frac{1}{n}}_{n\in\NN}$ 
+    to finish.
+\end{proof}
+
+\begin{proposition}
+    If $(s_n)$ converges, then every subsequence converges to the 
+    same limit.
+\end{proposition}
+
+We now prove the Bolzano-Weierstra\ss \ Theorem.
+
+\begin{lemma}
+    Every sequence $(s_n)$ has a monotonic subsequence.
+\end{lemma}
+\begin{proof}
+    Define a term $n$ as \textit{dominant} if $s_n>s_m\forall m > n$.
+    There are two cases: 
+    \begin{enumerate}
+        \item \textbf{Case 1:} There are infinite dominant terms.
+        Define $(s_{n_k})$ as subsequence of them. Then $s_{n_{k+1}} < s_{n_k}$ for all $k$, so it is a decreasing sequence.
+        \item \textbf{Case 2:} There are finitely many dominant terms.
+        Choose $n_1$ past all of them. Given $N \geq n_1$, then 
+        $\exists m > N$, s.t. $s_m\geq s_N$.
+        If we continue choosing terms like this, then we have a 
+        non-decreasing sequence. \qedhere
+    \end{enumerate}
+\end{proof}
+\begin{theorem}
+[Bolzano-Weierstra\ss \ Theorem]
+    \label{thm:bwt}
+    Every bounded sequence has a convergent subsequence.
+\end{theorem}
+\begin{proof}
+    The sequence has a monotonic subsequence by the previous lemma,
+    and it is bounded. By \cref{thm:bddmonotonicconv} that subsequence 
+    converges.
+\end{proof}
+
+Visually, we split the bounds of the sequence in half. At least one half 
+will have infinitely many terms. We continue this process 
+to make a split arbitrarily small region with infinitely many terms.
+This expands to $2$ dimensions with splitting into $4$ squares. 
+
+\begin{definition}
+    A \vocab{subsequential limit} is any $s\in\ol{\RR}$ 
+    that is the limit of some subsequence of $(s_n)$.
+\end{definition}
+
+\begin{example}
+    Let $s_n = \left( n \sin\frac{\pi n}{2} \right)+ \frac{1}{n}$
+    on $n\in\NN$. The subsequential limits are 
+    $S = \left\{0,-\infty, \infty\right\}$.
+\end{example}
+
+\begin{proposition}
+    There is a monotonic subsequence of $(s_n)$ that has limit
+    $\limsup s_n$ and $\liminf s_n$.
+\end{proposition}
+
+\begin{theorem}
+    If $(s_n)$ is a sequence in $\RR$, and $S$ is the set of 
+    subsequential limits of $(s_n)$.
+    Then 
+    \begin{enumerate}
+        \item $S$ is non-empty.
+        \item $\sup S= \limsup s_n$, and $\inf S= \liminf s_n$
+        \item $\lim s_n$ exists $\iff$ $S = \{\lim s_n\}$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    [Proof of (2)]
+    Consider a subsequence $(s_{n_k})_{k\in\NN}$ with limit $t$.
+    Then 
+    \[ t = \liminf s_{n_k} = \limsup s_{n_k}.\]
+    In addition, $\left\{s_{n_k}\mid k > N\right\}\subseteq \left\{s_n\mid n > N\right\}$ and 
+    \[ 
+        \liminf s_n \leq\liminf s_{n_k} = t=\limsup s_{n_k} \leq \limsup s_k.
+    \]
+    By previous result, there are subsequences that tend to 
+    $\liminf s_n, \limsup s_n$, so 
+    \[ \inf S = \liminf s_n, \qquad \sup S = \limsup s_n.\qedhere\]
+\end{proof}
+
+\clearpage
+\section{September 29th, 2022}
+\subsection{Subsequence results}
+
+\begin{theorem}
+    [S is a closed set]
+    \label{thm:subseqlimclosed}
+    Let $S$ be the set of subsequential limits of $(s_n)$.
+    Suppose $(t_n)$ is a subsequence of $S\cap\RR$, and $t = \lim t_n$.
+    Then $t \in S$.
+\end{theorem}
+
+\begin{proof}
+    Since a subsequence of $(s_n)$ converges to $t_1$, there exists 
+    $n_1$ s.t. $\pa{s_{n_1} - t_1} < 1$. Choose $n_1<n_2<\cdots$, s.t. 
+    $\pa{s_{n_j} - t_j} < \frac{1}{j}$ for $j =1,2,\dots,k$.
+
+    Suppose $\pa{s_{n_k}-t} \leq \pa{s_{n_k}-t_k} + \pa{t_k-t} < \frac{1}{k}+\pa{t_k-t}$.
+    Consider $\eps > 0$. There is $N_1$ s.t. 
+    $k>N_1 \implies \pa{t_k-t} < \frac{\eps}{2}$, and
+    $N_2$ s.t. $\frac{1}{k}< \frac{\eps}{2}$. 
+    Let $N = \max \left\{N_1, N_2\right\}$. 
+    \[ \pa{s_{n_k} - t} < \frac{\eps}{2} + \frac{\eps}{2} = \eps. \qedhere\]
+\end{proof}
+
+For the next theorem, we allow for $s\cdot\infty = \infty$
+and $s \cdot (-\infty) = -\infty$.
+
+\begin{theorem}
+    Given sequences $(s_n)$ and $(t_n)$ s.t. 
+    $\lim{s_n}=s>0$,
+    then 
+    $\limsup{s_nt_n} = s (\limsup t_n)$. 
+\end{theorem}
+
+\begin{proof}
+    Suppose $\limsup t_n$ is finite, and equal to $\beta$.
+    Then there is a subsequence $(t_{n_k})$ that converges to $\beta$.
+    In addition $\lim_{k\rightarrow \infty}{s_{n_k}} = s$,
+    then \[ \lim_{k\rightarrow \infty}{s_{n_k}t_{n_k}} = \beta s.\]
+    Therefore $s\limsup t_n = \beta s\leq \limsup s_nt_n$.
+    
+    To avoid division by $0$, we ignore any finite number of terms of $(s_n)$ and 
+    assume $s_n\neq 0$ for all $n$ beyond some point, since 
+    $\lim s_n \neq 0$.
+
+    Then $\lim \frac{1}{s_n} = \frac{1}{s}$. 
+    \[ \limsup t_n = \limsup \left(\frac{1}{s_n}\right)s_nt_n \geq \frac{1}{s}\limsup s_nt_n. \]
+    Therefore $s\limsup t_n \geq \limsup s_nt_n$, which proves equality.
+\end{proof}
+\begin{theorem}
+    Let $(s_n)$ be any sequence of non-zero numbers. 
+    Then 
+    \[ \liminf \pa{\frac{s_{n+1}}{s_n}} \leq \liminf \pa{s_n}^{\frac{1}{n}}
+    \leq \limsup \pa{s_n}^{\frac{1}{n}}\leq \limsup \pa{\frac{s_{n+1}}{s_n}}.\]
+\end{theorem}
+\begin{proof}
+    [Proof of third inequality]
+    Let $\alpha = \pa{s_n}^{\frac{1}{n}}$, and 
+    $L = \pa{\frac{s_{n+1}}{s_n}}$.
+    It suffices to show that $\alpha \leq L_1 \forall L_1>L.$
+    \begin{align*}
+        L &= \limsup \pa{\frac{s_{n+1}}{s_n}} \\
+        &= \limsup_{N\rightarrow \infty}\left\{\pa{\frac{s_{n+1}}{s_n}} : n > N\right\} < L_1.
+    \end{align*}
+    Where $L_1$ is arbitrarily larger than $L$. 
+    Then there exists $N\in\NN$ s.t. 
+    \[ \sup \left\{\pa{\frac{s_{n+1}}{s_n}} : n > N\right\} < L_1,\]
+    and therefore 
+    \[ \pa{\frac{s_{n+1}}{s_n}} < L_1 \text{ for } n>N.\]
+    For $n>N$, 
+    \[ \pa{s_n} = \pa{\frac{s_{n}}{s_{n-1}}}\pa{\frac{s_{n-1}}{s_{n-2}}}
+    \cdots \pa{\frac{s_{N+1}}{s_N}}\pa{s_N} < L_1^{n-N}\pa{s_N}.\]
+    Since $L_1$ and $N$ are fixed, let $a = L_1^{-N}\pa{s_N}$.
+    \begin{align*}
+        \pa{s_n} &< L_1^na \\
+        \pa{s_n}^{\frac{1}{n}} &< L_1a^{\frac{1}{n}} \text{ for } n > N.
+    \end{align*}
+    We have that $\lim_{n\rightarrow \infty}{a^{\frac{1}{n}}} =1$.
+    Hence $\alpha= \limsup \pa{s_n}^{\frac{1}{n}}\leq L_1,$
+    so $\alpha \leq L$.
+\end{proof}
+
+\begin{corollary}
+    If $\lim_{n\rightarrow\infty} \pa{\frac{s_{n+1}}{s_n}}$ exists and is $L$, then 
+    $\lim_{n\rightarrow\infty} \pa{{s_n}^{\frac{1}{n}}}$ exists and is $L$.
+\end{corollary}
+
+\subsection{Series}
+
+When we write $\sum_{n=m}^{\infty}a_n$,
+we consider the sequence of partial sums 
+\[ s_n = \sum_{k=m}^{n}a_k.\]
+The \vocab{infinite series} $\sum_{n=m}^{\infty}a_n$, \vocab{converges}
+if the sequence of partial sums converges.
+\[ 
+    \sum_{n=m}^{\infty}a_n := \lim_{n\rightarrow \infty}{\left(\sum_{k=m}^{n}a_k\right)} = \lim_{n\rightarrow \infty}{s_n}= S.
+\]
+By making the ordering stay consistent across the 
+partial sums, we avoid different convergences.
+$\sum_{n=m}^{\infty}a_n$ \vocab{diverges to $\pm\infty$} provided 
+that $\lim_{n\rightarrow \infty}{s_n} = \pm\infty$.
+We can write $\sum a_n$ to refer to the sum of the series in general.
+
+\begin{example}
+    [Series examples]
+    Some examples of series from class
+    \begin{itemize}
+        \item Consider the sum
+        \[ \sum_{k=0}^{n}a^n = 1+a+a^2+\cdots+a^n= \frac{a^{n+1}-1}{a-1}.\]
+        Since we showed that $\lim_{n\rightarrow \infty}{a_n} = 0$ 
+        if $\pa{a}<1$ in which case 
+        \[ \sum_{k=0}^{\infty}a^n = \lim_{n\rightarrow \infty}\frac{a^{n+1}-1}{a-1} = \frac{1}{1-a}.\]
+        \item The sum
+        \[ \sum_{k=1}^{\infty}\frac{1}{k^p}\]
+        converges if and only if $p>1$.
+        When $p=2$, the sum is $\frac{\pi^2}{6}$, $p=3$ yields 
+        $1.2020569$ (Ap\'ery's constant).
+    \end{itemize}
+\end{example}
+
+\begin{remark}
+    [Riemann zeta function]
+    The Riemann zeta function is 
+    \[ \zeta(p) = \sum_{k=1}^{\infty}\frac{1}{k^p},\]
+    and is defied for real $p>1$. Can be analytically 
+    extended to $\CC$.
+    There are zeros of this function at $-2,-4,-6,\dots$, but they 
+    are "trivial".
+
+    There are also sporadic zeros on the line $\Re(p) = \frac{1}{2}$.
+    The Riemann hypothesis says that all zeros lie on this line.
+\end{remark}
+
+\begin{proposition}
+    $a_k$ is Cauchy if
+    $\sum a_k$ satisfies $\forall \eps>0, \exists N$ s.t.
+    $n \geq m>N$ implies \[ \pa{s_{m-1}-s_n} < 
+    \eps,\]
+    or 
+    \[
+        \pa{\sum_{k=m}^{n}a_k} < \eps. 
+    \]
+\end{proposition}
+
+\begin{corollary}
+    If $\sum a_k$ converges, then $\lim a_n=0$.
+\end{corollary}
+
+\begin{proposition}
+    [Comparison test]
+    \label{prop:comptest}
+    Let $\sum a_n$ be a series where $a_n\geq 0\forall n$. Then, 
+    \begin{enumerate}
+        \item If $\sum a_n$ converges  and $\pa{b_n}\leq a_n$, then 
+        $\sum b_n$ converges.
+        \item If $\sum a_n=\infty$ diverges and $\pa{b_n}\geq a_n$, then 
+        $\sum b_n = \infty$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    (1) Consider the Cauchy criterion,
+    \[ \pa{\sum_{k=m}^{n}b_k} \leq \sum_{k=m}^{n}\pa{b_k} 
+    \leq \sum_{k=m}^{n}a_k.\]
+    For all $\eps>0$, there exists $N$ s.t. $n\geq m > N$ implies 
+    \[ \pa{\sum_{k=m}^{n}b_k} \leq \pa{\sum_{k=m}^{n}a_n}< \eps.\]
+
+    (2) We know that 
+    \[ \sum_{k=1}^{n}a_k \leq \sum_{k=1}^{n}b_k.\]
+    Then $\forall M>0$, $\exists N$ s.t. $n>N$ implies
+    \[ M < \sum_{k=1}^{n} a_k \leq \sum_{k=1}^{n} b_k  \implies \sum b_n = \infty.
+    \qedhere \]
+\end{proof}
+\begin{definition}
+    $\sum a_k$ is \vocab{absolutely convergent} if $\sum \pa{a_k}$ converges.
+    Note that $\sum \pa{a_k}$ is monotonic and always has a meaningful
+    limit. Absolutely convergent $\implies$ convergent.
+\end{definition}
+\begin{proposition}
+    [Ratio test]
+    \label{prop:ratiotest}
+    A series $\sum a_n$ of non-zero terms 
+    \begin{enumerate}
+        \item Converges absolutely if $\limsup \pa{\frac{a_{n+1}}{{a_n}}} < 1$.
+        \item Diverges if $\liminf \pa{\frac{a_{n+1}}{{a_n}}} > 1$.
+        \item Otherwise the test provides no information.
+    \end{enumerate}
+\end{proposition}
+\begin{proposition}
+[Root test]
+    \label{prop:roottest}
+    Let $\sum a_n$ be a series and $\alpha =\limsup \pa{a_n}^{\frac{1}{n}}$
+    The series $\sum a_n$ 
+    \begin{enumerate}
+        \item Converges absolutely if $\alpha<1$.
+        \item Diverges if $\alpha>1$.
+        \item Otherwise the test provides no information.
+    \end{enumerate}
+\end{proposition}
+\begin{example}
+    [Ratio test]
+    Consider $\sum \frac{n^2}{2^n}$, so by \cref{prop:ratiotest},
+    \[ \lim\frac{a_{n+1}}{a_n} = \lim\frac{\left(1+\frac{1}{n}\right)^2}{2} = \frac{1}{2}.\]
+\end{example}
+
+\begin{example}
+    [Using tests]
+    Two examples of using both tests,
+    \begin{itemize}
+        \item Consider $\sum\frac{1}{n!}$. 
+        By the ratio test, the ratio is $\frac{1}{n} \rightarrow 0$, so it converges absolutely.
+        \item Consider $\sum_{n=0}^{\infty}2^{(-1)^n-n} = 2 + \frac{1}{4}+\frac{1}{2}+\frac{1}{16}+ \frac{1}{8}+\cdots$.
+        We see 
+        \[ \frac{1}{8} = \liminf \pa{\frac{a_{n+1}}{a_n}} <  \limsup \pa{\frac{a_{n+1}}{a_n}}= 2.\]
+        So the ratio test provides no information.
+        But the root test yields
+        \[\lim(a_n)^{1/n} \lim 2^{\frac{1}{n} - 1}= 2^{-1} = \half. \]
+    \end{itemize}
+\end{example}
+\clearpage
+\section{October 4th, 2022}
+\subsection{Series test proofs and examples}
+We now prove \cref{prop:roottest}.
+\begin{proof}
+    Suppose $\alpha<1$. Choose $\eps>0$ s.t. $\alpha+\eps < 1$.
+    Then $\exists N$ s.t.  
+    \[ \alpha-\eps < \sup\ps{\pa{a_n}^{1/n}\mid n > N} < 
+    \alpha + \eps. \]
+    Hence $\pa{a_n}^{1/n} < \alpha+\eps \forall n > N$.
+    $\pa{a_n} < \pp{\alpha+\eps}^n < 1$. Then 
+    \[ \sum_{n=N+1}^{k}\pa{a_n} < \sum_{n=N+1}^{k}\pp{\alpha+\eps}^n\]
+    is finite, so $\sum a_n$ is also finite.
+    
+    If $\alpha>1$, then there exists subsequence 
+    $\pa{a_n}^{1/n}$ that his limit $>1$,
+    hence $\pa{a_n} > 1$ for infinitely many terms and the series diverges.
+\end{proof}
+Next we prove \cref{prop:ratiotest}.
+\begin{proof}
+    Since 
+    \[ \liminf \pa{\frac{s_{n+1}}{s_n}} \leq \liminf \pa{s_n}^{\frac{1}{n}}
+    \leq \limsup \pa{s_n}^{\frac{1}{n}}\leq \limsup \pa{\frac{s_{n+1}}{s_n}}\]
+    \[ \implies\liminf \pa{\frac{s_{n+1}}{s_n}} \leq \alpha\leq \limsup \pa{\frac{s_{n+1}}{s_n}},\]
+    from which conclusions follow from \cref{prop:roottest}.
+\end{proof}
+
+So the ratio test is just a weaker root test, since there are more types of 
+functions that satisfy its constraints.
+
+\subsection{Alternating series and integral tests}
+
+\begin{example}
+    [Integral test for divergence]
+    Consider the sequence $a_n = \frac{1}{n}$. Note that
+    \[ \sum_{k=1}^{n}\frac{1}{k} \geq \int_{1}^{n+1}\frac{1}{x}dx = \log\pp{n+1}.\] 
+    Taking the limit of everything to $\infty$, 
+    $\lim_{n\rightarrow \infty}{\log\pp{n}} = \infty$,
+    so series diverges to $\infty$.
+\end{example}
+
+\begin{example}
+    [Integral test for convergence]
+    Consider the sequence $a_n = \frac{1}{n^2}$. Note that
+    \[ \sum_{k=1}^{n}\frac{1}{k^2} \leq \int_{1}^{n}\frac{1}{x^2}dx + 1.\]
+    Since the integral is finite, the series must converge.
+\end{example}
+
+\begin{theorem}
+[Alternating series theorem]
+    \label{thm:alterseries}
+    Suppose you have a sequence $a_i\geq a_{i+1}$ and $a_i\geq 0$ for all $i$,
+    and $\lim_{n\rightarrow \infty}{a_n} = 0$. Then 
+    \[ \sum_{n=1}^{\infty}(-1)^{n+1}a_n\]
+    converges.
+\end{theorem}
+\begin{proof}
+    The subsequence $(s_{2n})$ is increasing, 
+    (where $s$ is the series sum) since 
+    $s_{2n+2} - s_{2n} = a_{2n+2} + a_{2n+1} \geq 0$.
+    Similarly, $(s_{2n-1})$ is decreasing.
+    First $s_{2n} \leq s_{2n+1}\forall n$, since $s_{2n+1}-s_{2n}=a_{2n+1} \geq 0$.
+    If $m\leq n$, then $s_{2m}\leq s_{2n}\leq s_{2n+1}$. If $m\geq n$,
+    $s_{2n+1}\geq s_{2m+1}\geq s_{2m}$
+    Hence $(s_{2n})$ and $(s_{2n+1})$ are bounded, and their limits exist.
+    Let those limits be $s,t$ respectively.
+    \begin{align*}
+        t-s &= \lim_{n\rightarrow \infty}{s_{2n+1}} -
+        \lim_{n\rightarrow \infty}{s_{2n}} \\ 
+        &= \lim_{n\rightarrow \infty}{s_{2nn+1} - s_{2n}} \\
+        &= \lim_{n\rightarrow \infty}{a_{2n+1}} = 0.
+    \end{align*}
+    So $s=t$ and $\lim_{n\rightarrow \infty}{s_n} = s$.
+\end{proof}
+\subsection{Metric spaces}
+Since many of the proofs rely on the triangle inequality, we 
+to generalize to more spaces than just $\RR$.
+
+\begin{definition}
+    Let $S$ be a set and $d$ be defined for all $(x,y) \in S\times S$
+    such that 
+    \begin{enumerate}
+        \item $d(x,x) = 0 \forall x \in S$ and $d(x,y) > 0 \forall x \neq y,x,y\in S$.
+        \item $d(x,y) = d(y,x) \forall x,y\in S$
+        \item $d(x,z) \leq d(x,y) + d(y,z) \forall x,y,z\in S$ (\textit{triangle inequality})
+    \end{enumerate}
+    If all are true, then $d$ is a \vocab{metric}
+    and the pair $(S,d)$ is a \vocab{metric space}.
+\end{definition}
+
+\begin{example}
+    [Euclidean norm]
+    For $\RR^k$, let $\vec{x} = (x_1,\cdots, x_k)$, and 
+    $\vec{y} = (y_1,\cdots, y_k)$ and define the metric $d$ as 
+    $d(\vec{x},\vec{y}) = \sqrt{\sum_{i=1}^{k}(x_i-y_i)^2}$
+\end{example}
+
+\begin{definition}
+    We extend the convergence property of a sequence $s$ to if 
+    \[ \lim_{n\rightarrow \infty}{d(s_n,s)} = 0,\]
+    and Cauchy if for each $\eps>0$, $\exists N$ s.t. $m,n > N \implies 
+    d(s_n,s_m) < \eps$.
+\end{definition}
+
+\begin{definition}
+    A metric space is \vocab{complete} if every Cauchy sequence in $S$
+    converges to some element in $S$. In $\RR$ the notion of 
+    completeness is interchangeable with the completeness axiom.
+\end{definition}
+
+\subsection{Topological concepts}
+\begin{definition}
+    Given a metric space $(S,d)$,
+    \begin{enumerate}[a.]
+        \item A \vocab{neighborhood} of some element $p\in S$ is a 
+        set \[ N_r(p) = \ps{q\mid q \in S, d(p,q)<r}. \] 
+        \item A point $p$ is a \vocab{limit point} of a set $E\subseteq S$ 
+        if every neighborhood of $p$ contains a $q\neq p$ s.t.
+        $q \in E$. If $p\in E$ is not a limit point, it is called an
+        \vocab{isolated point}. $E$ is \vocab{closed} if every limit point $p$ of $E$ 
+        has $p \in E$.
+        \item A point $p$ is an \vocab{interior} point of $E$ if
+        there is a neighborhood $N(p)$ s.t. $N\subseteq E$. $E$ is \vocab{open} if every point of $E$ is an 
+        interior point of $E$.
+        \item The \vocab{complement} of $E$, denoted $E^C$ is the 
+        set of all pts. $p \in S$ s.t. $p\notin E$.
+        \item $E$ is \vocab{bounded} if there is a real number 
+        $M$ and a point $q \in S$ s.t. $d(p,q)< M\forall p \in E$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    Two metrics $d_1, d_2$ on $S$ are \vocab{equivalent} if 
+    $\forall x \in S$,
+    $\forall \eps > 0$, we can find a $\delta >0$ s.t. 
+    $N_{\delta}^{(d_1)}(x) \subseteq N_{\eps}^{(d_2)}(x)$ and vice-versa.
+\end{definition}
+
+\clearpage
+\section{October 6th, 2022}
+\subsection{Open and closed sets}
+
+\begin{theorem}
+    \label{thm:nbhdopen}
+    Every neighborhood is an open set.
+\end{theorem}
+
+\begin{proof}
+    Consider $E = N_r(p)$, and look at $q \in E$. Then $\exists h > 0$
+    s.t. $d(p,q) = r-h$. Consider $s$ s.t. $d(q,s) < h$.
+    We know that 
+    \[ d(p,s) \leq d(p,q) + d(q,s) < r-h+h = r.\]
+    Hence $N_h(q) \subseteq N_r(p) \forall q \in E$, and $E$ is open.
+\end{proof}
+\begin{proposition}
+    If $p$ is a limit point of a set $E$, then every neighborhood of $p$
+    contains infinitely many points of $E$.
+\end{proposition}
+\begin{proof}
+    Suppose for contradiction there is a neighborhood $N$ of $p$ that 
+    only contains a finite number of points in $E$. Let $q_1,\dots,q_n$ 
+    be the points in $N\cap E$ that are distinct.
+    Let $r = \min_{m\in\ps{1,\dots,n}} d(p,q_m)$. But that means 
+    that $q_i \in N_r(p)$.
+\end{proof}
+\begin{corollary}
+    A finite point set has no limit points.
+\end{corollary}
+\begin{theorem}
+    For a collection of possibly infinite sets $E_\alpha$,
+    \[ A = \pp{\bigcup_\alpha E_\alpha}^C = \bigcap_\alpha E_\alpha^C = B.\]    
+\end{theorem}
+\begin{proof}
+    If $x\in A$, then $x \notin \bigcup_\alpha E_\alpha$, so $x \notin E_\alpha$ for all $\alpha$. So $x\in E_\alpha^C$ for all $\alpha$.
+    So $x \in \bigcap_\alpha E_\alpha^C = B$.
+    Hence $A\subseteq B$, similar proof follows for $B\subseteq A$.
+\end{proof}
+\begin{theorem}
+    $E$ open $\iff$ $E^C$ closed.
+\end{theorem}
+\begin{proof}
+    Suppose $E^C$ is closed. Choose $x \in E$. Since $x\notin E^C$,
+    $x$ is not a limit point of $E^C$. Hence $\exists N_r(x)$ s.t.
+    $E^C\cap N_r = \varnothing \implies N_r \subseteq E$. Therefore $x$ is 
+    an interior point of $E\forall x \in E$, so $E$ is open.
+
+    Suppose $E$ is open. Let $x$ be a limit point of $E^C$. Then 
+    every neighborhood contains a point of $E^C$ so $x$ is not an interior 
+    point of $E$, so $x$ is not an interior point of $E$. Since $E$ 
+    is open, $x\in E^C$ for all limit points of $E$, so $E^C$ is closed. 
+\end{proof}
+\begin{theorem}
+    Results for open and closed sets:
+    \begin{enumerate}[a.]
+        \item For any collection $\ps{G_\alpha}$ of open sets,
+        $\bigcup_\alpha G_\alpha$ is open.
+        \item For any collection $\ps{F_\alpha}$ of closed sets,
+        $\bigcap_\alpha F_\alpha$ is closed.
+        \item For any \textit{finite} collection 
+        $G_1,\dots, G_n$ of open sets,
+        $\bigcap_{i=1}^n G_i$ is open.
+        \item For any \textit{finite} collection 
+        $F_1,\dots, F_n$ of closed sets,
+        $\bigcup_{i=1}^n F_i$ is closed
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    (a) Suppose that $\mathcal G = \bigcup_\alpha G_\alpha$. If $x\in \mathcal G$, then $x \in G_\alpha$, and $x$ is an interior point of 
+    $G_\alpha$, so $x$ is an interior point of $\mathcal G$. So 
+    $\mathcal{G}$ is open.
+
+    (b) Use the fact that $\bigcap_\alpha F_\alpha = \bigcup_\alpha(F_\alpha)^C$.
+
+    (c) Let $H = \bigcap_{i=1}^n G_i$. For any $x\in H$, there exist $N_i$'s with 
+    radii $r_i$ s.t. $N_i\subseteq G_i$. Let $r=\min_{i\in\ps{1,\dots,n}}\ps{r_i}$, so $N_r(x)\subseteq G_i$.
+    
+    (d) Follows similarly to (b).
+\end{proof}
+
+\begin{definition}
+    If $(X,d)$ is a metric space, and $E\subseteq X$, let $E'$ denote 
+    the sets of all limit points of $E$ in $X$. Then then \vocab{closure}
+    of $E$ is the set $\ol{E} = E \cup E'$.
+\end{definition}
+
+\begin{theorem}
+    If $(X,d)$ is a metric space and $E\subseteq X$, then 
+    \begin{enumerate}[a.]
+        \item $\ol{E}$ is closed.
+        \item $E=\ol{E} \iff E$ is closed.
+        \item $\ol{E}\subset F$ for every closed set $F\subseteq X$ s.t.   
+        $E\subseteq F$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    (a) If $X\ni p\notin \ol{E}$, then $p$ is neither in $E$ nor a limit 
+    point of $E$. Hence $p$ has a neighborhood that does not 
+    intersect $E$. Therefore $p$ is an interior point of $\ol{E}^C$, so
+    $\ol{E}^C$ is open, and $\ol{E}$ is closed.
+
+    (b) If $E = \ol{E}$, then $E$ is closed by (a). If $E$ is closed,
+    then $E'\subseteq E$, hence $\ol{E} = E\cup \ol{E} = E$.
+
+    (c) If $F$ is closed and $E \supseteq F$, then $F\supseteq F'$
+    and $F'\supseteq E'$. Therefore $F\supseteq \ol{E}$.
+\end{proof}
+
+\clearpage
+\section{October 11th, 2022}
+\subsection{Relative openness}
+\begin{proposition}
+    Let $E\subseteq \RR$ be nonempty and bounded above.
+    Let $y=\sup E$. Then $y\in \ol{E}$, and $y \in E$ if $E$ 
+    is closed.
+\end{proposition}
+\begin{proof}
+    $y\in E\implies y\in\ol{E}$, so assume $y\notin E$. For $h>0$,
+    there exists $x\in E$ s.t. $y-h<x<y$. Therefore $y$ is 
+    a limit point of $E$, and $y\in\ol{E}$.
+\end{proof}
+Consider $E\subseteq Y \subseteq X$. If $E$ is an open subset of $X$, then 
+for each $p\in E$, there exists $r>0$ s.t. 
+\[N_r(p) = \ps{q\in X\mid d(p,q)<r}\subseteq E.\]
+Note the neighborhood definition depends on the space $X$, and the pair 
+$(Y,d)$ is also a metric space. This motivates the following definition.
+\begin{definition}
+    $E$ is \vocab{open relative to} $Y$ if for each $p\in E$, there 
+    exists an $r>0$ s.t.
+    \[ N_r^Y(p) =\ps{q\in Y\mid d(p,q)<r}\subseteq E.\]
+    In words, for each point $p\in E$, there is a neighborhood 
+    on $Y$'s metric that is contained in $E$.
+\end{definition}
+\begin{example}
+    [Relative openness example]
+    Suppose $X=\RR$, $Y=[-1,1]$, and $E=(0,1]$. hence $E\subseteq Y\subseteq X$. $E$ is not open relative to $Y$, since $N_{r}^X(1)=(1-r,1+r)$
+    is not confined within $E$ for any $r$.
+    However, if $E=(0,1)$, $E$ is open relative to $Y$.
+\end{example}
+\begin{theorem}
+    Suppose $Y\subset X$. A subset $E$ is only open relative to $Y$ if 
+    and only if $E=Y\cap G$ for some open subset $G$ of $X$. 
+\end{theorem}
+\begin{proof}
+    For each $p\in E$, $\exists r_p>0$ s.t. $N_{r_p}^Y(p) \subseteq E$.
+    Let 
+    \[ G=\bigcup_{p\in E}N_{r_p}^X(p).\] 
+    The union of open sets is open. So $G$ is an open subset of $X$
+    and $E\subseteq G\cap Y$. 
+\end{proof}
+\subsection{Compactness}
+\begin{definition}
+    An \vocab{open cover} of set $E$ in a metric space is a collection
+    $\ps{G_\alpha}$ of open subsets of $X$ such that $E\subseteq \bigcup_\alpha G_\alpha$.
+\end{definition}
+
+\begin{definition}
+    A subset $K$ of a metric space $X$ is \vocab{compact} if every open cover contains a finite subcover.
+\end{definition}
+
+For example, 
+if $\ps{G_\alpha}$ is an open cover of $K$, and 
+$K$ is compact, then there are finitely 
+many indices $\alpha_1,\dots,\alpha_n$ s.t. 
+\[ K\subseteq G_{\alpha_1}\cup\dots\cup G_{\alpha_n}. \]
+
+\begin{theorem}
+    Suppose $K\subset Y\subset X$. Then $K$ is compact relative to $X
+    \iff K$ is compact relative to $Y$.
+\end{theorem}
+
+\begin{proof}
+    Suppose that $K$ is compact relative to $X$. Let $\ps{V_\alpha}$ 
+    be a collection of sets relatively open to $Y$ such 
+    that $K \subseteq \bigcup_{\alpha}V_\alpha$. By a previous theorem
+    there are sets $G_\alpha$ open relative to $X$ s.t. $V_\alpha=Y\cap G_\alpha$. By compactness,
+    \[ K \subseteq G_{\alpha_1}\cup\cdots\cup G_{\alpha_n},\]
+    and since $K\subseteq Y$, then 
+    \[ K \subseteq V_{\alpha_1}\cup\cdots\cup V_{\alpha_n}. \]
+
+    Conversely, suppose $K$ is compact relative to $Y$,
+    and let $\ps{G_\alpha}$ be a collection of open subsets of $X$
+    that cover $K$. Define $V_\alpha=Y\cap G_\alpha$.
+    Since $V_\alpha$ has a finite cover of $K$, so does $G_\alpha$.
+\end{proof}
+
+The conclusion? Compact sets are metric spaces
+in their own right. While it does not make sense to talk about 
+closed or open metric spaces, 
+it does to talk about compact metric spaces.
+
+% Ohmygod he's been doing notes based on the color of his t-shirt
+
+\begin{theorem}
+    Compact subsets of metric spaces are closed.
+\end{theorem}
+
+\begin{proof}
+    Let $K$ be a compact subset of a metric space, and consider 
+    $K^C$. Choose $p\in K^C$. For any $q\in K$, let $V_q$ and $W_q$ be 
+    neighborhoods of $p$ and $q$ respectively of radius less than 
+    $d(p,q)/2$.
+    Since $K$ is compact, there are finitely many 
+    points $q_1,\dots,q_n$ in $K$ such that $ K\subseteq W_{q_1}\cup \cdots\cup W_{q_n}$.
+    If we let $V = V_{q_1}\cap \cdots\cap V_{q_n}$, the $V$ is a neighborhood of $P$ that does not intersect $W$.
+    Hence $V\subseteq K^C$, and $p$ is an interior point of $K^C$,
+    and $K^C$ is open $\iff$ $K$ is closed.
+\end{proof}
+
+\begin{theorem}
+    Closed subsets of compact sets are compact.
+\end{theorem}
+
+\begin{proof}
+    Suppose that $F\subseteq K\subseteq X$, $F$ closed (rel. to $X$),
+    and $K$ compact. Let $\ps{V_\alpha}$ be an open cover of $F$.
+    If $F^C$ is adjoined to $\ps{V_\alpha}$, we obtain an open cover 
+    $\Omega$ of $K$.
+
+    Since $K$ is compact, there is a finite subcollection $\Phi$ of 
+    $\Omega$ that covers $K$ and therefore $F$. If $F^C$ is a 
+    member of $\Phi$, we can remove it and still retain an 
+    open cover of $F$. Thus a finite subcollection of $\ps{V_\alpha}$
+    covers $F$, so $F$ is compact.
+\end{proof}
+\begin{corollary}
+    If $F$ is closed, and $K$ is compact, then $F\cap K$ is compact.
+\end{corollary}
+\clearpage
+\section{October 13th, 2022}
+\subsection{Compact sets results}
+\begin{theorem}
+    If $\ps{K_\alpha}$ is a collection of compact subsets of a metric 
+    space $X$ s.t. the intersection of every finite subcollection 
+    of $\ps{K_\alpha}$ is non-empty, then $\bigcap_\alpha K_\alpha$ is 
+    non-empty
+\end{theorem}
+\begin{proof}
+    Fix a member $K_1\in\ps{K_\alpha}$ and let $G_\alpha=K_\alpha^C$.
+    Assume that no point of $K_1$ belongs to all $K_\alpha$. Then the 
+    set $G_\alpha$ forms an open cover of $K_1$.
+
+    Since $K_1$ is compact, $\exists$ finitely many indices $\alpha_1,\dots,\alpha_n$ s.t. $K_1\subseteq G_{\alpha_1}\cup G_{\alpha_2}\cup \cdots\cup G_{\alpha_n}$.
+
+    But then $K_1\cap K_{\alpha_1}\cap K_{\alpha_2}\cap \cdots\cap K_{\alpha_n}=\varnothing$, so one point of $K_1$ belongs to every set 
+    $K_\alpha$, and $\bigcap_\alpha K_\alpha$ is non-empty.
+\end{proof}
+\begin{corollary}
+    \label{co:nonemptyintersection}
+    If $\ps{K_n}$ is a sequence of non-empty compact sets such that 
+    $K_n\supseteq K_{n+1}\forall n$. Then $\bigcap_{n=1}^{\infty}K_n$ is 
+    non-empty.
+\end{corollary}
+
+\subsection{Heine-Borel theorem}
+
+\begin{lemma}
+    If $E$ is an infinite subset of a compact set $K$, then $E$ has a 
+    limit point in $K$.
+\end{lemma}
+
+\begin{proof}
+    If no point of $K$ were a limit point of $E$, then each $q\in K$
+    has a neighborhood $V_q$ such that $\pa{V_q\cap E} \leq 1$.
+
+    Since $E$ has infinitely many points, we know that no finite subcollection of 
+    $\ps{V_q}$ can cover $E$,
+    and since $E\subseteq K$, then the same is true for $K$,
+    implying $K$ is not compact, which is a contradiction.
+\end{proof}
+
+\begin{lemma}
+    If $\ps{I_k}$ is a sequence of closed intervals in $\RR^1$
+    such that $I_n\supseteq I_{n+1}\forall n$. Then $\bigcap_{i=1}^{\infty}I_i$
+    is non-empty.
+\end{lemma}
+
+\begin{proof}
+    Let $I_n$ be the interval $[a_n,b_n]$, and let $E$ 
+    be the set of all $a_n$. $E$ is bounded above by $b_1$.
+    Let $x=\sup E$. For $m,n \in \NN$,
+    \[ a_n\leq a_{m+n}\leq b_{m+n}\leq b_m.\]
+    Since $a_m\leq x\leq b_m\forall m \in \NN$, $x\in I_m\ \forall m\in \NN$,
+    and $x\in \bigcap_{i=1}^{\infty}$.
+\end{proof}
+
+\begin{definition}
+    Let $a_i<b_i$ for $i=1,\dots,k$ with $a_i,b_i\in\RR$. Then the set 
+    $\vec{x}=(x_1,x_2,\dots,x_k)\in\RR^k$ that satisfy $a_i\leq x_i\leq b_i$
+    for all $i$ is called a \vocab{$k$-cell}.
+\end{definition}
+
+For notation, we will have all vectors, and their entries, 
+written in the way above.
+We want to generalize \cref{co:nonemptyintersection}
+from nested intervals to nested $k$-cells.
+
+\begin{lemma}
+    Let $k>0,k\in\NN$. If $\ps{I_n}$ is a sequence of $k$-cells s.t.
+    $I_n\supseteq I_{n+1}\forall n$, then $\bigcap_{n=1}^{\infty}I_n$
+    is non-empty.
+\end{lemma}
+\begin{proof}
+    Let $I_n$ be the set of all points $\vec{x}\in \RR^k$
+    s.t. $a_{n,j}\leq x_k\leq b_{n,j}$ ($1\leq j\leq k,n\in\NN$),
+    and put $I_{n,j}=[a_{n,j},b_{n,j}]$. For each dimension, 
+    there exists $x_j^*$ s.t. $a_{n,j}\leq x_j^*\leq b_{n_j}$ 
+    for all $j$. So $\vec{x}^*=(x_1^*,x_2^*,\dots,x_k^*)\in \bigcap_{n=1}^{\infty}I_n$ 
+\end{proof}
+\begin{lemma}
+    Every $k$-cell is compact.
+\end{lemma}
+\begin{proof}
+    Let $I$ be a $k$-cell consisting of points $\vec{x}$
+    where $a_j\leq x_j\leq b_j$ for all $j$, and let 
+    \[ \delta = \sqrt{\sum_{j=1}^{k}(b_j-a_j)^2}.\]
+    Then $d(\vec{x},\vec{y})\leq \delta$ for $\vec{x},\vec{y}\in I$.
+
+    Suppose there exists an open cover $\ps{G_\alpha}$ of $I$ 
+    that has no finite subcover. Let $c_k=\frac{a_j+b_j}{2}$.
+    Then the intervals $[a_j,c_j]$ and $[c_j,b_j]$ determine 
+    $2^k$ $k$-cells $\ps{Q_i}$, whose union is $I$.
+
+    At least one of the $Q_i$'s cannot be covered by any finite 
+    subcollection of $\ps{G_\alpha}$, let that be $I_1$. Now 
+    subdivide $I_1$ and continue this process to get a 
+    sequence $\ps{I_j}_{j\in\NN}$ s.t.
+    \begin{enumerate}
+        \item $I\supseteq I_1\supseteq I_2\supseteq\cdots$
+        \item $I_n$ is not covered by any finite subcollection of $\ps{G_\alpha}$
+        \item If $\vec{x},\vec{y}\in I_n$, then 
+        \[d(\vec{x},\vec{y})\leq \frac{\delta}{2^n}. \]
+    \end{enumerate}
+    The previous result tells us that there is some $\vec{x}^*$ 
+    s.t. $\vec{x}^*\in I_n\forall n$. We must have $\vec{x}^*\in G_\alpha$
+    for some $\alpha$. Since $G_\alpha$ is open, $\exists r>0$ s.t.
+    the $N_r(\vec{x}^*)\subseteq G_\alpha$.
+
+    By choosing a suitably large $n$ s.t. $2^{-n}\delta<r$. Then 
+    $I_n\subseteq G_\alpha$. So $G_\alpha$ covers $I_n$ contradicting 
+    our assumption.
+\end{proof}
+\begin{theorem}
+[Heine-Borel theorem]
+    \label{thm:heineborelthm}
+    If $E\subseteq \RR^k$, then the following statements are equivalent:
+    \begin{enumerate}[(a)]
+        \item $E$ is closed and bounded.
+        \item $E$ is compact 
+        \item Every infinite subset of $E$ has a limit point in $E$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    If (a) holds, then we can enclose $E$ in a $k$-cell $I$.
+    Since closed subset of compact sets are compact, $E$ is compact,
+    so (a) $\implies$ (b).
+
+    (b) $\implies$ (c) is finished by a previous theorem.
+
+    To show (c) $\implies$ (a), suppose that $E$ is not bounded.
+    Then $E$ contains points $\vec{x}_n$ with 
+    $\pa{\vec{x}_n}>n\forall n \in \NN$. The set consisting of 
+    these points is infinite, but has no limit point in $\RR^k$.
+    Hence (c) implies that $E$ is bounded. 
+    
+    If $E$ is not closed, 
+    then there is a point $\vec{x}_0\in \RR^k$ that is a limit point of $E$,
+    but is not contained in $E$. Therefore $\exists \vec{x}_n\in E$ s.t.
+    $\pa{\vec{x}_n-\vec{x}_0}<\frac{1}{n}\forall n \in \NN$.
+    Let $S$ be the set of all such $x_n$.
+    $S$ is infinite and has a limit point $\vec{x}_0$, and no other limit points in $\RR^k$. Choose $\vec{y}\in\RR^k$, where $\vec{y}\neq \vec{x}_0$.
+    Then 
+    \[ d(\vec{x}_n,\vec{y})\geq d(\vec{x}_0,\vec{y})-d(\vec{x}_n,\vec{y})
+    \geq d(\vec{x}_0,\vec{y})-\frac{1}{n}\geq \frac{1}{2}d(\vec{x}_0,\vec{y}).\]
+    For all but finitely many $n$. Thus $\vec{y}$ is is not a limit point of 
+    $S$, and $E$ is closed.
+\end{proof}
+\subsection{Functions and continuity}
+\begin{definition}
+    The \vocab{domain} of a function $f$ is the set on which $f$ is defined,
+    and is denoted $\dom(f)$.
+\end{definition}
+For a \textit{real valued function}, $\dom(f)\subseteq \RR$, and $f(x)\in\RR$ for 
+all $x\in\dom(f)$. Sometimes the domain is omitted, and we 
+assume that the function is valid on the \textit{natural domain},
+the set of all points in $\RR$ on which the function is well-defined.
+\begin{definition}
+    Let $f$ be a real valued function whose domain is a subset of $\RR$.
+    The function $f$ is \vocab{continuous at $x_0$} in $\dom(f)$ if 
+    for every sequence $(x_n)$ in $\dom(f)$ that converges 
+    to $x_0$,  
+    \[\lim_{n\rightarrow \infty}f(x_n)=f(x_0). \]
+    If $f$ is continuous at each point of a set $S\subseteq \dom(f)$, 
+    then $f$ is said to be \vocab{continuous on $S$}.
+\end{definition}
+\clearpage
+\section{October 18th, 2022}
+Prof. Rycroft was out of town today, 
+so the lecture notes are from a virtual meeting.
+Lecture recording will be in Kaltura.
+\subsection{Continuing continuity}
+\begin{theorem}
+    \label{thm:continuity}
+    Let $f : S \rightarrow \RR$, where $S\subseteq \RR$. Then $f$ 
+    is continuous at $x_0\in S$ if and only if $\forall\eps>0$,
+    $\exists\delta>0$ s.t. $x\in S$ and $\pa{x-x_0}<\delta$, then 
+    $\pa{f(x)-f(x_0)}<\eps$.
+\end{theorem}
+
+\begin{proof}
+    Suppose that $\forall\eps>0$,
+    $\exists\delta>0$ s.t. $x\in S$ and $\pa{x-x_0}<\delta$, then 
+    $\pa{f(x)-f(x_0)}<\eps$ is true.
+    Take the sequence $(x_n)$ in $\dom(f)$ s.t. $\lim_{n\rightarrow \infty}x_n = x$.
+    Let $\eps>0$. $\exists \delta>0$ s.t. $x\in S$ and $\pa{x-x_0} < \delta
+    \implies \pa{f(x)-f(x_0)}<\eps$. We know $\exists N$ s.t. 
+    $n>N\implies \pa{x_n-x_0} < \delta$, and therefore 
+    $\pa{f(x_n)-f(x_0)} < \eps$.
+
+    Assume that $f$ is continuous but the theorem fails.
+    So for each $n\in \NN$, for $\pa{x_n-x_0} < \frac{1}{n}$.
+    $\exists x_n\in\dom(f)$ s.t. $\pa{f(x_n)-f(x_0)}\geq \eps$.
+    But then $\lim f(x_n)\neq f(x_0)$.
+\end{proof}
+
+\begin{example}
+    [Continuity with rapid oscillations]
+    Consider \[ f_1(x) = \begin{cases}
+        x\sin\frac{1}{x} &x\neq 0, \\
+        0 &x=0.
+    \end{cases}\]
+    Note that $\pa{f_1(x) -f_1(0)} = \pa{x\sin\frac{1}{x}}<\pa{x}$
+    if $x\neq 0$ and $0$ otherwise.
+    Let $\delta = \eps$ in \cref{thm:continuity}, and finish to show that
+    $f_1$ is continuous at $0$.
+\end{example}
+
+\begin{proposition}
+    Let $f$ be a real valued function with $\dom(f)\subseteq \RR$.
+    If $f$ is continuous at $x_0$ in $\dom(f)$, then $\pa{f}$ and 
+    $kf$ are too.
+\end{proposition}
+
+\begin{proposition}
+    Let $f$ and $g$ be real valued function continuous at $x_0\in\RR$.
+    Then 
+    \begin{enumerate}
+        \item $f+g$ is continuous at $x_0$.
+        \item $fg$ is continuous at $x_0$.
+        \item $f/g$ is continuous at $x_0$ provided $g(x_0)\neq 0$.
+    \end{enumerate}
+\end{proposition}
+\begin{proof}
+    First two follow from sequence convergence theorems.
+    For (3), examine $(x_n)$ in $\dom(f)\cap \ps{x\in\dom(g)\mid g(x)\neq 0}$ s.t. $x_n\to x_0$. Then 
+    \[ \lim_{n\rightarrow \infty}\pp{\frac{f}{g}}\pp{x_n} = \lim_{n\rightarrow \infty}\frac{f(x_n)}{g(x_n)}=\frac{f(x_0)}{g(x_0)}.
+    \qedhere \]
+\end{proof}
+\begin{proposition}
+    The composition of continuous function is continuous.
+\end{proposition}
+
+\begin{example}
+    The "max" function is continuous. Let $\max(f,g) = \frac{1}{2}(f+g) + \frac{1}{2}\pa{f-g}$. We have shown that all the operations
+    performed of $f$ and $g$ preserve continuity.
+\end{example}
+
+\begin{theorem}
+    Let $f$ be a continuous real-valued function on a closed interval 
+    $[a,b]$. Then $f$ is bounded and achieves its max/min values.
+\end{theorem}
+\begin{proof}
+    Suppose that $f$ is not bounded. Then for each $n\in \NN$, 
+    $\exists x_n$ s.t. $\pa{f(x_n)}>n$. By \cref{thm:bwt},
+    there is a subsequence $(x_{n_k})$ that converges to $x_0$.
+    $x_0$ must be within the closed interval. Since $f$ is continuous at 
+    $x_0$, $\lim_{k\rightarrow \infty}f(x_{n_k}) =f(x_0)$.
+    But $\lim_{k\rightarrow \infty}\pa{f(x_{n_k})} = \infty$,
+    which is a contradiction, so $f$ is bounded.
+    
+    Let $M = \sup\ps{f(x)\mid x\in[a,b]}$. $M$ is finite.
+    Then for each $n\in \NN$, $\exists y_n\in[a,b]$ s.t. $M-\frac{1}{n}<f(y_n) < M$. Then $\lim_{n\rightarrow \infty}f(y_n) = M$.
+    By \cref{thm:bwt}, $\exists$ a convergent subsequence $y_{n_k}$
+    that has limit $y_0$ in $[a,b]$. 
+    Since $f$ is continuous at $y_0$, then 
+    \[ f(y_0) = \lim_{k\rightarrow \infty}f(y_{n_k}) = \lim_{n\rightarrow \infty}f(y_n) = M. \]
+    The same argument follows for the minimum.
+\end{proof}
+\begin{theorem}
+[Intermediate Value Theorem]
+    \label{thm:intermediatevalthm}
+    Let $f$ be a continuous real-valued function on an interval $I$.
+    Then whenever $a,b\in I$, $a<b$, and $f(a) < y < f(b)$ or 
+    $f(b) < y < f(a)$, then $\exists$ at least $1$ $x\in(a,b)$ s.t.
+    $f(x) = y$.
+\end{theorem}
+\begin{proof}
+    Let $S = \ps{x\in [a,b] \mid f(x)<y}$.
+    $a\in S$ so $S$ is non-empty, so $\sup S = x_0$, where $x_0 \in [a,b]$.
+    For all $n\in \NN$, $x_0-\frac{1}{n}$ is not an upper bound for $S$.
+    So $\exists s_n\in S$ s.t. $x_0-\frac{1}{n}<s_n\leq x_0$. Hence 
+    $\lim_{n\rightarrow \infty}s_n=x_0$, and since $f(s_n)<y \forall n$,
+    \[ f(x_0) = \lim_{n\rightarrow \infty}f(s_n)\leq y.\] 
+
+    Now let $t_n = \min\ps{b, x_0+\frac{1}{n}}$. 
+    Since $x_0\leq t_n\leq x_0+\frac{1}{n}$, then 
+    $\lim t_n = x_0$.
+    $t_n\in[a,b]$, but $t_n\notin S$ so $f(t_n)\geq y$, and 
+    \[ f(x_0) = \lim_{n\rightarrow \infty}f(t_n)\geq y.\]
+
+    Using both results, $f(x_0) = y$.
+\end{proof}
+\begin{corollary}
+    If $f$ is a continuous real-valued function on an interval $I$, 
+    then $f(I)$ is also an interval or a single point.
+\end{corollary}
+\begin{proof}
+    Given $y_0,y_1\in f(I)$, then \cref{thm:intermediatevalthm} tells us 
+    that $y_0<y<y_1$ for $y \in f(I)$.
+\end{proof}
+\clearpage
+\section{October 20th, 2022}
+Zoom lecture again\dots
+\subsection{Strictly increasing functions}
+\begin{definition}
+    Consider $f(x)$ on the interval $I$. $f(x)$ is \vocab{strictly 
+    increasing} if for all $x,y\in I$, $x<y \implies f(x)<f(y)$.
+    In cases like this, an \vocab{inverse function} $f\inv$ can 
+    be unambiguously defined so that $(f\inv\circ f)(x) = x$.
+\end{definition}
+
+\begin{theorem}
+    Let $g$ be a strictly increasing function on an interval $J$ 
+    such that $g(J)$ is an interval $I$. Then $g$ is continuous on $J$.
+\end{theorem}
+
+\begin{proof}
+    Consider $x_0\in J$ so that it is not 
+    an endpoint. Hence $g(x_0)$ is not an endpoint, and $\exists \eps_0$
+    s.t. \[ (g(x_0)-\eps_0, g(x_0) +\eps_0) \subseteq I.\]
+    Assume $\eps<\eps_0$. $\exists x_1,x_2\in J$ s,t,
+    \[
+        g(x_1)=g(x_0) - \eps, \quad g(x_2)=g(x_0) + \eps.
+    \]
+    Then $x_1<x_0<x_2$ since it is strictly 
+    increasing. Similarly for $x\in(x_1,x_2)$, $g(x_1) < g(x)  < g(x_2)$,
+    then $\pa{g(x_0)-g(x)}<\eps$. Let $\delta = \min\ps{x_2-x_0, x_0-x_1}$.
+    Then $\pa{x-x_0}<\delta \implies \pa{g(x)-g(x_0)}<\eps$.
+\end{proof}
+
+\begin{theorem}
+    Let $f$ be a continuous, strictly increasing function on the 
+    interval $I$. $J=f(I)$ is an interval by previous result,
+    and $f\inv$ represent a function on $f(I)$ that is continuous 
+    and strictly increasing.
+\end{theorem}
+
+\begin{proof}
+    Continuity is given by the previous theorem.
+
+    Suppose $a,b\in J$ s.t. $a<b$. Then $\exists c,d \in I$ s.t. 
+    $f(c)=a$ and $f(d)=b$. $a\neq b\implies c\neq d$, so 
+    $c<d$ (if $c>d$, then $f(c)>f(d)$). Hence, since $c=f\inv(a)$
+    and $d=f\inv(b)$ we see $f\inv(a)<f\inv(b)$.
+    Therefore $f\inv$ is strictly increasing.
+\end{proof}
+
+We can think of this a partial converse to \cref{thm:intermediatevalthm}:
+A strictly increasing function with the intermediate value property 
+is continuous.
+\subsection{Uniform continuity}
+Recall that $f$ is continuous on $S\subseteq\dom(f) \implies$
+\[ \forall x_0\in S, \forall \eps>0, \exists \delta>0 \text{ s.t. } \]
+\[ x\in\dom(f) \text{ and } \pa{x-x_0}<\delta\implies \pa{f(x)-f(x_0)}<\eps. \]
+Note that the voice of $\delta$ depends on the value of $\eps$ and $x_0$.
+For example, $f(x) = x\inv$ on $(0,\infty)$ has vastly different $\delta$
+choices for different $\eps$ and $x_0$.
+
+\begin{example}
+Consider showing $f(x)=x\inv$ is continuous at a point $x_0>0$.
+Then 
+\[ f(x) - f(x_0) = x\inv - x_0\inv = \frac{x_0-x}{xx_0}.\]
+Pick $\eps>0$. Suppose that $\pa{x-x_0} < x_0/2$, then $\frac{x_0}{2}<x<\frac{3x_0}{2}$. Then 
+\[\pa{f(x) - f(x_0)} =\frac{\pa{x_0-x}}{xx_0} < \frac{\pa{x_0-x}}{\frac{x_0}{2}x_0} = \frac{2\pa{x_0-x}}{x_0^2}. \] 
+Now suppose that $\delta=\min\ps{\frac{x_0}{2}, \frac{\eps x_0^2}{2}}$. 
+Then $\pa{x_0-x} < \delta$ implies 
+\[\pa{f(x)-f(x_0)} < \frac{2}{x_0^2}\cdot\frac{\eps x_0^2}{2}= \eps. \]
+\end{example}
+Hence $f$ in the example is continuous at $x_0$, but $\delta$ gets small as 
+$x_0$ gets small due to the steepness of $\frac{1}{x}$.
+This motivates a definiton, 
+
+\begin{definition}
+    Let $f$ be a real-valued function on $S\subseteq \RR$. Then $f$ is 
+    \vocab{uniformly continuous} on $S$ if 
+    \[ \forall \eps>0, \exists \delta>0 \text{ s.t. }\]
+    \[ \forall x,y\in S \text{ and } \pa{x-y} < \delta \implies \pa{f(x)-f(y)}< \eps.\]
+\end{definition}
+
+\begin{example}
+    We consider $f(x) = x^{-1}$ again. It is uniformly continuous 
+    on the interval $[a,\infty)$ for $a>0$. Let $\eps>0$ and consider any $x,y\geq a$. Pick $\delta=\min\ps{\frac{a}{2}, \frac{\eps a^2}{2}}$.
+    If $\pa{x-y}<\delta$, then $\pa{f(x)-f(y)} <\delta$ from before.
+
+    However $f(x)$ is not uniformly continuous on $(0,\infty)$.
+    To show this, we will prove that 
+    $\forall \delta>0$, $\exists x,y \in (0,\infty)$
+    s.t. $\pa{x-y} < \delta$, and yet $\pa{f(x)-f(y)}\geq 1$.
+    If $\delta>1$, choose $x=1, y=\frac{1}{2}$.
+    Otherwise, if $\delta\leq 1$, choose $x=\delta, y=\frac{\delta}{2}$,
+    so $\pa{\frac{1}{\delta}-\frac{1}{\delta/2}} = \frac{1}{\delta}\geq 1$.
+\end{example}
+
+\begin{theorem}
+    [Continuous on closed interval $\implies$ uniformly continuous]
+    If $f$ is continuous on $[a,b]$, then $f$ is uniformly continuous 
+    on $[a,b]$.
+\end{theorem}
+
+\begin{proof}
+    Assume $f$ is not uniformly continuous on $[a,b]$. 
+    Then $\exists \eps>0$ s.t. $\forall \delta>0, \exists x,y \in [a,b]$
+    s.t. $\pa{x-y} < \delta$ but $\pa{f(x)-f(y)}\geq \eps$.
+
+    If this is true, then define sequences $x_n, y_n\in [a,b]$ s.t.
+    $\pa{x_n-y_n}<\frac{1}{n}$, but $\pa{f(x_n)-f(y_n)} \geq \eps$.
+    By \cref{thm:bwt}, there is a subsequence $(x_{n_k})$ 
+    which converges. But if $x_0=\lim_{k\rightarrow \infty}x_{n_k}$,
+    then $x_0\in [a,b]$. In addition, $\lim_{k\rightarrow \infty}y_{n_k}=x_0$ as well. But since $f$ is continuous at $x_0$, 
+    \[ f(x_0) = \lim_{k\rightarrow \infty}f(x_{n_k})= \lim_{k\rightarrow \infty}f(y_{n_k}) \implies \lim_{k\rightarrow \infty}f(x_{n_k})-f(y_{n_k}) = 0, \]
+    which contradicts the asumption that 
+    $\pa{f(x_{n_k})-f(y_{n_k})} \geq \eps$
+\end{proof}
+
+\begin{theorem}
+    [Uniformly continuous preserves Cauchy]
+    If $f$ is uniformly continuous on a set $S$ and $(s_n)$ is Cauchy 
+    in $S$, then $(f(s_n))$ is Cauchy.
+\end{theorem}
+
+\begin{proof}
+    For $\eps>0$, $\exists \delta$ s.t. $x,y\in S$ $\pa{x-y}<\delta 
+    \implies \pa{f(x)-f(y)}<\eps$. Then since $(s_n)$ is Cauchy, 
+    $\exists N$ s.t. $n,m > N \implies \pa{s_n-s_m}<\delta\implies \pa{f(s_n)-f(s_m)}<\eps$.
+    This result requires uniform continuity.
+\end{proof}
+\subsection{Introducing limits of functions}
+\begin{definition}
+    Let $S\subseteq \RR$, and $a\in \RR\cup\ps{\pm\infty}$ that 
+    is the limit of some sequence in $S$. Let $L\in\RR\cup\ps{\pm\infty}$.
+    We write 
+    \[ \lim_{x\rightarrow a^S}f(x) = L\]
+    given that
+    \begin{itemize}
+        \item $f$ is a function defined on $S$.
+        \item For every sequence $(x_n)$ in $S$ with limit $a$, we 
+        have $\lim_{n\rightarrow \infty}f(x_n) = L$.
+    \end{itemize}
+\end{definition}
+We can conclude the limit exists if and only if $f$ is continuous $a$
+on $S$. 
+\begin{definition}
+    Here are some standard definitions:
+    \begin{enumerate}[a.]
+        \item For $a\in\RR$, write $\lim_{x\rightarrow a}f(x)=L$ if 
+        $\lim_{x\rightarrow a^S}f(x)=L$ for some $S=J\setminus\ps{a}$
+        where $J$ is an open interval containing $a$.
+        \item \vocab{Positive and negative limits} are defined as 
+        \[\lim_{x\rightarrow a^+}f(x)=L \]
+        if $\lim_{x\rightarrow a^S}f(x)=L$ for some open interval $S=(a,b)$,
+        or 
+        \[\lim_{x\rightarrow a^-}f(x) = L \]
+        if $\lim_{x\rightarrow a^S}f(x)=L$ for some open interval $S=(c,a)$.
+    \end{enumerate}
+\end{definition}
+\clearpage
+\section{October 25th, 2022}
+\subsection{Limits of functions}
+
+\begin{definition}
+    \vocab{Infinite function limits} are written 
+    \[ \lim_{x\rightarrow \infty}f(x) = L \]
+    if $\lim_{n\rightarrow \infty^S}f(x)=L$, where $S=(c,\infty)$.
+\end{definition}
+
+\begin{proposition}
+    [Function limit properties]
+    Let $f_1,f_2$ be function such that 
+    \[L_1=\lim_{x\rightarrow a^S}f_1(x) \qquad\text{and}\qquad  
+    L_2=\lim_{x\rightarrow a^S}f_2(x).\]
+    \begin{enumerate}
+        \item $\lim_{x\rightarrow a^S}(f_1+f_2)(x) = L_1+L_2$
+        \item $\lim_{x\rightarrow a^S}(f_1f_2)(x) = L_1L_2$
+        \item $\lim_{x\rightarrow a^S}(f_1+f_2)(x) = L_1/L_2$ provided 
+        $f(x)\neq0 \forall x\in S$ and $L_2\neq 0$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    (1) Consider $x_n$ in $S$ with limit $a$. 
+    Then 
+    \[
+        \lim_{n\rightarrow \infty}(f_1+f_2)(x_n)=\lim_{n\rightarrow \infty}f_1(x_n)+\lim_{n\rightarrow \infty}f_2(x_n)=L_1+L_2.
+    \]
+    Similarly, (2) and (3) are true.
+\end{proof}
+
+\begin{theorem}
+    Let $f$ be a function defined on $S\supseteq\RR$, and $a\in\RR$
+    is a limit of some seq. in $S$. Then 
+    \[ \lim_{x\rightarrow a^S}f(x)=L\in \RR\]
+    if and only if 
+    \[\forall \eps>0, \exists\delta>0 \text{ s.t. } x\in S\text{ and} \]
+    \[\pa{x-a}<\delta \text{ then } \pa{f(x)-L}<\eps. \]
+\end{theorem}
+
+\begin{proof}
+    Consider a sequence in $S$ s.t. $\lim_{n\rightarrow \infty}x_n=a$.
+    Goal: show $\lim_{n\rightarrow \infty}f(x_n)=L$.
+
+    Assume the second part is true. Then $\exists N$ s.t. 
+    $n>N\implies \pa{x_n-a}<\delta\implies\pa{f(x)-L}<\eps.$
+    Hence $\lim_{n\rightarrow \infty}f(x_n)=L$.
+
+    Now assume that $\lim_{x\rightarrow a^S}f(x)=L$, but the second part 
+    fails. Then $\exists \eps>0$ s.t. $\forall\delta>0,x\in S$ and 
+    $\pa{x-a}<\delta$ does not imply $\pa{f(x)-L}<\eps$.
+    For each $n\in\NN, \exists x_n\in S$ where $\pa{x_n-a}<\frac{1}{n}$
+    while $\pa{f(x_n)-L}\geq\eps$. So $x_n\to a$, but 
+    $\lim_{n\rightarrow \infty}f(x_n)=L$ fails, which is a contradiction.
+\end{proof}
+Alternatively,
+let $f$ be defined on $I\setminus\ps{a}$, where $I$ is an open interval 
+and $a\in I$. $\lim_{x\rightarrow a}f(x)=L\in\RR$ if and only if 
+\[\forall \eps>0, \exists\delta>0 \text{ s.t. } 0<\pa{x-a}<\delta 
+\implies \pa{f(x)-L}<\eps. \]
+
+\begin{theorem}
+    Let $f$ be a function defined on $I\setminus\ps{a}$. 
+    $\lim_{x\rightarrow a}f(x)$ exists $\iff \lim_{x\rightarrow a^+}f(x)$
+    and $\lim_{x\rightarrow a^-}f(x)$ exist and are equal, in 
+    which case all mentioned limits are equal.
+\end{theorem}
+\begin{proof}
+    If $\lim_{x\rightarrow a}f(x)=L$, then 
+    \[\forall\eps>0, \exists\delta>0 \text{ s.t. } 0<\pa{x-a}<\delta\implies \pa{f(x)-L}<\eps.\]
+    It follows that 
+    \[ \forall\eps>0, \exists\delta>0 \text{ s.t. } a<x<a+\delta\implies \pa{f(x)-L}<\eps\]
+    \[ \forall\eps>0, \exists\delta>0 \text{ s.t. } a-\delta<x<a\implies \pa{f(x)-L}<\eps\]
+    Therefore both limits are equal.
+
+    Conversely, choose $\eps>0$. Then 
+    \[ \forall\eps>0, \exists\delta_1>0 \text{ s.t. } a<x<a+\delta_1\implies \pa{f(x)-L}<\eps\]
+    \[ \forall\eps>0, \exists\delta_2>0 \text{ s.t. } a-\delta_2<x<a\implies \pa{f(x)-L}<\eps\]
+    Let $\delta=\min\ps{\delta_1,\delta_2}$. Then 
+    \[ 0<\pa{x-a}<\delta\implies \pa{f(x)-L}<\eps\implies \lim_{x\rightarrow a}f(x)=L.\qedhere\]
+\end{proof}
+\subsection{Power series}
+\begin{definition}
+    Let $(a_n)$ be a real number seq. Then 
+    \[\sum_{n=0}^{\infty}a_nx^n \]    
+    is called a \vocab{power series}. 
+    We use the convention in power series that $0^0=1$.
+\end{definition}
+We can use power series to approximate other functions. For example,
+\[\sin x = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots.\]
+
+\begin{theorem}
+    For the power series $\sum a_nx^n$, let $\beta=\limsup\pa{a_n}^{1/n}$,
+    and $R=\beta\inv$ (let $R=\infty$ if $\beta=0$ and vice-versa).
+    
+    Then the power series converges for $\pa{x}<R$, and diverges for 
+    $\pa{x}>R$. $R$ is called the \vocab{radius of convergence}.
+\end{theorem}
+
+\begin{proof}
+    Using the root test, for $x$,
+    let $\alpha_x=\limsup\pa{a_nx^n}^{1/n}=\limsup\pa{a_n}^{1/n}\pa{x}
+    =\pa{x}\limsup\pa{a_n}^{1/n}=\pa{x}\beta$.
+
+    If $0<\beta<\infty$, then $\alpha_x=\beta\pa{x}=\frac{\pa{x}}{R}$.
+    Then if $\pa{x}<R$, then $\alpha_x<1$, and the series converges, and 
+    if $\pa{x}>R$, then $\alpha_x>1$, and the series diverges.
+\end{proof}
+
+\begin{corollary}
+    [Power series convergence properties]
+    For a power series $\sum a_nx^n$, either
+    \begin{enumerate}
+        \item It converges $\forall x\in\RR$.
+        \item It converges at $x=0$ only.
+        \item It converges $x\in I$, where $I$ is an interval, but not necessarily open or closed.
+    \end{enumerate}
+\end{corollary}
+
+\begin{example}
+    [Endpoints are not guaranteed]
+    \[ \sum_{n=0}^{\infty}x^n,\qquad \sum_{n=0}^{\infty}n\inv x^n,\qquad \sum_{n=0}^{\infty}n^{-2} x^n\]
+    all have $R=1$, but the first doesn't converge for $x=\pm 1$,
+    the second converges only for $x=-1$, and the last converges for 
+    $x=\pm 1$.
+\end{example}
+We can write more generally for any point $x_0\in \RR$,
+\[ \sum_{n=0}^{\infty}a_n(x-x_0)^n.\]
+Any partial sum will be continuous (and differentiable),
+but this doesn't guarantee that the entire power series will also 
+be continuous.
+
+% For example,
+% \[ f(x)=\begin{cases}
+% 1 &\text{if }x=0\\
+% 1 &\text{if }x\neq0
+% \end{cases}\]
+% and let $f_n(x)=\min(1-n\pa{x},0)$.
+% This motivates a stronger definition of convergence: 
+% \textit{uniform convergence}. 
+% Power series do satisfy this stronger definition.
+\begin{definition}
+    Let $(f_n)$ be a sequence of real-valued functions defined on 
+    $S\subseteq\RR$. Then the sequence \vocab{converges pointwise}
+    to a function $f$ on $S$ if
+    \[\lim_{n\rightarrow \infty}f_n(x)=f(x)\forall x\in S.\]
+    Then write that 
+    \[\lim_{n\rightarrow \infty}f_n=f \qquad f_n\to f,\]
+    and both are pointwise.
+
+    In terms of the $\eps$-$\delta$ definiton, 
+    \[ \forall x\in S, \forall \eps>0, \exists N\text{ s.t. } 
+    n>N \implies \pa{f_n(x)-f(x)}<\eps.\]
+\end{definition}
+\clearpage
+\section{October 27th, 2022}
+\subsection{Uniform convergence of functions}
+\begin{definition}
+    Let $(f_n)$ be a seq. of real-valued functions defined on 
+    $S \subseteq \RR$. Then $f_n$ \vocab{converges uniformly} on $S$
+    to $f$ if 
+    \[
+        \forall \eps>0, \exists N \text{ s.t. } \pa{f_n(x)-f(x)}<\eps \
+        (\forall x\in S, n > N)
+    \]
+    In this case, write $\lim_{n\rightarrow \infty}f_n=f$ uniformly.
+\end{definition}
+For any $\eps>0$, the $f_n$ have to eventually lie within a strip 
+of width $\eps$ around $f$.
+
+\begin{example}
+    Consider $f_n=(1-\pa{x})^n$. Then $\pa{f_n(x)-f(x)}$ should 
+    eventually be smaller than $\eps=\frac{1}{2}$. However, 
+    the function will always pass the strip $f(x)+\eps<f_n(x)$.
+
+    Let $x=1-2^{-\frac{1}{N+1}}$. Then 
+    \[
+        (1-x)^{N+1}=\frac{1}{2}.
+    \]
+    Therefore $\pa{f_{N+1}(x)-f(x)}=\frac{1}{2}$.
+\end{example}
+Uniformly convergent series of functions are a subset of pointwise convergent series
+of functions. 
+
+\begin{example}
+    [Uniform convergence with rapid oscillations]
+    For example, 
+    \[
+        f_n(x)=\frac{1}{n}\sin n^2x,
+    \]
+    which forms lower amplitude sine waves with higher frequency
+    as $x\to 0$.
+    For $\eps>0$, $\exists N$ s.t. $n>N$
+    $\pa{f_n(x)-0}\leq \frac{1}{n}<\frac{1}{N}=\eps$.
+\end{example}
+
+\begin{theorem}
+    Let $(f_n)$ be a series of functions $S \subseteq\RR$ and suppose 
+    $f_n\to f$ uniformly on $S$ and $\dom(f)=S$.
+    If each $f_n$ is continuous at $x_0\in S$, then $f$ is continuous
+    at $x_0$.
+\end{theorem}
+
+\begin{proof}
+    Let $\eps>0$. $\exists N\in\NN$ s.t. $n>N\implies \pa{f_n(x)-f(x)}<\frac{\eps}{3}\forall x\in S$, so $\pa{f_{N+1}(x)-f(x)}<\frac{\eps}{3}\forall x\in S$. $f_{N+1}$ is continuous at $x_0$, so 
+    $\exists\delta>0$ s.t. $x\in S$ and $\pa{x-x_0}<\delta\implies
+    \pa{f_{N+1}(x)-f_{N+1}(x_0)}<\frac{\eps}{3}$.
+
+    Then $x\in S$ and $\pa{x-x_0}<\delta$ implies 
+    \begin{align*}
+        \pa{f(x)-f(x_0)}&\leq \pa{f(x)-f_{N+1}(x)} + \pa{f_{N+1}(x)-f_{N+1}(x_0)}  + \pa{f_{N+1}(x_0)-f(x_0)} \\
+        &< \eps.\qedhere
+    \end{align*}
+\end{proof}
+
+\begin{definition}
+    A seq. $(f_n)$ of functions defined on $S \subseteq\RR$ is 
+    \vocab{uniformly Cauchy} at $x$ if 
+    \[
+        \forall \eps>0 \exists N \text{ s.t. } \pa{f_n(x)-f_m(x)}<\eps \ 
+        (\forall x\in S, m,n>N).
+    \]
+\end{definition}
+
+\begin{theorem}
+    [Uniformly Cauchy $\implies$ uniformly convergent]
+    Let $(f_n)$ be series of functions that are uniformly Cauchy on 
+    $S \subseteq\RR$. Then $\exists f$ on $S$ s.t. $f_n\to f$ uniformly.
+\end{theorem}
+\begin{proof}
+    Choose $\eps>0$. Then for fixed $x_0\in S$, 
+    $\pa{f_n(x_0)-f_m(x_0)} <\eps\ \forall m,n>N$.
+    Hence $f_n(x_0)$ is a Cauchy seq. so it must converge to $f(x_0)$.
+
+    Since this applies to any $x_0\in S$, $f_n\to f$ pointwise.
+    To show convergence is uniform, choose $\eps>0$. Then $\exists N$
+    s.t. $\pa{f_n(x)-f_m(x)}<\eps/2$. Fix $m>N$. 
+    Then $\forall n>N$, 
+    \[
+        f_n(x)\in\pp{f_m(x)-\frac{\eps}{2}, f_m(x)+\frac{\eps}{2}}.
+    \]
+    Then 
+    \[
+        \lim_{x\rightarrow a}f_m(x) = f(x) \in \left[f_m(x)-\frac{\eps}{2}, f_m(x)+\frac{\eps}{2}\right]\implies \pa{f(x)-f_m(x)}\leq \frac{\eps}{2}<\eps.\qedhere
+    \]
+\end{proof}
+\subsection{Application to power series}
+\begin{proposition}
+    Consider a sequence of partial sums of function $(\sum_{k=0}^{n}g_k)$
+    defined on $S \subseteq\RR$. If each $g_k$ continuous on $S$
+    and $g_k\to g$ uniformly and $g$ continuous on $S$,
+    then $\sum_{k=0}^{\infty}g_k$ is continuous.
+\end{proposition}
+
+\begin{proof}
+    Let $f_n=\sum_{k=0}^{n}g_k$. 
+    $f_n$ is continuous, and $f_n\to f$ uniformly, and $f$ is also continuous.
+\end{proof}
+
+\begin{proposition}
+    [Analog of Cauchy criterion for function series limits]
+    \label{prop:cauchycriterionfunction}
+    For $\sum_{k=0}^{\infty}a_k$, the Cauchy criterion is 
+    \[
+        \forall \eps>0, \exists N\text{ s.t. } n\geq m>N \implies 
+        \pa{\sum_{k=m}^{n}a_k}<\eps.
+    \]
+    For a series of functions,
+    \[
+        \forall \eps>0, \exists N\text{ s.t. } n\geq m>N, x\in S \implies
+        \pa{\sum_{k=m}^{n}g_k(x)}<\eps
+    \]
+\end{proposition}
+
+\begin{theorem}
+[Weierstra\ss $\ M$-test]
+    \label{thm:weirstrasmtest}
+    Suppose $(M_k)$ is a seq. of non-negative real numbers
+    where $\sum_{k=0}^{\infty}M_k$ is finite. If 
+    $\pa{g_k(x)}\leq M_k\ \forall x\in S, \forall k$, then 
+    $\sum g_k$ converges uniformly on $S$.
+\end{theorem}
+
+\begin{proof}
+    Since $\sum M_k$ converges, it satisfies \cref{prop:cauchycriterionfunction}:
+    \[
+        \pa{\sum_{k=m}^{n}M_k}<\eps.
+    \]
+    Hence 
+    \[
+        \pa{\sum_{k=m}^{n}g_k(x)}\leq \sum_{k=m}^{n}\pa{g_k(x)}\leq 
+        \sum_{k=m}^{n}M_k<\eps.
+    \]
+    So $g_k$ converges uniformly on $S$.
+\end{proof}
+
+\begin{example}
+    Use for power series 
+    \begin{align*}
+        \sum_{n=1}^{\infty}2^{-n}x^n &= x\sum_{n=0}^{\infty}2^{-n-1}x^n \\
+        &= \frac{x}{2}\sum_{n=0}^{\infty}\pp{\frac{1}{2}}^nx^n \\
+        &= \frac{x}{2}\cdot\frac{1}{1-\frac{x}{2}}=\frac{x}{2-x}.
+    \end{align*}
+    At $x=\pm2$, the series does not converge. For the interval
+    $[-a,a], a<2$, then $\pa{2^{-n}x^n}\leq \pp{\frac{a}{2}}^n$,
+    which converges as $n\to \infty$. Now let $M_n=\pp{\frac{a}{2}}^n$. By 
+    \cref{thm:weirstrasmtest}, the series converges uniformly on 
+    $[-a,a]$. The limit function must be continuous, so it 
+    must be continuous on $(-2,2)$.
+\end{example}
+
+\clearpage
+\section{November 1st, 2022}
+\subsection{More power series results}
+\begin{theorem}
+    Let $\sum_{n=0}^{\infty}a_nx^n$ be a power series with 
+    a radius of convergence $R>0$. If $0<R_1<R$, the power series 
+    converges uniformly on $[-R_1,R_1]$ to a continuous function.
+\end{theorem}
+
+\begin{corollary}
+    The power series converges uniformly to a continuous function for the 
+    open interval $(-R,R)$.
+\end{corollary}
+Given a power series, $f(x) = \sum_{n=0}^{\infty}a_nx^n$, then 
+$f'(x) = \sum_{n=0}^{\infty}na_nx^{n-1}$ has the same radius 
+of convergence, and must converge for the same values of $x$.
+
+\begin{theorem}
+[Abel's theorem]
+    \label{thm:abelthm}
+    Let $f(x)=\sum_{n=0}^{\infty}a_nx^n$ be a power series with a 
+    finite positive radius of convergence. If the series 
+    converges at $x=R$, then $f$ is continuous at $x=R$,
+    and similarly for $x=-R$.
+\end{theorem}
+
+\begin{proof}
+    Consider $f(x)=\sum_{n=0}^{\infty}a_nx^n$ with radius of convergence 
+    $1$ (we will generalize later). Let the series converge at $1$. Let,
+    $f_n=\sum_{k=0}^{n}a_kx^k$, and $s_n = f_n(1) = \sum_{k=0}^{n}a_k$.
+    We note 
+    \[
+        \lim s_n=s=\sum_{k=0}^{\infty}a_k=f(1),\quad s_k-s_{k-1}=a_k.
+    \]
+    For $0<x<1$,
+    \begin{align*}
+        f_n(x)&=s_0+\sum_{k=1}^{n}(s_k-s_{k-1})x^k \\
+        &= s_0+\sum_{k=1}^{n}s_kx^k - x \sum_{k=0}^{n-1}s_kx^k \\
+        &= \pp{\sum_{k=0}^{n-1}s_k(1-x)x^k}+s_nx^n.
+    \end{align*}
+    We note that $f(1)=s$, and $\sum_{n=0}^{\infty}x^n=\frac{1}{1-x}
+    \implies \sum_{n=0}^{\infty}(1-x)x^n=1$.
+    Taking the limit as $n\to\infty$,
+    \begin{align*}
+        \lim f_n(x) = f(x) &= \sum_{n=0}^{\infty}s_n(1-x)x^n. \\ 
+        f(1) = s &= \sum_{n=0}^{\infty}s(1-x)x^n.\\
+        f(1)-f(x) &= \sum_{n=0}^{\infty}(s-s_n)(1-x)x^n.
+    \end{align*}
+    Choose $\eps>0$. Since $\lim_{n\rightarrow \infty}s_n=s$, 
+    $\exists N\in\NN$ s.t. $n>N\implies \pa{s-s_n}<\frac{\eps}{2}$.
+
+    Define $g_N(x)=\sum_{n=0}^{N}\pa{s-s_n}(1-x)x^n$.
+    Then 
+    \begin{align*}
+        \pa{f(1)-f(x)} &\leq g_N(x) + \sum_{n=N+1}^{\infty}\pa{s-s_n}(1-x)x^n\\
+        &\leq g_N(x) + \sum_{n=N+1}^{\infty}\frac{\eps}{2}(1-x)x^n \\
+        &= g_N(x) + \frac{\eps}{2}\underbrace{\sum_{n=N+1}^{\infty}(1-x)x^n}_{\text{bounded by $1$}}\\
+        &< g_N(x)+\frac{\eps}{2}.
+    \end{align*}
+    $g_N$ is continuous and $g_N(1)=0$. Hence $\exists \delta>0$ s.t. 
+    $1-\delta<x<1\implies g_N(x)<\frac{\eps}{2}$.
+    Then 
+    \[
+        \pa{f(1)-f(x)}<\frac{\eps}{2}+\frac{\eps}{2}=\eps.
+    \]
+    If $f(x)$ has radius of convergence $R$, define $g(x)=f(Rx)$.
+    $g$ has radius of convergence $R$, so the proof applies.
+    For $-R$, let $h(x)=f(-x)$.
+\end{proof}
+
+A consequence is that if a power series and associated function 
+agree with the theorem statement, then 
+\[
+    \lim_{x\rightarrow R^-}f(x) = \sum_{n=0}^{\infty}a_nR^n,
+\]
+or
+\[
+    \lim_{x\rightarrow -R^+}f(x) = \sum_{n=0}^{\infty}a_n(-R)^n.
+\]
+
+\subsection{Approximating functions}
+Any continuous function on $[0,1]$ can be approximated by polynomials, 
+they just may not be power series. This can be done in 
+terms of \vocab{Bernstein polynomials}. For $f$ continuous on $[0,1]$,
+\[
+    B_nf(x) = \sum_{k=0}^{\infty}f\pp{\frac{k}{n}}\binom{n}{k}x^k(1-x)^{n-k}.
+\]
+Although it is not that efficient for some functions, it 
+nonetheless can approximate any continuous function.
+% \begin{lemma}
+%     For $x\in\RR$, $n\geq0$,
+%     \[
+%         \sum_{k=0}^{n}\binom{n}{k}x^k(1-x)^{n-k}=1.
+%     \]
+% \end{lemma}
+
+\begin{lemma}
+    For $x\in\RR$, $n\geq0$,
+    \[
+        \sum_{k=0}^{n}(nx-k)^2\binom{n}{k}x^k(1-x)^{n-k}=nx(1-x)\leq \frac{n}{4}.
+    \]
+\end{lemma}
+
+\begin{proof}
+    Note 
+    \[
+        k\binom{n}{k}=\frac{kn!}{(n-k)!k!} = \frac{n(n-1)!}{(n-k)!(k-1)!}
+        =n\binom{n-1}{k-1}.
+    \]
+    Then
+    \begin{align*}
+        \sum_{k=0}^{n}k\binom{n}{k}x^k(1-x)^{n-k} &= n \sum_{k=1}^{n}\binom{n-1}{k-1}x^k(1-x)^{n-k} \\
+        &= nx \sum_{j=0}^{n-1}\binom{n-1}{j}x^j(1-x)^{n-j-1} \\
+        &= nx (x+(1-x))^{n-1} \\
+        &= nx.
+    \end{align*}
+    Similarly, 
+    \[
+        \sum_{k=0}^{n}k(k-1)\binom{n}{k}x^k(1-x)^{n-k}=n(n-1)x^2.
+    \]
+    \[
+        \sum_{k=0}^{n}k^2\binom{n}{k}x^k(1-x)^{n-k} = n(n-1)x^2+nx = n^2x^2+nx(1-x).
+    \]
+    Since $(nx-k)^2=n^2x^2-2nxk+k^2$, 
+    \begin{align*}
+        \sum_{k=0}^{n}(nx-k)^2\binom{n}{k}x^k(1-x)^{n-k} &= n^2x^2-2nxk+k^2 + nx(1-x) \\
+        &= nx(1-x)\\
+        &\leq \frac{n}{4}.\qedhere
+    \end{align*}
+\end{proof}
+
+\clearpage
+\section{November 3rd, 2022}
+\subsection{Finishing Bernstein polynomials}
+\begin{theorem}
+    \label{thm:bernstein-convergence}
+    For every continuous function on $[0,1]$, $B_nf\to f$ uniformly.
+    on $[0,1]$.
+\end{theorem}
+\begin{proof}
+    Assume that $f$ is not always $0$. Let 
+    $M=\sup\ps{\pa{f(x)}: x\in [0,1]}$.
+    Choose $\eps>0$. Then $\exists \delta>0$ s.t. $\pa{x-y}<\delta
+    \implies \pa{f(x)-f(y)}<\frac{\eps}{2}$.
+    Consider
+    $\pa{B_nf(x)-f(x)} = \pa{\sum_{k=0}^{n}f\pp{\frac{k}{n}}\binom{n}{k}x^k(1-x)^{n-k}-f(x)}$. Note that $\sum_{k=0}^{n}\binom{n}{k}x^k(a-x)^{n-k}=1$. We can rewrite the sum as 
+    \begin{align*}
+        \pa{B_nf(x)-f(x)} &= \pa{\sum_{k=0}^{n}\pp{f\pp{\frac{k}{n}} - f(x)} \binom{n}{k} x^k (1-x)^{n-k}} \\ 
+        &\leq \sum_{k=0}^{n}\pa{f\pp{\frac{k}{n}} - f(x)} \binom{n}{k} x^k (1-x)^{n-k}.
+    \end{align*}
+    We separate the terms in the sum into two cases.
+    \begin{itemize}
+        \item If $\pa{\frac{k}{n}-x}<\delta$, then 
+        $\pa{f\pp{\frac{k}{n}}-f(x)}<\frac{\eps}{2}$.
+        \item If $\pa{\frac{k}{n}-x}\geq\delta$, then 
+        $\pa{\frac{k-nx}{n}}\geq \delta \implies 
+        \frac{(k-nx)^2}{n^2}\geq\delta^2 \implies \pp{k-nx}^2\geq \delta^2n^2$.
+    \end{itemize}
+    Let $B$ a set of indices where the second case holds.
+    \begin{align*}
+        \sum_{k\in B}\pa{f\pp{\frac{k}{n}} - f(x)} \binom{n}{k} x^k (1-x)^{n-k}
+        &\leq 2M\sum_{k\in B}\binom{n}{k} x^k (1-x)^{n-k} \\
+        &\leq \frac{2M}{n^2\delta^2}\sum_{k\in B}(k-xn)^2\binom{n}{k} x^k (1-x)^{n-k} \\
+        &\leq \frac{2M}{n^2\delta^2}\cdot\frac{n}{4} \\
+        &= \frac{M}{2n\delta^2}.
+    \end{align*}
+    Consider for $n>N=\frac{M}{\eps\delta^2}$.
+    Then 
+    \[
+        \sum_{k\in B}\pa{f\pp{\frac{k}{n}} - f(x)} \binom{n}{k} x^k (1-x)^{n-k}\leq \frac{M}{2\pp{\frac{M}{\eps\delta^2}}\delta^2} < \frac{\eps}{2}.
+    \]
+    Let $A$ be the indices where the first case holds.
+    Then 
+    \begin{align*}
+        \sum_{k\in A}
+        \pa{f\pp{\frac{k}{n}} - f(x)} \binom{n}{k} x^k (1-x)^{n-k}
+        &<
+        \sum_{k\in A} \frac{\eps}{2} \binom{n}{k} x^k (1-x)^{n-k}\\
+        &\leq 
+        \frac{\eps}{2}.
+    \end{align*}
+    Therefore the entire sum is bounded by 
+    $\frac{\eps}{2}+\frac{\eps}{2}=\eps$.
+\end{proof}
+\begin{theorem}
+[Weiersta\ss \ approximation theorem]
+    \label{thm:weierstrassapproxthm}
+    Every continuous function on a closed interval $[a,b]$  can 
+    be uniformly approximated by polynomials on $[a,b]$.
+\end{theorem}
+For any function $g(x)$ on $[a,b]$, we can create $h(x)$ on $[0,1]$ 
+by $h(x)=g(a+(b-a)x)$, and apply \cref{thm:bernstein-convergence} on $h(x)$.
+
+\subsection{Differentiation}
+
+\begin{definition}
+    Let $f$ be a real-valued function on $S \subseteq \RR$.
+    Define the \vocab{derivative} $f'(a)$ at $a\in S$ as 
+    \[
+        f'(a) = \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a},
+    \]
+    if it exists and is finite.
+\end{definition}
+\begin{theorem}
+    If $f$ is differentiable at $a$, then $f$ is continuous at $a$.
+\end{theorem}
+\begin{proof}
+    Given 
+    \[
+        \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}
+    \]
+    exists, then 
+    \[
+        f(x) = \underbrace{(x-a)}_{=0}\underbrace{\frac{f(x)-f(a)}{x-a}}_{\text{finite}} + f(a)
+    \]
+    Therefore 
+    \[
+        \lim_{x\rightarrow a}f(x) = f(a).\qedhere
+    \]
+\end{proof}
+\begin{proposition}
+    Let $f$, $g$ be differentiable at $a$. Let $c\in \RR$.
+    Then 
+    \begin{enumerate}
+        \item $(cf)'(a) = cf'(a)$
+        \item $(f+g)'(a) = f'(a) + g'(a)$
+        \item $(f\cdot g)'(a) = f(a)g'(a)+f'(a)g(a)$
+        \item $(f/g)'(a) = \frac{g(a)f'(a)-f(a)g'(a)}{g(a)^2}$
+    \end{enumerate}
+    except when $g(a)=0$ for $f/g$.
+\end{proposition}
+\begin{proof}
+    [Proof for (3)]
+    \begin{align*}
+        \frac{(fg)(x)-(fg)(a)}{x-a} &= \frac{f(x)g(x)-f(x)g(a)+f(x)g(a)-f(a)g(a)}{x-a} \\
+        &= f(x)\frac{g(x)-g(a)}{x-a} + g(a)\frac{f(x)-f(a)}{x-a}.
+    \end{align*}
+    Therefore 
+    \[
+        \lim_{x\rightarrow a}\frac{(fg)(x)-(fg)(a)}{x-a} = f(a)g'(a) + g(a)f'(a). \qedhere
+    \]
+\end{proof}
+\begin{theorem}
+[Chain rule]
+    \label{thm:chain-rule}
+    Suppose that $f$ differentiable at $a$ and $g$ differentiable at $f(a)$.
+    Then 
+    \[
+        (g\circ f)'(a) = g'(f(a))f'(a).
+    \]
+\end{theorem}
+\begin{proof}
+    Define
+    \[
+        h(y) = \frac{g(y)-g(f(a))}{y-f(a)}
+    \]
+    for $y\in \dom(g), y\neq f(a)$.
+    Also define $h(f(a)) = g'(f(a))$. Consider 
+    \[
+        \lim_{y\rightarrow f(a)}h(y) = h(f(a)) = g'(f(a)).
+    \]
+    Hence $h$ is continuous at $f(a)$. Now 
+    \[
+        g(y) - g(f(a)) = h(y)(y-f(a)) \quad \forall y\in\dom(g).
+    \]
+    Let $y=f(x), x\in\dom(g\circ f)$.
+    \[
+        (g\circ f)(x) - (g\circ f)(a) = h(f(x))(f(x)-f(a))
+    \] 
+    \[
+        \frac{(g\circ f)(x) - (g\circ f)(a)}{x-a} = \frac{h(f(x))(f(x)-f(a))}{x-a}.
+    \]
+    Taking the limit,
+    \[
+        (g\circ f)'(a) = g'(f(a))f'(a). \qedhere
+    \]
+\end{proof}
+\clearpage
+\section{November 15th, 2022}
+\subsection{Derivative properties}
+\begin{theorem}
+    If $f$ is defined on an open interval $x_0$, and $f$ assumes 
+    a min/max at $x_0$, and $f$ is differentiable at $x_0$,
+    then $f'(x_0) = 0$.
+\end{theorem}
+\begin{proof}
+    Suppose $f$ is defined on $(a,b)$ with $a<x_0<b$. Suppose 
+    the max is at $x_0$.
+    If $f'(x_0)>0$, then 
+    \[
+        f'(x_0) = \lim_{x\rightarrow x_0}\frac{f(x)-f(x_0)}{x-x_0}>0.
+    \]
+    Pick $\eps = f'(x_0)$. $\exists \delta$ s.t. $0<\pa{x-x_0}<\delta$,
+    then 
+    \[
+        \pa{\frac{f(x)-f(x_0)}{x-x_0}-f'(x_0)} < f'(x_0).
+    \]
+    \[
+        -f'(x_0)< \frac{f(x)-f(x_0)}{x-x_0}-f'(x_0)< f'(x_0).
+    \]
+    \[
+        0< \frac{f(x)-f(x_0)}{x-x_0}.
+    \]
+    Thus there is a point $x \in (x_0,x_0+\delta)$
+    such that $f(x)>f(x_0)$.
+\end{proof}
+\begin{theorem}
+    [Rolle's theorem]
+    \label{thm:rollesthm}
+    Let $f$ be a continuous function on $[a,b]$ that is differentiable on 
+    $(a,b)$ and satisfies $f(a)=f(b)$.  Then $\exists x\in(a,b)$ 
+    s.t. $f'(x) = 0$.
+\end{theorem}
+\begin{proof}
+    By a previous theorem, $f$ is bounded and achieves its bounds.
+    Then $\exists x_0,y_0\in[a,b]$ s.t. $f(x)\in [f(x_0),f(y_0)]
+    \forall x\in[a,b]$.
+
+    Clearly if $x_0$ and $y_0$ are both endpoints, then $x_0=y_0$,
+    and $f(x) = x_0$ is constant.
+
+    Otherwise, $f$ assumes a maximum/minimum at $x\in(a,b)$,
+    in which case $f'(x)=0$.
+\end{proof}
+This can be generalized to,
+\begin{theorem}
+    [Mean value thoerem]
+    \label{thm:mvt}
+    Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$.
+    Then $\exists x\in(a,b)$ s.t. 
+    \[
+        f'(x) = \frac{f(b)-f(a)}{b-a}.
+    \]
+\end{theorem}
+\begin{proof}
+    Let $L(x) = f(a) + \frac{(x-a)}{b-a}(f(b)-f(a))$.
+    Then $L'(x) = \frac{f(b)-f(a)}{b-a}$. Let $g(x) = f(x) - L(x)$ and 
+    $g(a)=0=g(b)$. Rolle's theorem tells us that $g'(x)=0$, so 
+    $f'(x) = L'(x) = \frac{f(b)-f(a)}{b-a}$.
+\end{proof}
+\begin{corollary}
+    Let $f$ be differentiable on $(a,b)$ s.t. $f'(x) = 0, \forall x \in(a,b)$. Then $f$ is a constant function on $(a,b)$. 
+\end{corollary}
+\begin{proof}
+    If non-constant, $\exists x_1,x_2$ s.t. $a<x_1<x_2<b$ and 
+    $f(x_1)\neq f(x_2)$. Applying \cref{thm:mvt} to $x_1,x_2$,
+    $\exists x\in (x_1,x_2)$ s.t. $f'(x) = \frac{f(x_1)-f(x_2)}{x_1-x_2}$ 
+    is non-zero, contradicting our assumption.
+\end{proof}
+\begin{corollary}
+    If $f$, $g$ are differentiable on $(a,b)$ and $f'=g'$ on 
+    $(a,b)$, then $\exists c\in\RR$ s.t. $f(x)=g(x) + c, \forall x\in(a,b)$.
+\end{corollary}
+\begin{proof}
+    Apply the previous corollary to $f-g$. Then $f(x)-g(x) = c\in\RR$.
+    Then $f(x) = g(x)+C$.
+\end{proof}
+
+\begin{corollary}
+    Let $f$ be differentiable on $(a,b)$. Then 
+    \begin{itemize}
+        \item $f$ is strictly increasing if $f'(x)>0 \forall x \in (a,b)$
+        \item $f$ is increasing if $f'(x)\geq 0 \forall x \in (a,b)$
+    \end{itemize}    
+\end{corollary}
+
+\begin{proof}
+    Consider $x_1,x_2$ s.t. $a<x_1<x_2<b$. \cref{thm:mvt} tells us 
+    that $\exists x$ s.t. $\frac{f(x_2)-f(x_1)}{x_2-x_1} = f'(x) > 0$.
+\end{proof}
+
+\begin{theorem}
+[IVT for derivatives]
+    \label{thm:ivtderivatives}
+    Let $f$ be differentiable on $(a,b)$. Whenever $a<x_1<x_2<b$ and 
+    $c$ is between $f'(x_1), f'(x_2)$, $\exists x\in(x_1,x_2)$ s.t.
+    $f'(x)=c$.
+\end{theorem}
+
+\begin{proof}
+    WLOG $f'(x_1)<c<f'(x_2)$. Let $g(x) = f(x)-cx$ for $x\in (a,b)$.
+    Then $g'(x_1)<0<g'(x_2)$. A previous theorem tells us that $g$ 
+    assumes its minimum on $x_0\in[x_1,x_2]$.
+    \[
+        g'(x_1) = \lim_{y\rightarrow x_1}\frac{g(y)-g(x_1)}{y-x_1}<0.
+    \]
+    Hence $g(y)-g(x_1)<0$ close to $x_1$ or $g(y)<g(x_1)$.
+    Therefore $x_1$ is not a minimum. Similarly, we can show $x_2$ is 
+    not a minimum. $g'(x_0)=0$ by a previous theorem, 
+    so $f'(x_0) = g'(x_0) + c = c$.
+\end{proof}
+\clearpage
+\section{November 17th, 2022}
+\subsection{Exam review}
+\begin{ques}
+    [Exam Question 5]
+    Consider the function defined on $[0,\infty)$ as 
+    \[
+        g(x) = \begin{cases}
+            x(1-x) &\text{if }0\leq x\leq 1 \\
+            0 &\text{if }x>1
+        \end{cases}
+    \]
+    Let $f_n(x)=g(nx)$.
+    \begin{enumerate}[a)]
+        \item What is the maximum value of $g$ and where is it attained?
+        \item Sketch the functions $f_1(x), f_2(x), f_3(x)$ on $[0,1]$.
+        \item Does $f_n$ pointwise converge to some $f$.
+        \item Does $f_n \to f$ uniformly?
+    \end{enumerate}
+\end{ques}
+Only 50\% of the class got (b)'s sketch correctly.
+No one got (c), (d) w/o the correct sketch for (b).
+\begin{soln}
+    Taking $g(x) \mapsto g(2x)$ is the same as geometrically scaling it by 
+    $\frac{1}{2}$ along the $x$-axis. 
+    These sketches allow the rest of the problem 
+    to be finished.
+\end{soln}
+\subsection{More differentiation}
+Let $f$ be an injective differentiable on an interval $I$.
+We try to conclude that $(f\inv)'(y_0) = \frac{1}{f'(x_0)}$.
+However, this requires assuming $(f\inv)'$ exists.
+
+\begin{theorem}
+    \label{thm:funcinvderivative}
+    Let $f$ be an injective continuous function on an open interval $I$, 
+    and let $J=f(I)$. If $f$ is differentiable at $x_0\in I$ and 
+    $f'(x_0) \neq 0$, then $f\inv$ is differentiable at $y_0=f(x_0)$, and 
+    \[
+        (f\inv)'(y_0) = \frac{1}{f'(x_0)}.
+    \]
+\end{theorem}
+
+\begin{proof}
+    $J$ is an open interval as well, so 
+    \[
+        \lim_{x\rightarrow x_0}\frac{f(x)-f(x_0)}{x-x_0}=f'(x_0).
+    \]
+    Choose $\eps>0$. $\exists \delta >0$ s.t. 
+    \[
+        0 < \pa{x-x_0} < \delta \implies \pa{\frac{x-x_0}{f(x)-f(x_0)}-\frac{1}{f'(x_0)}} < \eps.
+    \]
+    Let $g=f\inv$. $g$ is continuous at $y_0$. $\exists \eta > 0$ s.t.
+    \[
+        0 < \pa{y-y_0} < \eta \implies \pa{g(y)-g(y_0)} < \delta
+        \implies \pa{g(y) - x_0} < \delta.
+    \]
+    Hence 
+    \[
+        \pa{\frac{g(y)-x_0}{f(g(y)) - f(x_0)} - \frac{1}{f'(x_0)}} = \pa{\frac{g(y)-g(y_0)}{f(g(y)) - f(x_0)} - \frac{1}{f'(x_0)}} < \eps.
+    \]
+    for arbitrarily small $\eps$. Therefore 
+    \[
+        \lim_{y\rightarrow y_0}\frac{g(y)-g(y_0)}{y-y_0} = \frac{1}{f'(x_0)}. \qedhere
+    \]
+\end{proof}
+\subsubsection{L'H\^opital's rule}
+Consider a generic limit 
+\[
+        \lim_{x\rightarrow s}\frac{f(x)}{g(x)},
+    \]
+where the limit of $f$ and $g$ are both $0$.
+\begin{example}
+    [$\mathrm{sinc}$ function]
+    $\mathrm{sinc}\ x = \frac{\sin x}{x}$ satisfies these 
+    properties. We can find $\lim_{x\to 0}\mathrm{sinc}\ x=1$.
+\end{example}
+\begin{theorem}
+    [Generalized MVT]
+    \label{thm:generalizedmvt}
+    Let $f$, $g$ be continuous on $[a,b]$ and differentiable on $(a,b)$.
+    Then $\exists x \in (a,b)$ s.t. $f'(x)(g(b)-g(a)) = g'(x)(f(b)-f(a))$.
+\end{theorem}
+Note that if we let $g(x)=x$, then get the original MVT.
+\begin{proof}
+    Let 
+    \[
+        h(x) = f(x)(g(b)-g(a)) - g(x)(f(b)-f(a)).
+    \] 
+    \[
+        h(a) = f(a)g(b) - f(b)g(a) = h(b).
+    \]
+    $h$ satisfies \cref{thm:rollesthm}, so $\exists x\in (a,b)$ 
+    s.t. $h'(x) = 0$. The result follows from considering $h'(x)$.
+\end{proof}
+\begin{theorem}
+    [L'H\^opital's rule]
+    \label{thm:lopital}
+    Suppose $f,g$ are differentiable, let $s$ be any limit. Suppose
+    \[
+        \lim_{x\rightarrow s}\frac{f'(x)}{g'(x)} = L
+    \]
+    exists. If $\lim_{x\rightarrow s}f(x) = \lim_{x\rightarrow s}g(x) = 0$,
+    or $\lim_{x\rightarrow s}\pa{g(x)} = \infty$, then 
+    \[
+        \lim_{x\rightarrow s}\frac{f(x)}{g(x)} = L.
+    \]
+\end{theorem}
+\begin{proof}
+    Consider $\lim_{n\rightarrow a^+}$ or $\lim_{x\rightarrow -\infty}$.
+    We will show 
+    \begin{claim}
+        If $-\infty\leq L< \infty$ and $L_1> L$
+        $\exists \alpha_1>a$ s.t. $a<x<\alpha_1 \implies \frac{f(x)}{g(x)}<L_1$.
+    \end{claim}
+    \begin{subproof}
+        Let $(a,b)$ be an interval on which $f$ and $g$ are differentiable
+        and on which $g'$ never vanishes.
+
+        Either $g'(x) > 0 \ \forall x\in(a,b)$ or $g'(x) < 0 \ \forall x\in[a,b]$, which follows from IVT for derivatives.
+
+        Assume $g'(x)<0$. Then $g$ is strictly decreasing and injective.
+        $g(x) = 0$ for at most one $x\in (a,b)$.
+        We choose $b$ smaller than this value to ensure $g$ does not 
+        vanish.
+
+        Choose $L<K<L_1$. $\exists \alpha$ s.t. $a<x<\alpha\implies \frac{f'(x)}{g'(x)}<K$.
+
+        If $a<x<y<\alpha$, $\exists z\in(x,y)$ s.t. 
+        \[
+            \frac{f(x)-f(y)}{g(x)-g(y)} = \frac{f'(z)}{g'(z)} < K
+        \]
+        \begin{itemize}
+            \item \textbf{Case 1:} $\lim_{x\rightarrow a^+}f(x)=\lim_{x\rightarrow a^+}g(x) = 0$.
+            \[
+                \lim_{x\rightarrow a^+}\frac{f(x)-f(y)}{g(x)-g(y)} = \frac{f(y)}{g(y)} \leq K < L_1.
+            \]
+            \item \textbf{Case 2:} $\lim_{x\rightarrow a^+}g(x) = \infty$.
+            We multiply an above expression by $\frac{g(x)-g(y)}{g(x)}$ to 
+            get 
+            \[
+                \frac{f(x)}{g(x)} < K + \frac{f(y)-Kg(y)}{g(x)}.
+            \]
+            Note 
+            \[
+                \lim_{x\rightarrow a^+}\frac{f(y)-Kg(y)}{g(x)} = 0.
+            \]
+            So $\exists \alpha_2>a$ s.t. $a<x<\alpha_2$ and $\frac{f(x)}{g(x)}<L_1$. \qedhere
+        \end{itemize}
+    \end{subproof}
+    \begin{claim}
+        If $-\infty<L\leq\infty$ and $L_2<L$, $\exists \alpha_2>a$ s.t.
+        $a < x < \alpha_2 \implies \frac{f(x)}{g(x)}>L_2$.
+    \end{claim}
+    \begin{subproof}
+        Similar to the last proof.
+    \end{subproof}
+    Suppose $L$ is finite. Then 
+    \[
+        \exists a< x< \alpha_1 \implies \frac{f(x)}{g(x)}<L+\eps,
+    \]
+    \[
+        \exists a< x< \alpha_2 \implies \frac{f(x)}{g(x)}<L-\eps.
+    \]
+    Define $\alpha=\min\ps{\alpha_1,\alpha_2}$.
+    \[
+        a < x < \alpha \implies \pa{\frac{f(x)}{g(x)}-L} < \eps,
+    \]
+    finishing our proof.
+\end{proof}
+\clearpage
+\section{November 22nd, 2022}
+\subsection{Prerequisites for Taylor series}
+\begin{theorem}
+    Suppose $\sum_{n=0}^{\infty}c_nx^n$ converges for $\pa{x}<R$ 
+    and define $f(x)=\sum_{n=0}^{\infty}c_nx^n$ for $\pa{x}<R$.
+    Then $f'(x) = \sum_{n=1}^{\infty}nc_nx^{n-1}$.
+\end{theorem}
+\begin{proof}
+    Use $\limsup \pa{c_nn}^{1/n} = \limsup \pa{c_n}^{1/n}$.
+\end{proof}
+\begin{theorem}
+    Suppose $\ps{f_n}$ is a seq. of differentiable functions on $[a,b]$ s.t.
+    $\ps{f_n(x_0)}$ converges for $x_0\in [a,b]$. If $\ps{f_n'}$ converges 
+    uniformly on $[a,b]$, then $f_n$ converges uniformly on $[a,b]$ 
+    to $f$ and $f'(x) = \lim_{n\rightarrow \infty}f_n'(x)$.
+\end{theorem}
+\begin{proof}
+    Choose $\eps>0$ and $N$ s.t. $m,n>N$ implies 
+    \[
+        \pa{f_n(x_0)-f_m(x_0)} < \frac{\eps}{2},
+    \]
+    and 
+    \[
+        \pa{f_n'(t)-f_m'(t)} < \frac{\eps}{2(b-a)}, \text{ such that } t\in [a,b].
+    \]
+    Apply \cref{thm:mvt} to $f_n-f_m$. Thus $\exists y_0 \in (x,t)$
+    s.t. 
+    \[
+        \frac{\pa{f_n(x)-f_m(x) - f_n(t)+f_m(t)}}{\pa{x-t}} = \pa{f_n'(y_0)-f_m'(y_0)}.
+    \]
+    Thus 
+    \[
+        \pa{f_n(x)-f_m(x) - f_n(t)+f_m(t)} \leq \frac{\pa{x-t}\eps}{2(b-a)} < \frac{(b-a)\eps}{2(b-a)} = \frac{\eps}{2}.
+    \]
+    \[
+        \pa{f_n(x)-f_m(x)} \leq \pa{f_n(x)-f_m(x) - f_n(x_0)+f_m(x)} + \pa{f_n(x)-f_m(x_0)} < \frac{\eps}{2}+\frac{\eps}{2}.
+    \]
+    $f_n$ converges uniformly. Let $f(x)=\lim_{n\rightarrow \infty}f_n(x)$.
+
+    For the next part, consider $x,t \in [a,b]$ $x\neq t$.
+    \[
+        \phi_n(t) = \frac{f_n(t)-f_n(x)}{t-x} \qquad \phi(t) = \frac{f(t)-f(x)}{t-x}.
+    \]
+    $\lim_{t\rightarrow x}\phi_n(t) = f_n'(x)$. Since $f_n\to f$ uniformly,
+     $\phi_n$ converges uniformly. $\exists N$ s.t. $n,m>N\implies $
+    \[
+        \pa{\phi_n(t)-\phi_m(t)} < \frac{\eps}{2(b-a)},
+    \]
+    and $\lim_{t\rightarrow x}\phi_n(t) = \phi(t)$.
+    This is the same setup as the last part, so we can conclude that 
+    \[
+        \lim_{t\rightarrow x}\phi(t) = \lim_{n\rightarrow \infty}f_n'(x)=f'(x).
+        \qedhere
+    \]
+\end{proof}
+\subsection{Taylor series}
+Consider the power series $f(x)=\sum_{k=0}^{\infty}a_kx^k$.
+Then $f'(x) = \sum_{k=1}^{\infty}ka_kx^{k-1}$, and generally,
+$f^{(n)}(x) = \sum_{k=n}^{\infty}k(k-1)\cdots(k-n+1)a_kx^{k-n}$.
+Then $f^{(n)}(0) = n!a_n$. This motivates,
+\begin{definition}
+    The \vocab{Taylor series of $f$ about $0$} is the power series 
+    \[
+        f(x) = \sum_{k=0}^{\infty}\frac{f^{(k)}(0)}{k!}x^k.
+    \]
+    The \vocab{remainder} is defined as 
+    \[
+        R_n(x) := f(x) - \sum_{k=0}^{n-1}\frac{f^{(k)}(0)}{k!}x^k
+    \]
+\end{definition}
+$f$ equal its Taylor series if and only if 
+$\lim_{n\rightarrow \infty}R_n(x) = 0$.
+\begin{theorem}
+[Taylor's theorem]
+    \label{thm:taylorthm}
+    Let $f$ be defined on $(a,b)$ where $a<0<b$ and suppose 
+    the $n$th derivative $f^{(n)}$ exists on $(a,b)$.
+    Then for each non-zero $x\in (a,b)$, $\exists y$ between $0$ and $x$ 
+    s.t. $R_n(x)=\frac{f^{(n)}(y)x^n}{n!}$.
+\end{theorem}
+\begin{proof}
+    Fix $x\neq 0$. Assume that $x>0$. Let $M$ be the unique sol'n of 
+    \[
+        f(x) = \sum_{k=0}^{n-1}\frac{f^{(k)}(0)}{k!}x^k + \frac{Mx^n}{n!}.
+    \]
+    Let 
+    \[
+        g(t) = \sum_{k=0}^{n-1}\frac{f^{(k)}(0)}{k!}t^k + \frac{Mt^n}{n!}-f(t).
+    \]
+    $g(0)=f(0)-f(0)=0$, and $g^{(k)}(0)=0$ for $k<n$. In addition, $g(x)=0$.
+    By \cref{thm:rollesthm}, $\exists x_1\in(0,x)$ s.t. $g'(x_1)=0$.
+    We can apply Rolle's theorem again, so $\exists x_2\in(0,x_1)$ s.t.
+    $g''(x_2)=0$. We can recursively apply this to find 
+    $x_n\in (0,x_{n-1})$ s.t. $g^{(n)}(x_n)=0$.
+
+    Then $g^{(n)}(t) = \frac{n!M}{n!}-f^{(n)}(t)$.
+    $f^{(n)}(x) = M$, proving the result.
+\end{proof}
+\begin{corollary}
+    Let $f$ be defined on $(a,b)$ where $a<0<b$. If all derivatives 
+    $f^{(n)}$ exist on $(a,b)$ and are bounded by a single $C$,
+    then $\lim_{n\rightarrow \infty}R_n(x) = 0$ for all $x\in(a,b)$.
+\end{corollary}
+\begin{proof}
+    $\pa{R_n(x)}\leq \frac{C}{n!}\pa{x}^n$. $\lim_{n\rightarrow \infty}R_n(x)=0$.
+\end{proof}
+\begin{definition}
+    Let $f$ be a function on an interval containing $x_0\in\RR$. If $f$ 
+    has derivatives of all order at $x_0$, then 
+    \[
+        \sum_{k=0}^{\infty}\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k,
+    \]
+    is the \vocab{Taylor series of $f$ about $x_0$}.
+\end{definition}
+\subsection{Riemann integration}
+Consider a bounded function on a closed interval $[a,b]$. For 
+$S \subseteq [a,b]$, define 
+\[
+    M(f,S) = \sup\ps{f(x)\mid x\in S}, \qquad m(f,S) = 
+    \inf\ps{f(x)\mid x\in S}.
+\]
+Define a partition of $[a,b]$ as any finite ordered subset 
+\[
+    P = \ps{a=t_0<t_1<\cdots<t_n=b}.
+\]
+The \vocab{upper Darboux sum} $U(f,P)$ of $f$ w.r.t. $P$ is 
+\[
+    U(f,P) = \sum_{k=1}^{n}M(f,[t_{k-1},t_k])(t_k-t_{k-1}),
+\]
+and the \vocab{lower Darkboux sum} is 
+\[
+    L(f,P) = \sum_{k=1}^{n}m(f,[t_{k-1},t_k])(t_k-t_{k-1}).
+\]
+We see that 
+\[
+    m(f,[a,b])(b-a) \leq L(f,P) \leq U(f,P) \leq M(f,[a,b])(b-a).
+\]
+Define integrals as 
+\[
+    U(f) = \inf\ps{U(f,P)\mid P \text{ is a partition of }[a,b]},
+\]
+\[
+    L(f) = \sup\ps{L(f,P)\mid P \text{ is a partition of }[a,b]}.
+\]
+\clearpage
+\section{November 29th, 2022}
+
+\subsection{Darboux integrals}
+
+The bounds imply that $U(f)$ and $L(f)$ are real numbers, and 
+$L(f)\leq U(f)$. We say $f$ is \vocab{integrable} on $[a,b]$ if 
+$L(f)=U(f)$.
+Then 
+\[
+    \int_a^b f = \int_a^b f(x)dx = L(f) = U(f).
+\]
+We call this the \vocab{Darboux integral}.
+
+\begin{example}
+    [Darboux integration proof]
+    Consider $f(x)=x^3$ and $\int_0^bf$. For the partition 
+    $P=\ps{0=t_0<t_1<\cdots<t_n=b}$. Define $t_n = \frac{kb}{n}$.
+
+    Then 
+    \begin{align*}
+        U(f,P) &= \sum_{k=1}^{n}t_k^3(t_k-t_{k-1})\\ 
+        &= \frac{b^4}{n^4}\sum_{k=1}^{n}k^3\\ 
+        &= \frac{b^4}{n^4}\pp{\frac{n(n+1)}{2}}^2 \\
+        &= \frac{b^4}{4}\pp{1+\frac{2}{n}+\frac{1}{n^2}}.
+    \end{align*}
+    And 
+    \begin{align*}
+        L(f,p) &= \sum_{k=1}^{n}t_{k-1}^3(t_k-t_{k-1}) \\
+        &= \frac{b^4}{n^4}\sum_{k=1}^{n}(k-1)^3 \\
+        &= \frac{b^4}{n^4}\sum_{\ell=1}^{n-1}\ell^3 \\
+        &= \frac{b^4}{n^4}\pp{\frac{(n-1)n}{2}}^2 \\
+        &= \frac{b^4}{4}\pp{1-\frac{2}{n}+\frac{1}{n^2}}.
+    \end{align*}
+    As $n\to\infty$, $U(f,P)\to \frac{b^4}{4}$, so $U(f)\leq\frac{b^4}{4}$. 
+    Similarly, $L(f)\geq \frac{b^4}{4}$. Therefore $L(f)=U(f) = \frac{b^4}{4}$, and $f$ integrable on $[0,b]$. 
+\end{example}
+
+\begin{lemma}
+    For partitions $P,Q$ of $[a,b]$ s.t. $P \subseteq Q$,
+    \[
+        L(f,P) \leq L(f,Q) \leq U(f,Q) \leq U(f,P).
+    \]
+\end{lemma}
+
+\begin{proof}
+    WLOG suppose $P = \ps{a=t_0<t_1<\cdots<t_n = b}$, and \\
+    $Q = \ps{a=t_0<t_1<\cdots<t_{k-1}<u<t_k<\cdots<t_n = b}$.
+    Then 
+    \begin{align*}
+        L(f,Q) - L(f,P) &= m(f, [t_{k-1},u])(u-t_{k-1}) + m(f, [u,t_{k}])(t_{k}-u)\\ &\quad- m(f,[t_{k-1},t_k])(t_k-t_{k-1}).
+    \end{align*}
+    Note 
+    \begin{align*}
+        m(f,[t_{k-1},t_k])(t_k-t_{k-1}) &= m(f,[t_{k-1},t_k])(t_k-u) + m(f,[t_{k-1},t_k])(u-t_{k-1}) \\
+        &\leq m(f, [t_{k-1},u])(u-t_{k-1}) + m(f, [u,t_{k}])(t_{k}-u).
+    \end{align*}
+    Hence $L(f,Q)-L(f,P)\geq 0$.
+\end{proof}
+
+\begin{lemma}
+    For partitions $P,Q$ on $[a,b]$, $L(f,P)\leq U(f,Q)$.
+\end{lemma}
+\begin{proof}
+    $P\cup Q$ is also a partition of $[a,b]$ yielding 
+    \[
+        L(f,P) \leq L(f,P\cup Q) \leq  U(f,P\cup Q) \leq U(f,Q).\qedhere
+    \]
+\end{proof}
+\begin{proposition}
+    $L(f)\leq U(f)$.
+\end{proposition}
+
+\begin{proof}
+    This follows from the properties of limits.
+\end{proof}
+
+\begin{theorem}
+    [Integrable $\eps$ proof]
+    A bounded function $f$ on $[a,b]$ is integrable iff $\forall \eps>0, \exists$ a partition $P$ s.t. $U(f,P)-L(f,P)<\eps$. 
+\end{theorem}
+\begin{proof}
+    Suppose $f$ integrable. $\exists$ $P_1,P_2$ s.t. 
+    \[
+        L(f,P_1) > L(f)-\frac{\eps}{2},
+    \]
+    \[
+        L(f,P_2) < U(f)+\frac{\eps}{2}.
+    \]
+    For $P = P_1\cup P_2$, 
+    \[
+        U(f,P)-L(f,P) \leq U(f,P_2)-L(f,P_1) < U(f) - L(f) + \eps.
+    \]
+    Since $f$ is integrable, $U(f) = L(f)$, leading to the conclusion.
+
+    Consversely, suppose that $\exists \eps>0$ s.t. the statment holds.
+    Then 
+    \[
+        U(f) \leq U(f,P) = U(f,P) - L(f,P) + L(f,P) < \eps + L(f).
+    \]
+    Since $\eps$ is arbitrary, $U(f)\leq L(f)\implies U(f)=L(f)$.
+\end{proof}
+\begin{example}
+    [Non-Riemann integrable function]
+    $1_\QQ$ on $[0,1]$ has all $U(f) = 1, L(f) = 0$, since rationals and irrationals are dense in the reals.
+\end{example}
+\begin{definition}
+    The \vocab{mesh} of a partition $P$ is the maximum length 
+    of subintervals comprising $P$.
+    If $P = \ps{a=t_0<t_1<\cdots< t_n =b}$, then 
+    \[ \mathrm{mesh}(P) = \max_{1\leq k\leq n}\ps{t_k-t_{k-1}}. \]
+\end{definition}
+\begin{theorem}
+    [Integrable $\delta$-$\eps$ proof]
+    \label{thm:darbouxdeltaeps}
+    A bounded function $f$ on $[a,b]$ is integrable iff 
+    for each $\eps>0$, $\exists \delta>0$ s.t. 
+    $\mathrm{mesh}(P)<\delta\implies U(f,P)-L(f,P)<\eps$ for all 
+    partitions $P$.
+\end{theorem}
+\begin{proof}
+    Suppose $f$ is integrable. Let $\eps>0$ and $P_0$ is a partition of $[a,b]$ s.t. 
+    \[
+        U(f,P_0) - L(f,P_0) < \frac{\eps}{2}.
+    \]
+    Since $f$ is bounded, $\exists B>0$ s.t. $\pa{f(x)} \leq B \forall x\in[a,b]$. Let $\delta = \frac{\eps}{8mB}$ where $m$ is the number 
+    of intervals on $P_0$.
+
+    Let $P$ be a partiton of $[a,b]$ with $\mathrm{mesh}(P)<\delta$.
+    Let $Q = P\cup P_0$. If $Q$ has one more element than $P$,
+    \[
+        L(f,Q) - L(f,P) \leq B \mathrm{mesh}(P) - (-B)\mathrm{mesh}(P) = 2B \mathrm{mesh}(P).
+    \]
+    $Q$ has at most $m$ elements not in $P$, hence 
+    \[
+        L(f,Q) - L(f,P) \leq2mB\cdot\mathrm{mesh}(P) = \frac{\eps}{4}.
+    \]
+    Then $L(f,P_0)-L(f,P)<\frac{\eps}{2}$. Similarly $U(f,P_0)-U(f,P)<\frac{\eps}{4}$. 
+    \[
+        U(f,P)-L(f,P) < U(f,P_0)-L(f,P_0) + \frac{\eps}{2} < \eps.
+    \]
+    Converse follows easily from definitions.
+\end{proof}
+These two theorems give ways to show specific properties of integrable 
+(bounded) functions.
+\begin{theorem}
+    Every continuous function on $[a,b]$ is integrable.
+\end{theorem}
+\begin{proof}
+    Consider $\eps>0$. Since $f$ in \textit{uniformly} continuous on $[a,b]$, $\exists \delta>0$ s.t. $\pa{x-y}<\delta \implies \pa{f(x)-f(y)}<\frac{\eps}{b-a}$. 
+    
+    Consider a partition $P = \ps{a=t_0<\cdots<t_n=b}$
+    s.t. $\mathrm{mesh}(P) < \delta$.
+    Within any interval $[t_{k-1},t_k]$, $\pa{f(x)-f(y)}<\frac{\eps}{b-a}$.
+    Hence 
+    \[
+        M(f,[t_{k-1},t_k]) - m(f,[t_{k-1},t_k]) < \frac{\eps}{b-a}.
+    \]
+    So $U(f,P)-L(f,P)<\sum_{k=1}^{n}\frac{\eps}{b-a}(t_k-t_{k-1}) = \eps$.
+\end{proof}
+\clearpage
+\section{December 1st, 2022}
+\subsection{Darboux integration results}
+\begin{theorem}
+    Every monotonic function $f$ on $[a,b]$ is integrable.
+\end{theorem}
+\begin{proof}
+    WLOG assume $f$ increasing and $f(a)<f(b)$.
+    $f$ is bounded on $[a,b]$. Choose $\eps>0$, and a partition 
+    $P = \ps{a=t_0<\cdots<t_n=b}$ with $\mathrm{mesh}(P) < \frac{\eps}{f(b)-f(a)}$. Then 
+    \[
+        U(f,P) - L(f,P) = \sum_{k=1}^{n}(M(f, [t_{k-1},t_k])-m(f, [t_{k-1},t_k]))(t_k - t_{k-1})
+    \]
+    $M(f, [t_{k-1},t_k])-m(f, [t_{k-1},t_k])$ gets simplified to $f(t_k)-f(t_{k-1})$ since $f$ is increasing.
+    \begin{align*}
+        U(f,P) - L(f,P) &= \sum_{k=1}^{n}(f(t_k)-f(t_{k-1}))(t_k - t_{k-1}) \\
+        &< \frac{\eps}{f(b)-f(a)} \sum_{k=1}^{n}(f(t_k)-f(t_{k-1}))\\
+        &= \eps. \qedhere
+    \end{align*}
+\end{proof}
+\subsection{Riemann sums and integrals}
+
+\begin{definition}
+    Let $f$ be bounded function on $[a,b]$, and $P=\ps{a=t_0<\cdots<t_n=b}$
+    be a partition. A \vocab{Riemann sum} of $f$ associated with $P$
+    is a sum of the form 
+    \[
+        \sum_{k=1}^{n}f(x_k)(t_k-t_{k-1}),
+    \]
+    where $x_k\in[t_{k-1},t_k]$.
+
+    A function is \vocab{Riemann integrable} on $[a,b]$ if $\exists r$
+    s.t. $\forall \eps>0$, $\exists \delta>0$ s.t.
+    \[
+        \pa{S-r}<\eps \text{ for every Riemann sum $S$ of $f$ s.t. $\mathrm{mesh}(P)<\delta$}.
+    \]
+    If so, $r$ is the Riemann integral of $f$ on $[a,b]$, denoted 
+    $\mathscr{R}\int_a^b$.
+\end{definition}
+The next result shows that Riemann integration is just 
+Darboux integration.
+
+\begin{theorem}
+    A bounded function $f$ on $[a,b]$ is Riemann integrable iff it is Darboux integrable.
+\end{theorem}
+
+\begin{proof}
+    ($\implies$) 
+    Suppose $f$ Darboux integrable. Let $\eps>0$, and choose $\delta$ s.t.
+    \cref{thm:darbouxdeltaeps} is true.
+    We have 
+    \[
+        L(f,P) \leq S \leq U(f,P).
+    \]
+    \[
+        U(f,P) < L(f,P)+\eps \leq L(f)+\eps = \int_a^b f + \eps,
+    \]
+    and 
+    \[
+        L(f,P) > U(f)-\eps = \int_a^b f - \eps.
+    \]
+    Therefore 
+    \[
+        \int_a^b f -\eps < S < \int_a^b f+ \eps \implies \pa{S - \int_a^bf}< \eps.
+    \]
+    ($\ \Longleftarrow\ $) Suppose $f$ is Riemann integrable. Consider $\eps>0$. $\exists \delta$ and $r$ s.t. $\mathrm{mesh}(P)<\delta$
+    and Riemann sum $S$, 
+    \[
+        \pa{S-r}<\eps.
+    \]
+    Choose $x_k \in [t_{k-1},t_k]$ s.t. $f(x_k) < m(f, [t_{k-1}, t_k]) + \eps$. Do this for all intervals.
+    \[
+        S < L(f,P) + \eps(b-a).
+    \]
+    \[
+        L(f) \geq L(f,P) \geq S - \eps(b-a) > r-\eps-\eps(b-a).
+    \]
+    Since $\eps$ is arbitrary, $L(f)\geq r$. Similarly, $U(f)\leq r$.
+    Then $L(f)=U(f)$, so $f$ is Darboux integrable.
+\end{proof}
+
+\begin{proposition}
+    [Riemann/Darboux integration properties]
+    \label{prop:riemannintegrationprop}
+    If $f$ and $g$ are integrable functions on $[a,b]$,
+    \begin{enumerate}
+        \item $cf$ is integrable, and $\int_a^b cf = c\int_a^b f$.
+        \item $f+g$ is integrable, and $\int_a^b f+g = \int_a^b f+\int_a^b g$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    (1) Suppose $c>0$. For a given partition, 
+    \[
+        M(cf, [t_{k-1},t_k]) = cM(f,[t_{k-1},t_k]).
+    \] 
+    Hence $U(cf,P) = cU(f,P)$. Therefore $U(cf) = cU(f)$.
+    Similarly, $L(cf)=cL(f)$. This shows $\int_a^b cf = c\int_a^b f$.
+    For negative $c$, you would have to flip $U$ and $L$.
+
+    (2) Choose $\eps>0$. $\exists$ partitions $P_1,P_2$ s..t 
+    \[
+        U(f,P_1) - L(f,P_1) < \frac{\eps}{2}, \qquad U(g,P_2) - L(g,P_2) < \frac{\eps}{2}.
+    \]
+    Let $P = P_1\cup P_2$,
+    \[
+        U(f,P)-L(f,P) < \frac{\eps}{2}, \qquad U(g,P)-L(g,P) < \frac{\eps}{2}.
+    \]
+    To connect these two, note 
+    \[
+        \inf\ps{f(x)+g(x)} \geq \inf\ps{f(x)} + \inf\ps{g(x)},\quad (\forall x\in S)
+    \]
+    \[
+        m(f+g,S) \geq m(f,S) + m(g,S),
+    \]
+    \[
+        L(f+g,P) \geq L(f,P)+ L(g,P), \qquad U(f+g,P) \leq U(f,P)+U(g,P).
+    \]
+    Therefore 
+    \[
+        U(f+g,P) - L(f+g,P) < \eps,
+    \]
+    as desired.
+    To show the specific value, we use the same partition $P$.
+    We find that 
+    \[
+        U(f,P) + U(g,P) < L(f,P) + L(g,P) + \eps
+    \]
+    by the last equation. Thus
+    \begin{align*}
+        \int_a^b f+g &= U(f+g) \leq U(f+g,P) \\
+        &\leq U(f,P)+U(g,P) < L(f,P) + L(g,P) + \eps \\
+        &\leq L(f) + L(g) + \eps \\
+        &= \pp{\int_a^b f + \int_a^b g} +\eps.
+    \end{align*}
+    Similarly, 
+    \[
+        \int_a^b f+g > \pp{\int_a^b f + \int_a^b g} - \eps.
+    \]
+    Since $\eps$ is arbitrary, $\int_a^b f+g = \int_a^b f+\int_a^b g$.
+\end{proof}
+
+\begin{proposition}
+    \label{prop:integralfunctioninequality}
+    If $f$ and $g$ are integrable on $[a,b]$ and $f(x)\leq g(x) \forall x\in[a,b]$, then $\int_a^bf\leq\int_a^bg$.
+\end{proposition}
+
+\begin{proof}
+    \cref{prop:riemannintegrationprop} shows that $h=g-f$ is integrable on 
+    $[a,b]$. $h(x)\geq 0 \forall x\in[a,b]$ implies $L(h,P)\geq 0$ for any 
+    partition $P$. So
+    \[
+        \int_a^bg - \int_a^b f = \int_a^b h = L(h) \geq 0,
+    \]
+    from which the inequality follows.
+\end{proof}
+
+\begin{proposition}
+    [``Triangle'' inequality for integrals]
+    If $f$ is integrable on $[a,b]$, then $\pa{f}$ is integrable on $[a,b]$
+    with $\pa{\int_a^b f}\leq \int_a^b\pa{f}$.
+\end{proposition}
+
+\begin{proof}
+    Consider $S \subseteq [a,b]$. 
+    \begin{align*}
+        M(\pa{f},S)-m(\pa{f},S) &= \sup\ps{\pa{f(x)} : x\in S} - \inf\ps{\pa{f} : x\in S} \\
+        &= \sup\ps{\pa{f(x)} : x\in S} + \sup\ps{-\pa{f} : x\in S} \\ 
+        &= \sup\ps{\pa{f(x)} - \pa{f(y)} : x,y\in S} \\
+        &\leq \sup\ps{\pa{f(x) - f(y)} : x,y\in S} \\
+        &= \sup\ps{f(x) - f(y):x,y\in S} \\
+        &= M(f,S) - m(f,S).
+    \end{align*}
+    Thus 
+    \[
+        U(|f|,P) - L(|f|,P) \leq U(f,P) - L(f,P).
+    \]
+    Choose $\eps>0$. Then $\exists P$ s.t. 
+    \[
+        U(|f|,P) - L(|f|,P) \leq U(f,P) - L(f,P) < \eps.
+    \]
+
+    Since $-|f| \leq f \leq |f|$, it follows from \cref{prop:integralfunctioninequality} that 
+    \[
+        -\int_a^b|f| \leq \int_a^bf \leq \int_a^b|f| \implies 
+        \pa{\int_a^b f}\leq \int_a^b\pa{f}\qedhere
+    \]
+\end{proof}
+
+\begin{proposition}
+    Let $f$ be on $[a,b]$ If $a<c<b$ and $f$ is integrable on $[a,c]$ 
+    and $[c,b]$, then $f$ is integrable on $[a,b]$ and 
+    $\int_a^bf = \int_a^cf+\int_c^bf$.
+\end{proposition}
+
+\begin{definition}
+    A function is \vocab{piecewise monotonic} if $\exists$ a partition 
+    $P = \ps{a=t_0<\cdots<t_n=b}$ s.t. $f$ is monotonic on $(t_{k-1}, t_k)$ 
+    for $1\leq k\leq n$. 
+    
+    The function is \vocab{piecewise continuous}
+    if $\exists$ a partition $P$ of $[a,b]$ s.t. $f$ is 
+    uniformly continuous on $(t_{k-1},t_k)$.
+\end{definition}
+
+Both of these types of functions are integrable.
+
+\clearpage
+
+\section{December 6th, 2022}
+
+\subsection{Intermediate value theorem for integrals}
+
+\begin{theorem}
+    [IVT for integrals]
+    If $f$ is a continuous function on $[a,b]$, then 
+    for at least one $x\in[a,b]$,
+    \[
+        f(x) = \frac{1}{b-a}\int_a^bf.
+    \]
+\end{theorem}
+$f(x)$ is the averange value of the function on $[a,b]$.
+
+\begin{proof}
+    Let $m$ and $M$ be the minimum and maximum of $f$ on $[a,b]$ respectively.
+    If $m=M$, then $f$ is constant and the result holds for all $x\in[a,b]$.
+    
+    Otherwise $m<M$, and then $\exists x_0\neq y_0$ s.t. 
+    $f(x_0) = m, f(y_0) = M$. Consider $M-f$ and $f-m$, which are non-negative and not identically zero.
+    By previous results, $\int_{a}^{b}M-f\geq 0$, $\int_{a}^{b}f-m\geq 0$.
+    Moreover the inequality strict, since $f$ is continuous (see HW8 Q1).
+    Therefore 
+    \begin{align*}
+        \int_{a}^{b}m < &\int_{a}^{b}f < \int_{a}^{b}M \\
+        (b-a)m < &\int_{a}^{b}f<(b-a)M\\
+        m < &\frac{1}{b-a}\int_{a}^{b}f<M.
+    \end{align*}
+    Apply \cref{thm:intermediatevalthm} between $x_0, y_0$ to get 
+    the desired $x$.
+\end{proof}
+
+\subsection{Fundamental theorems of calculus}
+
+\begin{theorem}
+[The fundamental theorem of calculus]
+    \label{thm:fundthmcalc}
+    If $g$ is continuous on $[a,b]$ and differentiable on $(a,b)$
+    and $g'$ integrable on $[a,b]$, then 
+    \[
+        \int_{a}^{b}g' = g(b)-g(a).
+    \]
+\end{theorem}
+
+\begin{proof}
+    Choose $\eps>0$. $\exists P=\ps{a=t_0<\cdots<t_n=b}$ of the interval 
+    $[a,b]$ s.t. 
+    \[
+        U(g',P) - L(g',P) < \eps.
+    \]
+    Apply \cref{thm:mvt} to each interval $[t_{k-1},t_k]$.
+    $\exists x_k\in (t_{k-1}, t_k)$ s.t. 
+    \[
+        (t_k-t_{k-1})g'(x_k) = g(t_k) - g(t_{k-1}).
+    \]
+    Hence 
+    \begin{align*}
+        g(b)-g(a) &= \sum_{k=1}^{n}(g(t_k) - g(t_{k-1})) \\
+        &= \sum_{k=1}^{n}g'(x_k)(t_k-t_{k-1}),
+    \end{align*}
+    giving us 
+    \[
+        \sum_{k=1}^{n}m(g',[t_{k-1}, t_k])(t_k-t_{k-1}) \leq g(b)-g(a) \leq \sum_{k=1}^{n}M(g',[t_{k-1}, t_k])(t_k-t_{k-1}).
+    \]
+    So
+    \begin{align*}
+        L(g',P) \leq g(b)-g(a) &\leq  U(g',P), \\
+        L(g',P) \leq \int_{a}^{b}g' &\leq  U(g',P),
+    \end{align*}
+    are both true. 
+    Therefore 
+    \[
+        \pa{\int_{a}^{b}g' - (g(b)-g(a))} < \eps.
+    \]
+    Since $\eps$ is arbitrary, $\int_{a}^{b}g'=g(b)-g(a)$.
+\end{proof}
+
+\begin{theorem}
+[Integration by parts]
+    \label{thm:intbyparts}
+    Suppose that $u,v$ continuous on $[a,b]$ and differentiable on $(a,b)$.
+    If $u', v'$ integrable on $[a,b]$, then 
+    \[
+        \int_{a}^{b}uv' - \int_{a}^{b}u'v = 
+        u(b)v(b)-u(a)v(a).
+    \]
+\end{theorem}
+
+\begin{proof}
+    Let $g=uv \implies g'=uv'+u'v$. Products on integrable functions 
+    are integrable (exercise), so 
+    \[
+        \int_{a}^{b}g' = g(b)-g(a) = u(b)v(b) - u(a)v(a).
+    \]
+    Replacing $g'$ with $uv'+u'v$ finishes.
+\end{proof}
+
+\begin{theorem}
+    [The fundamental theorem of calculus II]
+    \label{thm:fundthmcalc2}
+    Let $f$ be integrable on $[a,b]$. For $x\in[a,b]$, let 
+    $F(x) = \int_{a}^{x}f(t)dt$. Then 
+    \begin{enumerate}
+        \item $F$ is continuous on $[a,b]$.
+        \item If $f$ continuous at $x_0\in(a,b)$, then $F$ is differentiable 
+        at $x_0$ and $F'(x_0) = f(x_0)$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    Choose $B>0$ s.t. $\pa{f(x)}\leq B$. If $x,y\in [a,b]$ $x<y$ with 
+    $\pa{x-y} < \frac{\eps}{B}$, then 
+    \[
+        \pa{F(y)-F(x)} = \pa{\int_{x}^{y}f(t)dt} \leq \int_{a}^{y}\pa{f(t)}dt \leq \int_{x}^{y}Bdt = B(y-x) < \eps.
+    \]
+    $\implies F$ is \textit{uniformly} continuous.
+
+    Suppose $f$ continuous at $x_0\in(a,b)$. Then 
+    \[
+        \frac{F(x)-F(x_0)}{x-x_0} = \frac{1}{x-x_0}\int_{x_0}^{x}f(t)dt,
+    \]
+    and
+    \[
+        f(x_0) = \frac{1}{x-x_0}\int_{x_0}^{x}f(x_0)dt.
+    \]
+    \begin{align*}
+        \frac{F(x) - F(x_0)}{x-x_0} - f(x_0) = \frac{1}{x-x_0}\int_{x_0}^{x}f(t)-f(x_0)dt.
+    \end{align*}
+    Choose $\eps>0$. Since $f$ continuous, $\exists \delta>0$ s.t. 
+    $t\in(a,b)$ and $\pa{t-x_0} < \delta$, then $\pa{f(t)-f(x_0)}<\eps$.
+    Therefore 
+    \[
+        \pa{\frac{F(x)-F(x_0)}{x-x_0}-f(x_0)} \leq \eps 
+        \implies 
+        F'(x_0) = \lim_{x\rightarrow x_0}\frac{F(x)-F(x_0)}{x-x_0} = f(x_0).
+    \]
+    It seems inconvenient that the first inequality is $\leq \eps$ vs. 
+    $<\eps$, but we can see that if we take $\eps\mapsto \frac{\eps}{2}$, then 
+    the proof can conclude with a strict ``less than.''
+\end{proof}
+
+\subsection{Change of variables}
+\begin{theorem}
+    [Change of variables]
+    \label{thm:changevars}
+    Let $u$ be a differentiable function on the open interval $J$ s.t. 
+    $u'$ continuous and let $I$ be an open interval s.t. $u(J)= I$ 
+    If $f$ is continuous on $I$, then $f \circ u$ is continuous on $J$ 
+    and
+    \[
+        \int_{a}^{b}f\circ u(x) u'(x)dx = \int_{u(a)}^{u(b)}f(u)du 
+    \]
+    for $a,b\in J$.
+\end{theorem}
+
+\begin{proof}
+    $f \circ u $ is continuous by previous result. Chooose $c\in I$ and 
+    let $F(u) = \int_{c}^{u}f(t)dt$. Then $F'(u)=f(u)$ by 
+    \cref{thm:fundthmcalc2}. Let $f=F\circ u$. Then 
+    \[
+        g'(x) = F'(u(x))u'(x) = f(u(x))u'(x).
+    \]
+    Then 
+    \begin{align*}
+        \int_{a}^{b}f\circ u(x)u'(x)dx &= \int_{a}^{b}g'(x)dx  \\
+        &= g(b)-g(a) \\
+        &= F(u(b))-F(u(a)) \\
+        &= \int_{c}^{u(b)}f(t)dt - \int_{c}^{u(a)}f(t)dt = \int_{u(a)}^{u(b)}f(t)dt \qedhere
+    \end{align*}
+\end{proof}
+
+\subsection{Improper integrals}
+
+% \begin{theorem}
+% [Improper integrals]
+% \label{thm:impropintegral}
+Consider an interval $[a,b)$ where $b\in \RR\cup\ps{\infty}$. 
+Suppose $f$ is a function that is integrable on each $[a,d]$ 
+for $a<d<b$ and 
+\[
+    \lim_{d\rightarrow b^-}\int_{a}^{d}f(x)dx 
+\]
+evaluates to a number in $\ol{\RR}$.
+Then 
+\[
+    \int_{a}^{b}f(x)dx = \lim_{d\rightarrow b^-}\int_{a}^{d}f(x)dx.
+\]
+If the interval is $(a,b]$ instead and $f$ is integrable on $[c,b]$ for all $a<c<b$, then 
+\[
+    \int_{a}^{b}f(x)dx = \lim_{c\rightarrow a^+}\int_{c}^{b}f(x)dx.
+\]
+For $f$ on $(a,b)$ and integrable on all closed subintervals $[c,d]$,
+then 
+\[
+    \int_{a}^{b}f(x)dx = \int_{a}^{\alpha}f(x)dx + \int_{\alpha}^{b}f(x)dx, \qquad \alpha\in(a,b).
+\]
+\clearpage
+
+\section{December 8th, 2022}
+
+\subsection{Cauchy principal value}
+
+Consider 
+\[
+    \int_{-\infty}^{\infty}\frac{x}{1+x^2}dx. 
+\]
+As $x\to \infty$, the function gets close to $\frac{1}{x}$, and 
+$x\to-\infty$, the function gets close to $-\frac{1}{x}$.
+By the regular definition, we can 
+
+\begin{align*}
+    \int_{-\infty}^{\infty}\frac{x}{1+x^2}dx &= \int_{-\infty}^{\alpha}\frac{x}{1+x^2}dx + \int_{\alpha}^{\infty}\frac{x}{1+x^2}dx \\ 
+    &= \underbrace{\lim_{a\rightarrow -\infty}\int_{a}^{\alpha}\frac{x}{1+x^2}dx}_{-\infty} +
+    \underbrace{\lim_{b\rightarrow \infty}\int_{\alpha}^{b}\frac{x}{1+x^2}dx}_\infty.
+\end{align*}
+
+So the integral value does not exist. Using the \vocab{Cauchy principal value}, we take the limit concurrently to $-\infty$ and $\infty$.
+
+\begin{align*}
+    P \int_{-\infty}^{\infty}\frac{x}{1+x^2}dx &= \lim_{a\rightarrow \infty}\int_{-a}^{a}\frac{x}{1+x^2}dx\\ 
+    &= \lim_{a\rightarrow \infty}0\\
+    &= 0
+\end{align*}
+
+\subsection{Continuity in metric spaces}
+
+Consider metric spaces $(S,d), (S^*,d^*)$. Consider maps $f : S \rightarrow S^*$.
+\begin{definition}
+    $f : S \rightarrow S^*$ is \vocab{continuous} at $s_0\in S$ if 
+    \[
+        \forall \eps>0, \exists \delta>0 \text{ s.t. } d(s,s_0) < \delta \implies d^*(f(s), f(s_0)) < \eps.
+    \]
+    A function $f$ is \vocab{continuous} on $E \subseteq S$ if $f$ 
+    is continuous at each point of $E$.
+    A function is \vocab{uniformly continuous} on $E \subseteq S$ if 
+    \[
+        \forall \eps>0, \exists \delta>0 \text{ s.t. if } s,t\in E 
+        \text{ and } d(s,t) < \delta \implies d^*(f(s), f(t)) < \eps.
+    \]
+\end{definition}
+
+If $S=S^* = \RR$ and $d=d^*$ is the Euclidean metric, then these match 
+the typical definitions.
+
+\begin{definition}
+    A \vocab{path} is a continuous mapping $\gamma : \RR \rightarrow \RR^k$.
+    The image $\gamma(\RR)$ is called a \vocab{curve}.
+\end{definition}
+
+\begin{example}
+    An ellipse is a path: $\gamma(t) = (a\cos t, b\sin t)$.
+\end{example}
+
+\begin{proposition}
+    If $f_1,f_2,\dots,f_k$ are continuous functions that are real-valued
+    $(\RR\to \RR)$, then 
+    \[
+        \gamma(t) = (f_1(t),\dots, f_k(t))
+    \]
+    defines a path in $\RR^k$.
+\end{proposition}
+
+\begin{proof}
+    We need to show that $\gamma$ is continuous. Pick 
+    $\vec{x}, \vec{y}\in \RR^k$. Then 
+    \begin{align*}
+        d^*(\vec{x},\vec{y}) &= \pp{\sum_{j=1}^{k}(x_j-y_j)^2}^{\frac{1}{2}}\\
+        &\leq \pp{k \max_{j=1}^k (x_j-y-j)^2}^{\frac{1}{2}} \\
+        &= \sqrt{k} \max_{j=1}^k \pa{x_j-y_j}.
+    \end{align*}
+    Consider $t_0\in \RR$ and $\eps>0$. For $j=1,\dots,k$, 
+    $\exists \delta_j>0$ s.t. 
+    \[
+        \pa{t-t_0} < \delta_j \implies \pa{f_j(t)-f_j(t_0)} < \frac{\eps}{\sqrt k}.
+    \]
+    If $\delta = \min\ps{\delta_1,\dots,\delta_k}$, and $\pa{t-t_0} < \delta$,
+    then we can find 
+    \[
+        \ps{\max{\pa{f_j(t)-f_j(t_0)}:1\leq j\leq k}} < \frac{\eps}{\sqrt k},
+    \]
+    so 
+    \[
+        d^*(\gamma(t), \gamma(t_0)) \leq \sqrt k  \ps{\max{\pa{f_j(t)-f_j(t_0)}:1\leq j\leq k}} < \eps. \qedhere
+    \]
+\end{proof}
+
+\begin{theorem}
+    Suppose that $(S,d), (S^*, d^*)$ are two metric spaces.
+    $f: S\to S^*$ is continuous on $S$ iff 
+    $f\inv(U)$ is an open subset of $S$ for every open subset $U$ 
+    of $S^*$.
+\end{theorem}
+
+\begin{proof}
+    Suppose that $f$ is continuous on $S$. Let $U$ be an open 
+    subset of $S^*$. Consider any $s_0 \in f\inv(U) \implies 
+    f(s_0)\in U$. Since $U$ is open, $\exists \eps>0$ s.t. 
+    \[
+        \ps{s^*\in S\mid d^*(s^*, f(s_0))<\eps} = N_\eps(f(s_0)) 
+        \subseteq U.
+    \]
+    Since $f$ is continuous at $s_0$, $\exists \delta>0$ s.t. 
+    \[
+        d(s,s_0) < \delta \implies d^*(f(s),f(s_0)) < \eps \implies f(s) \in U \implies s\in f\inv(U).
+    \]
+    In other words, $N_\delta(s_0) \subseteq U$. Hence $s_0$ is 
+    an interior pt. and $f\inv(U)$ is open.
+
+    Suppose that converse property holds. 
+    Consider $s_0\in S$. Choose $\eps>0$, and examine
+    $N_\eps(f(s_0))$. Then $F = f\inv(N_\eps(f(s_0)))$ is open 
+    by the assumption. For any $s_0\in F$, $\exists \delta>0$ s.t. 
+    $N_\delta(s_0) \subseteq F$. Hence if $d(s,s_0) < \delta$, then 
+    $d^*(f(s),f(s_0)) < \eps$.
+\end{proof}
+
+\begin{theorem}
+    Let $(S,d)$ and $(S^*,d^*)$ be metric spaces, and let 
+    $f : S \rightarrow S^*$ be continuous. Suppose that $E$ is a 
+    compact subset of $S$. Then 
+    \begin{enumerate}
+        \item $f(E)$ is a compact subset of $S^*$.
+        \item f is uniformly continuous on $E$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    (1) Let $\mathcal U$ be an open cover of $f(E)$. For each 
+    $U\in \mathcal{U}$, $f\inv(U)$ is open in $S$. Also 
+    $\ps{f\inv(U):U\in \mathcal{U}}$ is a cover of $E$. $x\in E \implies f(x)\in f(E)$ and $f(x)\in U'$ for some $U'$ so $x\in f\inv(U')$.
+
+    Since $E$ is compact, $\exists U_1,\dots, U_m \in \mathcal{U}$ s.t. 
+    $E \subseteq \bigcup_{i=1}^{m}f\inv(U_i)$. So $\ps{U_1,\dots,U_m}$ is a 
+    finite subcover of $f(E)$.
+
+    (2) Choose $\eps>0$. For $s\in E$ $\exists \delta_s>0$ s.t. 
+    $d(s,t)< \delta_s \implies d^*(f(s),f(t)) < \frac{\eps}{2}$.
+    Define sets $V_s := \ps{t\in S \mid d(s,t)<\frac{\delta_s}{2}}$.
+    $\mathcal{V}:=\ps{V_s\mid s\in E}$ is an open cover of $E$. 
+    By compactness, $\exists V_{s_1},\dots V_{s_n}$ that covers $E$.
+
+    Define $\delta = \frac{1}{2}\min\ps{\delta_1,\dots,\delta_n}$
+
+    Consider $s,t\in E$ with $d(s,t)<\delta$. Since $s\in V_{s_k}$ for 
+    some $s_k$, then $d(s,s_k)<\frac{\delta_{s_k}}{2}$. Then 
+    \[
+        d(t, s_k) \leq d(t,s) + d(s,s_k) < \delta+\frac{\delta_{s_k}}{2} < \delta_{s_k}.
+    \]
+    Thus 
+    \[
+        d(t, s_k), d(s,s_k) < \delta_{s_k} \implies 
+        d^*(f(s),f(s_k)), d^*(f(t),f(s_k)) < \frac{\eps}{2},
+    \]
+    implying 
+    \[
+        d^*(f(s),f(t)) < \eps.
+    \]
+\end{proof}
+
+\begin{corollary}
+    Let $f : (S,d) \rightarrow \RR$ be continuous and $S$ compact. 
+    Then for $E \subseteq S$, 
+    \begin{enumerate}
+        \item $f$ is bounded on $E$.
+        \item $f$ assumes its minimum/maximum on $E$.
+    \end{enumerate}
+\end{corollary}
+
+\begin{proof}
+    $f(E)$ compact on $\RR$ $\implies$ $f(E)$ is closed and bounded 
+    by \cref{thm:heineborelthm}.
+\end{proof}
+
+\clearpage
+\appendix
+\section{Appendix}
+\subsection{p-norms}
+Let the \vocab{$p$-norm} of a vector $z$ be 
+\[\pn{z}_p = \sqrt[p]{\sum_{i=1}^{k}\pa{z_i}^p}. \]
+Note that the Euclidean norm is just the $2$-norm.
+
+When $p$ is large, \[ \pn{z}_\infty = \max_{i=1}^k 
+\ps{\pa{z_i}}. \]
+Note now that the solutions to $\pn{\vec{x}}_p=1$ for $p=1$ is a diamond, 
+$p=2$ a circle, $p=4$ a superellipse, and $p=\infty$ a square. 
+
+\subsection{History of power series approximations}
+To approximate $\pi$, 
+James Gregory (1638-1675) created the power series 
+\[\tan\inv x = x-\frac{x^3}{3}+\frac{x^5}{5}-\cdots\]
+which evalutates
+\[\tan\inv 1 =\frac{\pi}{4}= 1-\frac{1}{3}+\frac{1}{5}-\cdots \] 
+However, this converges non-exponentially, which may be slow. But 
+\[\tan\inv \half = 1-\frac{\pp{\half}^3}{3}+\frac{\pp{\half}^5}{5}-\cdots \qquad \tan\inv \frac{1}{3} = 1-\frac{\pp{\frac{1}{3}}^3}{3}+\frac{\pp{\frac{1}{3}}^5}{5}-\cdots \]
+converges faster. Noting that 
+\[\frac{\pi}{4}= \tan\inv \half + \tan\inv \frac{1}{3}, \]
+we can calculate $\pi$ much faster (this can be proved by complex 
+nubmers).
+The \vocab{Machin formula} was found in the 18th century: 
+\[ \frac{\pi}{4}=4\tan\inv\frac{1}{5}-\tan\inv\frac{1}{239},\]
+which John Machin used in 1706 to find $100$ digits,
+and Zacharias Dase in 1844 found $200$ digits,
+and William Shanks in 1876 found $707$ digits, but everything from $528$
+onward was incorrect.
+
+\subsection{Limitations of power series}
+Taylor's theorem says 
+\[
+    f(x)= \sum_{k=0}^{\infty}\frac{\pp{f^{(k)}(x_0)}(x-x_0)^k}{k!},
+\]
+which allows us to generate power series.
+However, it has limitations. Consider 
+\[
+    f(x) = \begin{cases}
+        0 &x\leq 0,\\
+        e^{\frac{-1}{x^2}} &x>0.
+    \end{cases}
+\]
+\[
+    f^{(n)}(x) = \begin{cases}
+        0 &x\leq 0,\\
+        p(\frac{1}{x})e^{\frac{-1}{x^2}} &x>0. \\
+    \end{cases}
+\]
+For some polynomial $p(x)$.
+The function is infinitely differentiable, but $f^{(n)}(0)=0$ for all $n$,
+so a Taylor polynomial won't give a proper approximation.
+
+\subsection{Analysis bingo}
+W
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{images/rycroftbingo.PNG}
+\end{figure}
+\end{document}

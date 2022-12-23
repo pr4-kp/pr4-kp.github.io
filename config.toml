@@ -41,8 +41,3 @@ weight = 4
 name = "notes"
 url = "/notes"
 weight = 2
-
-[[menu.main]]
-name = "course guide"
-url = "/courses"
-weight = 4
