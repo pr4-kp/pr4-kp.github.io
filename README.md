@@ -10,3 +10,4 @@ TODO:
 - [ ] Implement macros
 - [ ] Finish class before writing course guides
 - [ ] Finish class and upload notes
+- [ ] Fix tags
