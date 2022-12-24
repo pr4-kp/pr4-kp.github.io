@@ -8,6 +8,4 @@ TODO:
 - [x] Fix social media icons for fontawesome
 - [ ] Automatic numbering of thmboxes
 - [ ] Implement macros
-- [ ] Finish class before writing course guides
-- [ ] Finish class and upload notes
 - [ ] Fix tags
