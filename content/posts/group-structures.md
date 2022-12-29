@@ -41,7 +41,7 @@ Recall that normal subgroups are very useful. If $N$ is a normal subgroup of $G$
 
 Therefore these "simple" groups have a unique property: we can't take any quotient and get anything meaningful, we either get the whole group, or the trivial group. However, this is a good thing, this means we can't reduce the group down.
 
-To show why this is important consider primes. We know that a prime only has itself and $1$ as divisors. Simple groups are the prime numbers of group theory. While we can't just multiply (in group theory, we call this an **external direct product**) simple groups together to form a larger group, we can use a generalization of products, [extensions](https://en.wikipedia.org/wiki/Group_extension), to get to any group given the simple groups.
+To show why this is important, consider how primes are used in number theory. A prime only has itself and $1$ as divisors. Analogously, simple groups are the prime numbers of group theory. While we can't just multiply (in group theory, we call this an **external direct product**) simple groups together to form a larger group, we can use a generalization of products, [extensions](https://en.wikipedia.org/wiki/Group_extension) to get different kinds of groups. However, there is still more work to be done to classify all finite groups. The [extension problem](https://en.wikipedia.org/wiki/Group_extension#Extension_problem) asks us whether we can reach all finite groups via extensions. 
 
 The easiest simple groups to describe with an undergraduate knowledge of group theory are
 1. The cyclic groups of prime order, $\mathbb{Z}/p\mathbb{Z}$.
@@ -196,6 +196,7 @@ The **center** of a group $G$ is the set of all elements that commute with all e
 {{< thmbox class="Definition">}}
 The **commutator subgroup** of $G$ is the set of all $xyx^{-1}y^{-1}$ for $x,y\in G$. It is denoted $G'$.
 {{</ thmbox>}}
+
 If these are trivial or the whole group, they can provide useful information too. If the center is the entire group, then the group is abelian.
 
 The commutator subgroups are useful since we can take the commutator of the commutator, $(G')'$, and so on. If this eventually terminates at the trivial group $\\{1\\}$ (we call this series the **derived series**), we can show that the group $G$ is solvable.
