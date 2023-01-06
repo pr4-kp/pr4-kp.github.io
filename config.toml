@@ -1,4 +1,4 @@
-baseURL = "https://PramanaSaldin.github.io"
+baseURL = "https://pr4-kp.github.io"
 languageCode = "en-us"
 title = "pramana's blog"
 theme="archie"
@@ -14,7 +14,7 @@ pygmentscodefencesguesssyntax = true
 [[Params.Social]]
 name = "GitHub"
 icon = "github"
-url = "https://github.com/PramanaSaldin/"
+url = "https://github.com/pr4-kp/"
 
 
 [[menu.main]]
