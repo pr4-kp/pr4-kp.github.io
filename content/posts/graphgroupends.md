@@ -21,11 +21,11 @@ However, knowing these "ends" isn't that useful when talking about graphs that a
 
 So how would we define the ends of a graph that is infinite? Well the simplest thing to check is a straight, infinite line. We know it has two ends: to the left and to the right. 
 
-{{< figure src="/img/graphgroupends/Screen%20Shot%202022-07-06%20at%2012.25.04%20AM.png" title="Figure 1: An infinite line">}}
+{{< figure src="/img/graphgroupends/Screen%20Shot%202022-07-06%20at%2012.25.04%20AM.png" title="Figure 1: An infinite line" class="invert">}}
 
 What can we say about these ends? Well as we get further from the center of the line, they always get further from each other. What else? Well lets look at another graph.
 
-{{< figure src="/img/graphgroupends/Screen%20Shot%202022-07-06%20at%2012.35.20%20AM.png" height="250px" title="Figure 2: A binary tree">}}
+{{< figure src="/img/graphgroupends/Screen%20Shot%202022-07-06%20at%2012.35.20%20AM.png" height="250px" title="Figure 2: A binary tree" class="invert">}}
 
 I'm sure that you've come across a binary tree in your life, whether you realized it or not. The basic idea is that we start from the top, and we have two options of how to continue down. Then we have two more options from them, and the tree continues (I'm assuming this tree is infinite). 
 
@@ -57,14 +57,14 @@ It should be clear now that any finite graph has $0$ ends, because we definitely
 
 Let's make a cut on the rope:
 
-{{< figure src="/img/graphgroupends/ballcutting.png" title="Figure 3: A rope cut">}}
+{{< figure src="/img/graphgroupends/ballcutting.png" title="Figure 3: A rope cut" class="invert">}}
 
 If we remove all the edges on that ball, then we end up with two infinite sets that aren't connected to each other. It makes sense as we increase the radius of the ball, centered at the same point, we would still have two disconnected, infinite sets. Therefore, the infinite rope has two ends. 
 
 ## Infinite Ends: The binary tree
 
 
-{{< figure src="/img/graphgroupends/Screen%20Shot%202022-07-06%20at%2012.35.20%20AM%20copy.png" height="250px" title="Figure 4: A binary tree cut">}}
+{{< figure src="/img/graphgroupends/Screen%20Shot%202022-07-06%20at%2012.35.20%20AM%20copy.png" height="250px" title="Figure 4: A binary tree cut" class="invert">}}
 <!-- ![infinite tree cuts](/img/graphgroupends/Screen%20Shot%202022-07-06%20at%2012.35.20%20AM%20copy.png){: width="300" height="200" } -->
 
 Removing every edge in the first ball gives us two disconnected, infinite sets, so there are two ends right? Well if we increase the size of the ball, the number of disconnected, infinite sets just keeps getting bigger, and it never really stops growing. In fact, the root of any disconnected set that hasn't been cut off will result in two, newly created sets after it does get cut. Therefore, the (infinite) binary tree has infinite ends.
@@ -73,7 +73,7 @@ Removing every edge in the first ball gives us two disconnected, infinite sets, 
 
 This one should build the idea the most in your head, but it may not seem intuitive: the lattice graph has only one end. 
 
-{{< figure src="/img/graphgroupends/Screen%20Shot%202022-07-06%20at%2012.59.51%20AM.png" width="300" height="300" title="Figure 5: The lattice graph">}}
+{{< figure src="/img/graphgroupends/Screen%20Shot%202022-07-06%20at%2012.59.51%20AM.png" width="300" height="300" title="Figure 5: The lattice graph" class="invert">}}
 <!-- ![lattice graph](../assets/img/Screen%20Shot%202022-07-06%20at%2012.59.51%20AM.png){: width="300" height="300" } -->
 
 What? you say, but the lattice is a bunch of ropes attached to each other, why would they not have infinitely many ends? Well notice that as we increase the size of our ball, we can always create a path *around* the ball from every vertex outside the ball to each other, meaning that they are all connected. So really all the "ends" of this graph are connected to each other, and we only have one end.

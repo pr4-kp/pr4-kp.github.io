@@ -6,7 +6,7 @@ aliases = ["about-us","contact"]
 author = "Pramana"
 +++
 
-This site is a modified [Archie](https://github.com/athul/archie) site with some more math capabilities added to make blog writing easier.
+This is a modified [Archie](https://github.com/athul/archie) site with some more math capabilities added to make blog writing easier.
 You can reach me at 
 
 **saldin [at] wisc [dot] edu**

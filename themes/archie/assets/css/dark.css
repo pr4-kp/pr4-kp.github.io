@@ -163,3 +163,7 @@ a:hover, #dark-mode-toggle:hover {
   background: royalblue;
   color: whitesmoke ;
 }
+
+.invert img {
+    filter: invert(1);
+}
