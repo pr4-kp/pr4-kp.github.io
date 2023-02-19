@@ -5,7 +5,7 @@ tags:
     - pdes
     - linear algebra
 math: true
-draft: true
+draft: false
 description: "A (hopefully) light survey of Dirichlet boundary problems and weak solutions to PDEs."
 ---
 
