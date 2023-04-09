@@ -86,7 +86,7 @@ The point that we choose to center the ball cut ($x_0$) does not matter; as we a
 
 # Applications to Geometric Group Theory
 
-Groups can be represented geometrically/graphically by **Cayley Graphs**, which take the generators of the group as directed edges, and the elements of the group as vertices.
+Groups can be represented geometrically by **Cayley Graphs**, which take the generators of the group as directed edges, and the elements of the group as vertices.
 
 {{< thmbox class="Proposition">}}
 The number of ends in the Cayley graphs of two groups does not change if the groups are [quasi-isometric](https://en.wikipedia.org/wiki/Quasi-isometry).
