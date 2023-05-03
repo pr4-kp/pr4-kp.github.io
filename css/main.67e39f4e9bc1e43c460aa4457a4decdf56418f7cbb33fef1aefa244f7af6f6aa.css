@@ -246,6 +246,10 @@ footer {
     padding: var(--footer-padding);
 }
 
+.soc {
+    height: 1.4em;
+}
+
 .soc:hover {
     color: white;
 }
