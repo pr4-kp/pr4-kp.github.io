@@ -12,6 +12,7 @@ description: "My spring semester undergradute research project. Joint work with 
 This semester I was able to participate in our undergradute research lab, and, relevant to my past work, 
 our project was in the field of geometric group 
 theory. I plan on introducing our project and go over some topics in geometric group theory I haven't covered before.
+This project was joint work with Noah Jillson and Katerina Stuopis with our advisors Daniel Levitin and Tullia Dymarz.
 
 If you want to skip the mathematical jargon and see the results, skip to the end.
 
