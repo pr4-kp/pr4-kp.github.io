@@ -1,5 +1,5 @@
 ---
-title: Horospheres on hyperbolic groups
+title: Visualizing horospheres on hyperbolic groups
 date: 2023-05-02
 tags:
   - geometric group theory
