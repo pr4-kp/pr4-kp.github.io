@@ -1,5 +1,5 @@
 ---
-title: group structures
+title: Group structures
 date: 2022-11-09
 tags:
     - abstract algebra

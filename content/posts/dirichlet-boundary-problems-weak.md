@@ -1,5 +1,5 @@
 ---
-title: weak solutions to dirichlet boundary problems
+title: Weak solutions to dirichlet boundary problems
 date: 2023-02-18
 tags:
     - pdes

@@ -1,5 +1,5 @@
 ---
-title: graph ends and their purpose in geometric group theory
+title: Graph ends and their purpose in geometric group theory
 date: 2022-07-06
 tags:
   - geometric group theory

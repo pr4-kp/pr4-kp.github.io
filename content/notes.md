@@ -1,5 +1,5 @@
 +++
-title = "notes"
+title = "Notes"
 description = "Repository of all my notes for my classes"
 +++
 
