@@ -6,7 +6,6 @@ tags:
   - hyperbolic geometry
   - research
 math: true
-draft: true
 description: "My spring semester undergradute research project. Joint work with Noah Jillson, Katerina Stuopis, Daniel Levitin, and Tullia Dymarz."
 ---
 
