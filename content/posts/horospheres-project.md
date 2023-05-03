@@ -32,9 +32,9 @@ points in hyperbolic space "look like" a saddle point.
 There 
 are many ways to represent the hyperbolic plane $\mathbb{H}^2$, one of which is shown in the following figure. However, we are forced to embed them into $\mathbb{R}^2$, so properties like distance and size are not as they appear.
 
-{{< figure src="/img/horospheres-project/Tessellation-of-hyperbolic-plane-by-right-angled-pentagons.png" caption="**Figure.** Tiling the hyperbolic plane with pentagons in the *Poincaré disk model*. Looking at the dashed lines, we can see that there are $5$ squares at each corner, or $90^\circ\cdot5 = 450^\circ$. This is only possible in hyperbolic space." class="" width="500" height="500">}}
+{{< figure src="/img/horospheres-project/Tessellation-of-hyperbolic-plane-by-right-angled-pentagons.png" caption="**Figure.** Tiling the hyperbolic plane with pentagons in the *Poincaré disk model*. Looking at the dashed lines, we can see that there are $5$ squares at each corner, or $90^\circ\cdot5 = 450^\circ$. This is only possible in hyperbolic space." class="" width="500">}}
 
-{{< figure src="/img/horospheres-project/parallel lines.png" caption="**Figure.** In the Poincaré disk model, both $L_1$ and $L_2$ are parallel to $L$ and pass through $P$." class="" width="500" height="500">}}
+{{< figure src="/img/horospheres-project/parallel lines.png" caption="**Figure.** In the Poincaré disk model, both $L_1$ and $L_2$ are parallel to $L$ and pass through $P$." class="" width="500">}}
 
 ## Horospheres
 
@@ -43,7 +43,7 @@ Formally, we take a **geodesic ray** $\gamma\colon[0,\infty)\to H$, where $H$ is
 A *geodesic* is a path from one point to another where the 
 path is as small as possible. The ray just has the property that any subset of $\gamma$ is a geodesic as well.
 
-{{< figure src="/img/horospheres-project/horosphere.png" caption="**Figure.** The (zero-)horosphere along the ray $\color{Goldenrod}\gamma$ is $\color{RoyalBlue}\mathcal{H}$" class="" width="500" height="500">}}
+{{< figure src="/img/horospheres-project/horosphere.png" caption="**Figure.** The (zero-)horosphere along the ray $\color{Goldenrod}\gamma$ is $\color{RoyalBlue}\mathcal{H}$" class="" width="500">}}
 
 To formally find all points at this horosphere, we need to use a **Busemann function** of $\gamma$ relative to $x_0$, 
 which is defined as 
@@ -77,7 +77,7 @@ For example, for the tiling shown in the first figure, there is a RACG that repr
 Its defining graph is shown below. 
 {{</ thmbox>}}
 
-{{< figure src="/img/horospheres-project/pentagon.png" caption="**Figure.** Defining graph for symmetries of a $5$-square tiling of $\mathbb{H}^2$." class="invert" width="333" height="333">}}
+{{< figure src="/img/horospheres-project/pentagon.png" caption="**Figure.** Defining graph for symmetries of a $5$-square tiling of $\mathbb{H}^2$." class="invert" width="333">}}
 
 In order to make sure our groups are hyperbolic, we need the following 
 theorem.
@@ -115,9 +115,9 @@ a [triangulation](https://en.wikipedia.org/wiki/Triangulation_(topology)) of a t
 
 We were able to put the horosphere data in Mathematica to get pictures of the horospheres.
 
-{{< figure src="/img/horospheres-project/Pentagon_Len_4.png" caption="**Figure.** Length $4$ horosphere of the pentagon defining graph." height="150">}}
+{{< figure src="/img/horospheres-project/Pentagon_Len_4.png" caption="**Figure.** Length $4$ horosphere of the pentagon defining graph." width="550">}}
 
-{{< figure src="/img/horospheres-project/Length3_Horosphere_2D.jpg" caption="**Figure.** Length $3$ horosphere of the torus triangulation defining graph." height="600">}}
+{{< figure src="/img/horospheres-project/Length3_Horosphere_2D.jpg" caption="**Figure.** Length $3$ horosphere of the torus triangulation defining graph." >}}
 
 {{< figure src="/img/horospheres-project/theta_graph-len5.png" caption="**Figure.** Length $5$ horosphere of another defining graph (we call it the *theta graph* because it looks like the letter $\Theta$).">}}
 
