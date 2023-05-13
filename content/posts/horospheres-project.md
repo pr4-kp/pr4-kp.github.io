@@ -126,9 +126,7 @@ We were able to put the horosphere data in Mathematica to get pictures of the ho
 We know that finitely generated groups can have either $0$, $1$, $2$, or $\infty$ **ends** on their Cayley graphs.
 The horosphere however, is not the entire Cayley graph. We found it can have more interesting numbers of ends 
 (such as $3$ in the $\Theta$ graph).
-While we can prove the number of ends a 
-horosphere has based on where we place it and what defining graph we chose, 
-we now visualize this fact.
+We can prove the number of ends a horosphere is based on our defining graph and which ray we choose, and we now visualize this. 
 
 Generating a finite part of the horosphere on a group gives us a discrete visualization of the **boundary** of that group. 
 The boundary is the set of geodesic rays with the equivalence relation $\sim$ between rays if they are "going the same direction".
