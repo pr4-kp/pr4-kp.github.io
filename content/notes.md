@@ -3,6 +3,12 @@ title = "Notes"
 description = "Repository of all my notes for my classes"
 +++
 
+# MATH 522: Analysis II 
+- Notes ([PDF](/pdf/math522/main_522.pdf))
+
+# MATH 514: Numerical Analysis
+- Notes ([PDF](/pdf/math514/main_514.pdf))
+
 # MATH 521: Analysis I
 - Notes ([PDF](/pdf/math521/main_521.pdf))([TeX](/pdf/math521/main_521.tex))
 - Final Paper – Gårding's Inequality ([PDF](/pdf/math521/gardings_inequality_521.pdf))([TeX](/pdf/math521/main_honors_paper.tex))
