@@ -1,6 +1,6 @@
 +++
 title = "Notes"
-description = "Repository of all my notes for my classes"
+description = "Repository of my notes for my classes"
 +++
 
 # MATH 522: Analysis II 
