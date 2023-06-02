@@ -23,7 +23,7 @@ where we study spaces that do not satisfy the postulates of Euclidean
 geometry. In particular, 
 hyperbolic spaces replace Euclid's fifth postulate with
 "given a line $L$, and a point $P$ not on $L$, there are *multiple* lines 
-that are parallel to $L$ and pass through $P$".
+that are parallel to $L$ and pass through $P$."
 
 A consequence of this is that hyperbolic space has negative curvature.
 Intuitively, this means that as 
@@ -38,7 +38,7 @@ are many ways to represent the hyperbolic plane $\mathbb{H}^2$, one of which is 
 
 ## Horospheres
 
-**Horospheres** are a geometric object that are defined on hyperbolic spaces. They formalize the idea of taking a sphere "to infinity".
+**Horospheres** are a geometric object that are defined on hyperbolic spaces. They formalize the idea of taking a sphere "to infinity."
 Formally, we take a **geodesic ray** $\gamma\colon[0,\infty)\to H$, where $H$ is a hyperbolic space. 
 A *geodesic* is a path from one point to another where the 
 path is as small as possible. The ray just has the property that any subset of $\gamma$ is a geodesic as well.
@@ -129,7 +129,7 @@ The horosphere however, is not the entire Cayley graph. We found it can have mor
 We can prove the number of ends a horosphere is based on our defining graph and which ray we choose, and we now visualize this. 
 
 Generating a finite part of the horosphere on a group gives us a discrete visualization of the **boundary** of that group. 
-The boundary is the set of geodesic rays with the equivalence relation $\sim$ between rays if they are "going the same direction".
+The boundary is the set of geodesic rays with the equivalence relation $\sim$ between rays if they are "going the same direction."
 The boundary of a hyperbolic space minus a point looks similar to these finite horospheres. In fact, the boundaries of some of our RACGs can be understood as homeomorphic to one of three objects: a $2$-sphere, and [two fractal-like surfaces](https://arxiv.org/pdf/2004.13315.pdf).
 
 The horosphere of the pentagon defining graph looks like a line because the boundary of the group is a circle, and a circle minus a point 
