@@ -7,7 +7,7 @@ tags:
     - prime spectrum
     - combinatorics
 math: true
-draft: true
+draft: false
 description: "Applying my combinatorics knowledge to commutative algebra to help draw the prime spectrum of a ring."
 ---
 
