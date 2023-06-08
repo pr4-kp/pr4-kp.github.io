@@ -10,7 +10,7 @@
 html {
     /* color: var(--maincolor); */
     font-family: 'Roboto Mono', monospace;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.6em;
     counter-reset: css-counter 0
 }
