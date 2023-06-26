@@ -57,7 +57,7 @@ This suffices for a commutative group. Then the multiplication properties:
 \end{enumerate}
 Along with the distributive law: $a(b+c) = ab +ac$ creates a field structure. 
 For example, $\QQ$, the set of rational numbers is a field.
-\subsubsection{Finding root 2}
+\subsubsection{Finding the squareroot 2}
 If we want a number $d$ s.t. $d\cdot d = 2$. In $\QQ$ we can get close... 
 \begin{align*}
     1.4142^2 &= 1.99996164\dots \\
@@ -120,7 +120,7 @@ $\sqrt2$ satisfies $x^2- 2=0$, therefore it is algebraic.
         \item[O4] If $a\leq b$, then $a+c\leq b+c$.
         \item[O5] If $a\leq b$ and $0\leq c$, then $ac \leq bc$. 
     \end{itemize}
-    We let $a<b$ be defined as as $a\leq b$ and $a\neq b$.
+    We let $a<b$ be defined as $a\leq b$ and $a\neq b$.
 \end{axiom}
 
 \begin{example}
@@ -230,7 +230,7 @@ Note that $\min[a,b] = a$, $\max[a,b] = b$.
     If $S$ is bounded below and $S$ has a greatest lower bound, then 
     we call it the \vocab{infimum} of $S$, $\inf{S}$.
 \end{definition}
-Note that if $\max S$ exists, then $\max S = \sup S$. Also $\sup[a,b] = \sup(a,b) = b$.
+Note that if $\max S$ exists, then $\max S = \sup S$. Also, $\sup[a,b] = \sup(a,b) = b$.
 \begin{example}
     [Sample sup/inf proof]
     $\sup(0,1) = 1$. 
@@ -252,7 +252,7 @@ Note that if $\max S$ exists, then $\max S = \sup S$. Also $\sup[a,b] = \sup(a,b
 \begin{proof}
     Define $-S = \left\{-s \mid s \in S\right\}$. Since $S$ is bounded below,
     $\exists m \in \RR$ s.t. $m\leq s \ \forall s \in S$.
-    Then $-m\geq -s \ \forall s \in S$. Therefore $-m \geq u \ \forall u \in -S$, showing the existence of $\sup -S$.
+    Then $-m\geq -s \ \forall s \in S$. Therefore, $-m \geq u \ \forall u \in -S$, showing the existence of $\sup -S$.
 
     I claim $\inf S = -s_0$. 
     \begin{itemize}
@@ -263,7 +263,7 @@ Note that if $\max S$ exists, then $\max S = \sup S$. Also $\sup[a,b] = \sup(a,b
         \]
 
         \item Then we show for any other lower bound $t$, $t\leq -s_0$. 
-        This implies that $-t\geq -s \ \forall s\in S$, or $-t\geq x \forall x \in -S$, so $-t$ is a upper bound for $-S$.
+        This implies that $-t\geq -s \ \forall s\in S$, or $-t\geq x \forall x \in -S$, so $-t$ is an upper bound for $-S$.
         So 
         \[ 
             -t\geq\sup(-S) = s_0 \implies -t\geq s_0 \implies t \leq -s_0. 
@@ -287,7 +287,7 @@ Note that if $\max S$ exists, then $\max S = \sup S$. Also $\sup[a,b] = \sup(a,b
     Let $s_0 = \sup S$, which must exist by the Axiom of completeness.
     $a>0 \implies s_0-a<s_0$. Since $s_0$ is the least upper bound, $s_0-a$
     can't be an upper bound. Meaning there is some $n_0\in\NN$ s.t. 
-    $s_0-a<n_0a$. Therefore $s_0 <(n_0+1)a$, but 
+    $s_0-a<n_0a$. Therefore, $s_0 <(n_0+1)a$, but 
     $(n_0+1)a \in S$, so $s_0$ is not an upper bound.
 \end{proof}
 \begin{proposition}
@@ -344,7 +344,7 @@ $\inf S = -\infty$ is $S$ is not bounded below.
 \begin{proof}
     Suppose $a_n \rightarrow a$ and $a_n\rightarrow b$, but $b\neq a$.
     WLOG $a<b$, let $d=b-a$. Let 
-    $\varepsilon = \frac{d}{3}$. Thus $\exists N_1$ s.t. 
+    $\varepsilon = \frac{d}{3}$. Thus, $\exists N_1$ s.t. 
     $\forall n>N_1, \pa{a_n-a} < \frac{d}{3}$, and $\exists N_2$ s.t. 
     $\forall n>N_2, \pa{a_n-b} < \frac{d}{3}$, but then 
     \begin{align*}
@@ -377,7 +377,7 @@ A sequence that does not converge \vocab{diverges}.
     \[ \lim_{n\rightarrow \infty}s_n = s \neq 0.\] 
     Then $\inf \left\{\pa{s_n}\mid n \in \NN\right\}>0$.
 
-    Choose $\eps$ so that seq. will lie in a region $\eps$ from 
+    Choose $\eps$ so that sequence will lie in a region $\eps$ from 
     $0$. Let $\eps = \frac{\pa{s}}{2}$. 
     There exists $N$ s.t. 
     $n>N \implies \pa{s_n-s}<\eps$.
@@ -389,7 +389,7 @@ A sequence that does not converge \vocab{diverges}.
         &= \frac{\pa{s}}{2}.
     \end{align*}
     Let $m =\min \left\{\frac{\pa{s}}{2}, \pa{s_1},\pa{s_2},\dots, \pa{s_N}\right\}$. $\pa{s_n} \geq m$ for all $m\in \NN$.
-    Therefore $m$ is a lower bound for $\inf\left\{\pa{s_n}\mid n \in \NN\right\}\geq m > 0$.
+    Therefore, $m$ is a lower bound for $\inf\left\{\pa{s_n}\mid n \in \NN\right\}\geq m > 0$.
 \end{example}
 \begin{theorem}
     [Sandwich lemma]
@@ -404,7 +404,7 @@ A sequence that does not converge \vocab{diverges}.
     Choose $\eps>0$, then $\exists N_1$ s.t. 
     $n>N_1 \implies \pa{a_n-s}<\eps \implies a_n>s-\eps$.
     Choose $N_2$ for $b$ as well, so that
-    $n>N_2\implies b_n<s+\eps$. Choose $n>N_1$ and $n > N_2$. Then 
+    $n>N_2\implies b_n<s+\eps$. Let $n>N_1$ and $n > N_2$. Then 
     \[ s-\eps < a_n \leq s_n \leq b_n < s+ \eps 
     \implies \pa{s_n-s} < \eps. \qedhere \]
 \end{proof}
@@ -440,7 +440,7 @@ A sequence that does not converge \vocab{diverges}.
     \begin{enumerate}
         \item $s_n+t_n \rightarrow s+t$ as $n\rightarrow \infty.$
         \item $s_n\cdot t_n \rightarrow s\cdot t$ as $n\rightarrow \infty.$
-        \item if $s_n\rightarrow s$ and $s_n\neq 0 \ \forall n$ and $s\neq0$,
+        \item If $s_n\rightarrow s$ and $s_n\neq 0 \ \forall n$ and $s\neq0$,
         then $\frac{1}{s_n}\rightarrow \frac{1}{s}$.
     \end{enumerate} 
 \end{proposition}
@@ -488,7 +488,7 @@ For example, $\lim_{n\rightarrow\infty} \frac{t_n}{s_n} = \lim_{n\rightarrow\inf
 \begin{example}
     $\lim_{n\rightarrow\infty}a^n = 0 \text{ if } \pa{a} < 1$.
     \begin{proof}
-        If $a=0$, obvious. Otherwise let $\pa{a}=\frac{1}{1+b}$.
+        If $a=0$, obvious. Otherwise, let $\pa{a}=\frac{1}{1+b}$.
         Note that 
         \[ (1+b)^n = 1+nb+\cdots \geq 1 +nb > nb \text{ for } n\in\NN,\]
         by the binomial theorem. Then 
@@ -543,10 +543,10 @@ For example, $\lim_{n\rightarrow\infty} \frac{t_n}{s_n} = \lim_{n\rightarrow\inf
 
 \subsection{Monotonic sequences}
 \begin{definition}
-    A seq. $(s_n)$ is \vocab{non-decreasing} if $s_n\leq s_{n+1} \forall n$,
+    A sequence $(s_n)$ is \vocab{non-decreasing} if $s_n\leq s_{n+1} \forall n$,
     and \vocab{non-increasing} if $s_n\geq s_{n+1} \forall n$.
 
-    A seq. that is either non-decreasing or non-increasing is
+    A sequence that is either non-decreasing or non-increasing is
     \vocab{monotonic}.
 \end{definition}
 \begin{example}
@@ -578,7 +578,7 @@ For example, $\lim_{n\rightarrow\infty} \frac{t_n}{s_n} = \lim_{n\rightarrow\inf
 \end{proof}
 \begin{corollary}
     If $(s_n)$ is monotonic, it either converges, or diverges to $\pm\infty$.
-    Thus $\lim s_n$ is always meaningful.
+    Thus, $\lim s_n$ is always meaningful.
 \end{corollary}
 \subsection{Liminf and limsup}
 \begin{definition}
@@ -675,7 +675,7 @@ This can be proven with \cref{thm:sandle}.
 \subsection{Subsequences}
 \begin{definition}
     A \vocab{subsequence} of seq. $(s_n)_{n\in\NN}$ has the form 
-    $(t_k)_{k\in\NN}$ where for each $k$, the is a positive integer 
+    $(t_k)_{k\in\NN}$ where for each $k$, there is a positive integer 
     $n_k$ so that 
     \[ n_1 < n_2 <\cdots,< n_k<n_{k+1}<\cdots\]
     and $t_k = s_{n_k}$.
@@ -820,9 +820,9 @@ and $s \cdot (-\infty) = -\infty$.
 \begin{proof}
     Suppose $\limsup t_n$ is finite, and equal to $\beta$.
     Then there is a subsequence $(t_{n_k})$ that converges to $\beta$.
-    In addition $\lim_{k\rightarrow \infty}{s_{n_k}} = s$,
+    In addition, $\lim_{k\rightarrow \infty}{s_{n_k}} = s$,
     then \[ \lim_{k\rightarrow \infty}{s_{n_k}t_{n_k}} = \beta s.\]
-    Therefore $s\limsup t_n = \beta s\leq \limsup s_nt_n$.
+    Therefore, $s\limsup t_n = \beta s\leq \limsup s_nt_n$.
     
     To avoid division by $0$, we ignore any finite number of terms of $(s_n)$ and 
     assume $s_n\neq 0$ for all $n$ beyond some point, since 
@@ -830,7 +830,7 @@ and $s \cdot (-\infty) = -\infty$.
 
     Then $\lim \frac{1}{s_n} = \frac{1}{s}$. 
     \[ \limsup t_n = \limsup \left(\frac{1}{s_n}\right)s_nt_n \geq \frac{1}{s}\limsup s_nt_n. \]
-    Therefore $s\limsup t_n \geq \limsup s_nt_n$, which proves equality.
+    Therefore, $s\limsup t_n \geq \limsup s_nt_n$, which proves equality.
 \end{proof}
 \begin{theorem}
     Let $(s_n)$ be any sequence of non-zero numbers. 
@@ -861,7 +861,7 @@ and $s \cdot (-\infty) = -\infty$.
         \pa{s_n}^{\frac{1}{n}} &< L_1a^{\frac{1}{n}} \text{ for } n > N.
     \end{align*}
     We have that $\lim_{n\rightarrow \infty}{a^{\frac{1}{n}}} =1$.
-    Hence $\alpha= \limsup \pa{s_n}^{\frac{1}{n}}\leq L_1,$
+    Hence, $\alpha= \limsup \pa{s_n}^{\frac{1}{n}}\leq L_1,$
     so $\alpha \leq L$.
 \end{proof}
 
@@ -967,7 +967,7 @@ We can write $\sum a_n$ to refer to the sum of the series in general.
     \begin{enumerate}
         \item Converges absolutely if $\limsup \pa{\frac{a_{n+1}}{{a_n}}} < 1$.
         \item Diverges if $\liminf \pa{\frac{a_{n+1}}{{a_n}}} > 1$.
-        \item Otherwise the test provides no information.
+        \item Otherwise, the test provides no information.
     \end{enumerate}
 \end{proposition}
 \begin{proposition}
@@ -978,7 +978,7 @@ We can write $\sum a_n$ to refer to the sum of the series in general.
     \begin{enumerate}
         \item Converges absolutely if $\alpha<1$.
         \item Diverges if $\alpha>1$.
-        \item Otherwise the test provides no information.
+        \item Otherwise, the test provides no information.
     \end{enumerate}
 \end{proposition}
 \begin{example}
@@ -1010,7 +1010,7 @@ We now prove \cref{prop:roottest}.
     Then $\exists N$ s.t.  
     \[ \alpha-\eps < \sup\ps{\pa{a_n}^{1/n}\mid n > N} < 
     \alpha + \eps. \]
-    Hence $\pa{a_n}^{1/n} < \alpha+\eps \forall n > N$.
+    Hence, $\pa{a_n}^{1/n} < \alpha+\eps \forall n > N$.
     $\pa{a_n} < \pp{\alpha+\eps}^n < 1$. Then 
     \[ \sum_{n=N+1}^{k}\pa{a_n} < \sum_{n=N+1}^{k}\pp{\alpha+\eps}^n\]
     is finite, so $\sum a_n$ is also finite.
@@ -1153,7 +1153,7 @@ to generalize to more spaces than just $\RR$.
     s.t. $d(p,q) = r-h$. Consider $s$ s.t. $d(q,s) < h$.
     We know that 
     \[ d(p,s) \leq d(p,q) + d(q,s) < r-h+h = r.\]
-    Hence $N_h(q) \subseteq N_r(p) \forall q \in E$, and $E$ is open.
+    Hence, $N_h(q) \subseteq N_r(p) \forall q \in E$, and $E$ is open.
 \end{proof}
 \begin{proposition}
     If $p$ is a limit point of a set $E$, then every neighborhood of $p$
@@ -1176,15 +1176,15 @@ to generalize to more spaces than just $\RR$.
 \begin{proof}
     If $x\in A$, then $x \notin \bigcup_\alpha E_\alpha$, so $x \notin E_\alpha$ for all $\alpha$. So $x\in E_\alpha^C$ for all $\alpha$.
     So $x \in \bigcap_\alpha E_\alpha^C = B$.
-    Hence $A\subseteq B$, similar proof follows for $B\subseteq A$.
+    Hence, $A\subseteq B$, similar proof follows for $B\subseteq A$.
 \end{proof}
 \begin{theorem}
     $E$ open $\iff$ $E^C$ closed.
 \end{theorem}
 \begin{proof}
     Suppose $E^C$ is closed. Choose $x \in E$. Since $x\notin E^C$,
-    $x$ is not a limit point of $E^C$. Hence $\exists N_r(x)$ s.t.
-    $E^C\cap N_r = \varnothing \implies N_r \subseteq E$. Therefore $x$ is 
+    $x$ is not a limit point of $E^C$. Hence, $\exists N_r(x)$ s.t.
+    $E^C\cap N_r = \varnothing \implies N_r \subseteq E$. Therefore, $x$ is 
     an interior point of $E\forall x \in E$, so $E$ is open.
 
     Suppose $E$ is open. Let $x$ be a limit point of $E^C$. Then 
@@ -1222,7 +1222,7 @@ to generalize to more spaces than just $\RR$.
 
 \begin{definition}
     If $(X,d)$ is a metric space, and $E\subseteq X$, let $E'$ denote 
-    the sets of all limit points of $E$ in $X$. Then then \vocab{closure}
+    the sets of all limit points of $E$ in $X$. Then the \vocab{closure}
     of $E$ is the set $\ol{E} = E \cup E'$.
 \end{definition}
 
@@ -1238,15 +1238,15 @@ to generalize to more spaces than just $\RR$.
 
 \begin{proof}
     (a) If $X\ni p\notin \ol{E}$, then $p$ is neither in $E$ nor a limit 
-    point of $E$. Hence $p$ has a neighborhood that does not 
-    intersect $E$. Therefore $p$ is an interior point of $\ol{E}^C$, so
+    point of $E$. Hence, $p$ has a neighborhood that does not 
+    intersect $E$. Therefore, $p$ is an interior point of $\ol{E}^C$, so
     $\ol{E}^C$ is open, and $\ol{E}$ is closed.
 
     (b) If $E = \ol{E}$, then $E$ is closed by (a). If $E$ is closed,
     then $E'\subseteq E$, hence $\ol{E} = E\cup \ol{E} = E$.
 
     (c) If $F$ is closed and $E \supseteq F$, then $F\supseteq F'$
-    and $F'\supseteq E'$. Therefore $F\supseteq \ol{E}$.
+    and $F'\supseteq E'$. Therefore, $F\supseteq \ol{E}$.
 \end{proof}
 
 \clearpage
@@ -1259,7 +1259,7 @@ to generalize to more spaces than just $\RR$.
 \end{proposition}
 \begin{proof}
     $y\in E\implies y\in\ol{E}$, so assume $y\notin E$. For $h>0$,
-    there exists $x\in E$ s.t. $y-h<x<y$. Therefore $y$ is 
+    there exists $x\in E$ s.t. $y-h<x<y$. Therefore, $y$ is 
     a limit point of $E$, and $y\in\ol{E}$.
 \end{proof}
 Consider $E\subseteq Y \subseteq X$. If $E$ is an open subset of $X$, then 
@@ -1276,7 +1276,7 @@ $(Y,d)$ is also a metric space. This motivates the following definition.
 \end{definition}
 \begin{example}
     [Relative openness example]
-    Suppose $X=\RR$, $Y=[-1,1]$, and $E=(0,1]$. hence $E\subseteq Y\subseteq X$. $E$ is not open relative to $Y$, since $N_{r}^X(1)=(1-r,1+r)$
+    Suppose $X=\RR$, $Y=[-1,1]$, and $E=(0,1]$. Hence, $E\subseteq Y\subseteq X$. $E$ is not open relative to $Y$, since $N_{r}^X(1)=(1-r,1+r)$
     is not confined within $E$ for any $r$.
     However, if $E=(0,1)$, $E$ is open relative to $Y$.
 \end{example}
@@ -1346,7 +1346,7 @@ it does to talk about compact metric spaces.
     Since $K$ is compact, there are finitely many 
     points $q_1,\dots,q_n$ in $K$ such that $ K\subseteq W_{q_1}\cup \cdots\cup W_{q_n}$.
     If we let $V = V_{q_1}\cap \cdots\cap V_{q_n}$, the $V$ is a neighborhood of $P$ that does not intersect $W$.
-    Hence $V\subseteq K^C$, and $p$ is an interior point of $K^C$,
+    Hence, $V\subseteq K^C$, and $p$ is an interior point of $K^C$,
     and $K^C$ is open $\iff$ $K$ is closed.
 \end{proof}
 
@@ -1363,7 +1363,7 @@ it does to talk about compact metric spaces.
     Since $K$ is compact, there is a finite subcollection $\Phi$ of 
     $\Omega$ that covers $K$ and therefore $F$. If $F^C$ is a 
     member of $\Phi$, we can remove it and still retain an 
-    open cover of $F$. Thus a finite subcollection of $\ps{V_\alpha}$
+    open cover of $F$. Thus, a finite subcollection of $\ps{V_\alpha}$
     covers $F$, so $F$ is compact.
 \end{proof}
 \begin{corollary}
@@ -1504,18 +1504,18 @@ from nested intervals to nested $k$-cells.
     Then $E$ contains points $\vec{x}_n$ with 
     $\pa{\vec{x}_n}>n\forall n \in \NN$. The set consisting of 
     these points is infinite, but has no limit point in $\RR^k$.
-    Hence (c) implies that $E$ is bounded. 
+    Hence, (c) implies that $E$ is bounded. 
     
     If $E$ is not closed, 
     then there is a point $\vec{x}_0\in \RR^k$ that is a limit point of $E$,
-    but is not contained in $E$. Therefore $\exists \vec{x}_n\in E$ s.t.
+    but is not contained in $E$. Therefore, $\exists \vec{x}_n\in E$ s.t.
     $\pa{\vec{x}_n-\vec{x}_0}<\frac{1}{n}\forall n \in \NN$.
     Let $S$ be the set of all such $x_n$.
     $S$ is infinite and has a limit point $\vec{x}_0$, and no other limit points in $\RR^k$. Choose $\vec{y}\in\RR^k$, where $\vec{y}\neq \vec{x}_0$.
     Then 
     \[ d(\vec{x}_n,\vec{y})\geq d(\vec{x}_0,\vec{y})-d(\vec{x}_n,\vec{y})
     \geq d(\vec{x}_0,\vec{y})-\frac{1}{n}\geq \frac{1}{2}d(\vec{x}_0,\vec{y}).\]
-    For all but finitely many $n$. Thus $\vec{y}$ is is not a limit point of 
+    For all but finitely many $n$. Thus, $\vec{y}$ is not a limit point of 
     $S$, and $E$ is closed.
 \end{proof}
 \subsection{Functions and continuity}
@@ -1523,12 +1523,12 @@ from nested intervals to nested $k$-cells.
     The \vocab{domain} of a function $f$ is the set on which $f$ is defined,
     and is denoted $\dom(f)$.
 \end{definition}
-For a \textit{real valued function}, $\dom(f)\subseteq \RR$, and $f(x)\in\RR$ for 
+For a \textit{real-valued function}, $\dom(f)\subseteq \RR$, and $f(x)\in\RR$ for 
 all $x\in\dom(f)$. Sometimes the domain is omitted, and we 
 assume that the function is valid on the \textit{natural domain},
 the set of all points in $\RR$ on which the function is well-defined.
 \begin{definition}
-    Let $f$ be a real valued function whose domain is a subset of $\RR$.
+    Let $f$ be a real-valued function whose domain is a subset of $\RR$.
     The function $f$ is \vocab{continuous at $x_0$} in $\dom(f)$ if 
     for every sequence $(x_n)$ in $\dom(f)$ that converges 
     to $x_0$,  
@@ -1574,18 +1574,18 @@ Lecture recording will be in Kaltura.
     \end{cases}\]
     Note that $\pa{f_1(x) -f_1(0)} = \pa{x\sin\frac{1}{x}}<\pa{x}$
     if $x\neq 0$ and $0$ otherwise.
-    Let $\delta = \eps$ in \cref{thm:continuity}, and finish to show that
+    Let $\delta = \eps$ in \cref{thm:continuity} to show that
     $f_1$ is continuous at $0$.
 \end{example}
 
 \begin{proposition}
-    Let $f$ be a real valued function with $\dom(f)\subseteq \RR$.
+    Let $f$ be a real-valued function with $\dom(f)\subseteq \RR$.
     If $f$ is continuous at $x_0$ in $\dom(f)$, then $\pa{f}$ and 
     $kf$ are too.
 \end{proposition}
 
 \begin{proposition}
-    Let $f$ and $g$ be real valued function continuous at $x_0\in\RR$.
+    Let $f$ and $g$ be real-valued function continuous at $x_0\in\RR$.
     Then 
     \begin{enumerate}
         \item $f+g$ is continuous at $x_0$.
@@ -1641,7 +1641,7 @@ Lecture recording will be in Kaltura.
     Let $S = \ps{x\in [a,b] \mid f(x)<y}$.
     $a\in S$ so $S$ is non-empty, so $\sup S = x_0$, where $x_0 \in [a,b]$.
     For all $n\in \NN$, $x_0-\frac{1}{n}$ is not an upper bound for $S$.
-    So $\exists s_n\in S$ s.t. $x_0-\frac{1}{n}<s_n\leq x_0$. Hence 
+    So $\exists s_n\in S$ s.t. $x_0-\frac{1}{n}<s_n\leq x_0$. Hence, 
     $\lim_{n\rightarrow \infty}s_n=x_0$, and since $f(s_n)<y \forall n$,
     \[ f(x_0) = \lim_{n\rightarrow \infty}f(s_n)\leq y.\] 
 
@@ -1679,14 +1679,14 @@ Zoom lecture again\dots
 
 \begin{proof}
     Consider $x_0\in J$ so that it is not 
-    an endpoint. Hence $g(x_0)$ is not an endpoint, and $\exists \eps_0$
+    an endpoint. Hence, $g(x_0)$ is not an endpoint, and $\exists \eps_0$
     s.t. \[ (g(x_0)-\eps_0, g(x_0) +\eps_0) \subseteq I.\]
-    Assume $\eps<\eps_0$. $\exists x_1,x_2\in J$ s,t,
+    Assume $\eps<\eps_0$. $\exists x_1,x_2\in J$ such that,
     \[
         g(x_1)=g(x_0) - \eps, \quad g(x_2)=g(x_0) + \eps.
     \]
     Then $x_1<x_0<x_2$ since it is strictly 
-    increasing. Similarly for $x\in(x_1,x_2)$, $g(x_1) < g(x)  < g(x_2)$,
+    increasing. Similarly, for $x\in(x_1,x_2)$, $g(x_1) < g(x)  < g(x_2)$,
     then $\pa{g(x_0)-g(x)}<\eps$. Let $\delta = \min\ps{x_2-x_0, x_0-x_1}$.
     Then $\pa{x-x_0}<\delta \implies \pa{g(x)-g(x_0)}<\eps$.
 \end{proof}
@@ -1705,7 +1705,7 @@ Zoom lecture again\dots
     $f(c)=a$ and $f(d)=b$. $a\neq b\implies c\neq d$, so 
     $c<d$ (if $c>d$, then $f(c)>f(d)$). Hence, since $c=f\inv(a)$
     and $d=f\inv(b)$ we see $f\inv(a)<f\inv(b)$.
-    Therefore $f\inv$ is strictly increasing.
+    Therefore, $f\inv$ is strictly increasing.
 \end{proof}
 
 We can think of this a partial converse to \cref{thm:intermediatevalthm}:
@@ -1729,7 +1729,7 @@ Now suppose that $\delta=\min\ps{\frac{x_0}{2}, \frac{\eps x_0^2}{2}}$.
 Then $\pa{x_0-x} < \delta$ implies 
 \[\pa{f(x)-f(x_0)} < \frac{2}{x_0^2}\cdot\frac{\eps x_0^2}{2}= \eps. \]
 \end{example}
-Hence $f$ in the example is continuous at $x_0$, but $\delta$ gets small as 
+Hence, $f$ in the example is continuous at $x_0$, but $\delta$ gets small as 
 $x_0$ gets small due to the steepness of $\frac{1}{x}$.
 This motivates a definiton, 
 
@@ -1745,7 +1745,7 @@ This motivates a definiton,
     on the interval $[a,\infty)$ for $a>0$. Let $\eps>0$ and consider any $x,y\geq a$. Pick $\delta=\min\ps{\frac{a}{2}, \frac{\eps a^2}{2}}$.
     If $\pa{x-y}<\delta$, then $\pa{f(x)-f(y)} <\delta$ from before.
 
-    However $f(x)$ is not uniformly continuous on $(0,\infty)$.
+    However, $f(x)$ is not uniformly continuous on $(0,\infty)$.
     To show this, we will prove that 
     $\forall \delta>0$, $\exists x,y \in (0,\infty)$
     s.t. $\pa{x-y} < \delta$, and yet $\pa{f(x)-f(y)}\geq 1$.
@@ -1771,7 +1771,7 @@ This motivates a definiton,
     which converges. But if $x_0=\lim_{k\rightarrow \infty}x_{n_k}$,
     then $x_0\in [a,b]$. In addition, $\lim_{k\rightarrow \infty}y_{n_k}=x_0$ as well. But since $f$ is continuous at $x_0$, 
     \[ f(x_0) = \lim_{k\rightarrow \infty}f(x_{n_k})= \lim_{k\rightarrow \infty}f(y_{n_k}) \implies \lim_{k\rightarrow \infty}f(x_{n_k})-f(y_{n_k}) = 0, \]
-    which contradicts the asumption that 
+    which contradicts the assumption that 
     $\pa{f(x_{n_k})-f(y_{n_k})} \geq \eps$
 \end{proof}
 
@@ -1850,7 +1850,7 @@ on $S$.
 
 \begin{theorem}
     Let $f$ be a function defined on $S\supseteq\RR$, and $a\in\RR$
-    is a limit of some seq. in $S$. Then 
+    is a limit of some sequence in $S$. Then 
     \[ \lim_{x\rightarrow a^S}f(x)=L\in \RR\]
     if and only if 
     \[\forall \eps>0, \exists\delta>0 \text{ s.t. } x\in S\text{ and} \]
@@ -1863,7 +1863,7 @@ on $S$.
 
     Assume the second part is true. Then $\exists N$ s.t. 
     $n>N\implies \pa{x_n-a}<\delta\implies\pa{f(x)-L}<\eps.$
-    Hence $\lim_{n\rightarrow \infty}f(x_n)=L$.
+    Hence, $\lim_{n\rightarrow \infty}f(x_n)=L$.
 
     Now assume that $\lim_{x\rightarrow a^S}f(x)=L$, but the second part 
     fails. Then $\exists \eps>0$ s.t. $\forall\delta>0,x\in S$ and 
@@ -1975,7 +1975,7 @@ be continuous.
 \section{October 27th, 2022}
 \subsection{Uniform convergence of functions}
 \begin{definition}
-    Let $(f_n)$ be a seq. of real-valued functions defined on 
+    Let $(f_n)$ be a sequence of real-valued functions defined on 
     $S \subseteq \RR$. Then $f_n$ \vocab{converges uniformly} on $S$
     to $f$ if 
     \[
@@ -1996,7 +1996,7 @@ of width $\eps$ around $f$.
     \[
         (1-x)^{N+1}=\frac{1}{2}.
     \]
-    Therefore $\pa{f_{N+1}(x)-f(x)}=\frac{1}{2}$.
+    Therefore, $\pa{f_{N+1}(x)-f(x)}=\frac{1}{2}$.
 \end{example}
 Uniformly convergent series of functions are a subset of pointwise convergent series
 of functions. 
@@ -2049,7 +2049,7 @@ of functions.
 \begin{proof}
     Choose $\eps>0$. Then for fixed $x_0\in S$, 
     $\pa{f_n(x_0)-f_m(x_0)} <\eps\ \forall m,n>N$.
-    Hence $f_n(x_0)$ is a Cauchy seq. so it must converge to $f(x_0)$.
+    Hence, $f_n(x_0)$ is a Cauchy sequence, so it must converge to $f(x_0)$.
 
     Since this applies to any $x_0\in S$, $f_n\to f$ pointwise.
     To show convergence is uniform, choose $\eps>0$. Then $\exists N$
@@ -2094,7 +2094,7 @@ of functions.
 \begin{theorem}
 [Weierstra\ss $\ M$-test]
     \label{thm:weirstrasmtest}
-    Suppose $(M_k)$ is a seq. of non-negative real numbers
+    Suppose $(M_k)$ is a sequence of non-negative real numbers
     where $\sum_{k=0}^{\infty}M_k$ is finite. If 
     $\pa{g_k(x)}\leq M_k\ \forall x\in S, \forall k$, then 
     $\sum g_k$ converges uniformly on $S$.
@@ -2105,7 +2105,7 @@ of functions.
     \[
         \pa{\sum_{k=m}^{n}M_k}<\eps.
     \]
-    Hence 
+    Hence, 
     \[
         \pa{\sum_{k=m}^{n}g_k(x)}\leq \sum_{k=m}^{n}\pa{g_k(x)}\leq 
         \sum_{k=m}^{n}M_k<\eps.
@@ -2187,7 +2187,7 @@ of convergence, and must converge for the same values of $x$.
         &= g_N(x) + \frac{\eps}{2}\underbrace{\sum_{n=N+1}^{\infty}(1-x)x^n}_{\text{bounded by $1$}}\\
         &< g_N(x)+\frac{\eps}{2}.
     \end{align*}
-    $g_N$ is continuous and $g_N(1)=0$. Hence $\exists \delta>0$ s.t. 
+    $g_N$ is continuous and $g_N(1)=0$. Hence, $\exists \delta>0$ s.t. 
     $1-\delta<x<1\implies g_N(x)<\frac{\eps}{2}$.
     Then 
     \[
@@ -2264,7 +2264,7 @@ nonetheless can approximate any continuous function.
 \subsection{Finishing Bernstein polynomials}
 \begin{theorem}
     \label{thm:bernstein-convergence}
-    For every continuous function on $[0,1]$, $B_nf\to f$ uniformly.
+    For every continuous function on $[0,1]$, $B_nf\to f$ uniformly
     on $[0,1]$.
 \end{theorem}
 \begin{proof}
@@ -2309,7 +2309,7 @@ nonetheless can approximate any continuous function.
         &\leq 
         \frac{\eps}{2}.
     \end{align*}
-    Therefore the entire sum is bounded by 
+    Therefore, the entire sum is bounded by 
     $\frac{\eps}{2}+\frac{\eps}{2}=\eps$.
 \end{proof}
 \begin{theorem}
@@ -2365,7 +2365,7 @@ by $h(x)=g(a+(b-a)x)$, and apply \cref{thm:bernstein-convergence} on $h(x)$.
         \frac{(fg)(x)-(fg)(a)}{x-a} &= \frac{f(x)g(x)-f(x)g(a)+f(x)g(a)-f(a)g(a)}{x-a} \\
         &= f(x)\frac{g(x)-g(a)}{x-a} + g(a)\frac{f(x)-f(a)}{x-a}.
     \end{align*}
-    Therefore 
+    Therefore, 
     \[
         \lim_{x\rightarrow a}\frac{(fg)(x)-(fg)(a)}{x-a} = f(a)g'(a) + g(a)f'(a). \qedhere
     \]
@@ -2389,7 +2389,7 @@ by $h(x)=g(a+(b-a)x)$, and apply \cref{thm:bernstein-convergence} on $h(x)$.
     \[
         \lim_{y\rightarrow f(a)}h(y) = h(f(a)) = g'(f(a)).
     \]
-    Hence $h$ is continuous at $f(a)$. Now 
+    Hence, $h$ is continuous at $f(a)$. Now 
     \[
         g(y) - g(f(a)) = h(y)(y-f(a)) \quad \forall y\in\dom(g).
     \]
@@ -2431,7 +2431,7 @@ by $h(x)=g(a+(b-a)x)$, and apply \cref{thm:bernstein-convergence} on $h(x)$.
     \[
         0< \frac{f(x)-f(x_0)}{x-x_0}.
     \]
-    Thus there is a point $x \in (x_0,x_0+\delta)$
+    Thus, there is a point $x \in (x_0,x_0+\delta)$
     such that $f(x)>f(x_0)$.
 \end{proof}
 \begin{theorem}
@@ -2514,8 +2514,8 @@ This can be generalized to,
     \[
         g'(x_1) = \lim_{y\rightarrow x_1}\frac{g(y)-g(x_1)}{y-x_1}<0.
     \]
-    Hence $g(y)-g(x_1)<0$ close to $x_1$ or $g(y)<g(x_1)$.
-    Therefore $x_1$ is not a minimum. Similarly, we can show $x_2$ is 
+    Hence, $g(y)-g(x_1)<0$ close to $x_1$ or $g(y)<g(x_1)$.
+    Therefore, $x_1$ is not a minimum. Similarly, we can show $x_2$ is 
     not a minimum. $g'(x_0)=0$ by a previous theorem, 
     so $f'(x_0) = g'(x_0) + c = c$.
 \end{proof}
@@ -2533,7 +2533,7 @@ This can be generalized to,
     \]
     Let $f_n(x)=g(nx)$.
     \begin{enumerate}[a)]
-        \item What is the maximum value of $g$ and where is it attained?
+        \item What is the maximum value of $g$, and where is it attained?
         \item Sketch the functions $f_1(x), f_2(x), f_3(x)$ on $[0,1]$.
         \item Does $f_n$ pointwise converge to some $f$.
         \item Does $f_n \to f$ uniformly?
@@ -2576,11 +2576,11 @@ However, this requires assuming $(f\inv)'$ exists.
         0 < \pa{y-y_0} < \eta \implies \pa{g(y)-g(y_0)} < \delta
         \implies \pa{g(y) - x_0} < \delta.
     \]
-    Hence 
+    Hence, 
     \[
-        \pa{\frac{g(y)-x_0}{f(g(y)) - f(x_0)} - \frac{1}{f'(x_0)}} = \pa{\frac{g(y)-g(y_0)}{f(g(y)) - f(x_0)} - \frac{1}{f'(x_0)}} < \eps.
+        \pa{\frac{g(y)-x_0}{f(g(y)) - f(x_0)} - \frac{1}{f'(x_0)}} = \pa{\frac{g(y)-g(y_0)}{f(g(y)) - f(x_0)} - \frac{1}{f'(x_0)}} < \eps
     \]
-    for arbitrarily small $\eps$. Therefore 
+    for arbitrarily small $\eps$. Therefore, 
     \[
         \lim_{y\rightarrow y_0}\frac{g(y)-g(y_0)}{y-y_0} = \frac{1}{f'(x_0)}. \qedhere
     \]
@@ -2701,7 +2701,7 @@ Note that if we let $g(x)=x$, then get the original MVT.
     Use $\limsup \pa{c_nn}^{1/n} = \limsup \pa{c_n}^{1/n}$.
 \end{proof}
 \begin{theorem}
-    Suppose $\ps{f_n}$ is a seq. of differentiable functions on $[a,b]$ s.t.
+    Suppose $\ps{f_n}$ is a sequence of differentiable functions on $[a,b]$ s.t.
     $\ps{f_n(x_0)}$ converges for $x_0\in [a,b]$. If $\ps{f_n'}$ converges 
     uniformly on $[a,b]$, then $f_n$ converges uniformly on $[a,b]$ 
     to $f$ and $f'(x) = \lim_{n\rightarrow \infty}f_n'(x)$.
@@ -2715,12 +2715,12 @@ Note that if we let $g(x)=x$, then get the original MVT.
     \[
         \pa{f_n'(t)-f_m'(t)} < \frac{\eps}{2(b-a)}, \text{ such that } t\in [a,b].
     \]
-    Apply \cref{thm:mvt} to $f_n-f_m$. Thus $\exists y_0 \in (x,t)$
+    Apply \cref{thm:mvt} to $f_n-f_m$. Thus, $\exists y_0 \in (x,t)$
     s.t. 
     \[
         \frac{\pa{f_n(x)-f_m(x) - f_n(t)+f_m(t)}}{\pa{x-t}} = \pa{f_n'(y_0)-f_m'(y_0)}.
     \]
-    Thus 
+    Thus, 
     \[
         \pa{f_n(x)-f_m(x) - f_n(t)+f_m(t)} \leq \frac{\pa{x-t}\eps}{2(b-a)} < \frac{(b-a)\eps}{2(b-a)} = \frac{\eps}{2}.
     \]
@@ -2819,7 +2819,7 @@ The \vocab{upper Darboux sum} $U(f,P)$ of $f$ w.r.t. $P$ is
 \[
     U(f,P) = \sum_{k=1}^{n}M(f,[t_{k-1},t_k])(t_k-t_{k-1}),
 \]
-and the \vocab{lower Darkboux sum} is 
+and the \vocab{lower Darboux sum} is 
 \[
     L(f,P) = \sum_{k=1}^{n}m(f,[t_{k-1},t_k])(t_k-t_{k-1}).
 \]
@@ -2869,7 +2869,7 @@ We call this the \vocab{Darboux integral}.
         &= \frac{b^4}{4}\pp{1-\frac{2}{n}+\frac{1}{n^2}}.
     \end{align*}
     As $n\to\infty$, $U(f,P)\to \frac{b^4}{4}$, so $U(f)\leq\frac{b^4}{4}$. 
-    Similarly, $L(f)\geq \frac{b^4}{4}$. Therefore $L(f)=U(f) = \frac{b^4}{4}$, and $f$ integrable on $[0,b]$. 
+    Similarly, $L(f)\geq \frac{b^4}{4}$. Therefore, $L(f)=U(f) = \frac{b^4}{4}$, and $f$ integrable on $[0,b]$. 
 \end{example}
 
 \begin{lemma}
@@ -2891,7 +2891,7 @@ We call this the \vocab{Darboux integral}.
         m(f,[t_{k-1},t_k])(t_k-t_{k-1}) &= m(f,[t_{k-1},t_k])(t_k-u) + m(f,[t_{k-1},t_k])(u-t_{k-1}) \\
         &\leq m(f, [t_{k-1},u])(u-t_{k-1}) + m(f, [u,t_{k}])(t_{k}-u).
     \end{align*}
-    Hence $L(f,Q)-L(f,P)\geq 0$.
+    Hence, $L(f,Q)-L(f,P)\geq 0$.
 \end{proof}
 
 \begin{lemma}
@@ -2962,8 +2962,7 @@ We call this the \vocab{Darboux integral}.
     Since $f$ is bounded, $\exists B>0$ s.t. $\pa{f(x)} \leq B \forall x\in[a,b]$. Let $\delta = \frac{\eps}{8mB}$ where $m$ is the number 
     of intervals on $P_0$.
 
-    Let $P$ be a partiton of $[a,b]$ with $\mathrm{mesh}(P)<\delta$.
-    Let $Q = P\cup P_0$. If $Q$ has one more element than $P$,
+    Let $P$ be a partiton of $[a,b]$ with $\mathrm{mesh}(P)<\delta$, and $Q = P\cup P_0$. If $Q$ has one more element than $P$,
     \[
         L(f,Q) - L(f,P) \leq B \mathrm{mesh}(P) - (-B)\mathrm{mesh}(P) = 2B \mathrm{mesh}(P).
     \]
@@ -2971,7 +2970,7 @@ We call this the \vocab{Darboux integral}.
     \[
         L(f,Q) - L(f,P) \leq2mB\cdot\mathrm{mesh}(P) = \frac{\eps}{4}.
     \]
-    Then $L(f,P_0)-L(f,P)<\frac{\eps}{2}$. Similarly $U(f,P_0)-U(f,P)<\frac{\eps}{4}$. 
+    Then $L(f,P_0)-L(f,P)<\frac{\eps}{2}$. Similarly, $U(f,P_0)-U(f,P)<\frac{\eps}{4}$. 
     \[
         U(f,P)-L(f,P) < U(f,P_0)-L(f,P_0) + \frac{\eps}{2} < \eps.
     \]
@@ -2988,7 +2987,7 @@ These two theorems give ways to show specific properties of integrable
     Consider a partition $P = \ps{a=t_0<\cdots<t_n=b}$
     s.t. $\mathrm{mesh}(P) < \delta$.
     Within any interval $[t_{k-1},t_k]$, $\pa{f(x)-f(y)}<\frac{\eps}{b-a}$.
-    Hence 
+    Hence, 
     \[
         M(f,[t_{k-1},t_k]) - m(f,[t_{k-1},t_k]) < \frac{\eps}{b-a}.
     \]
@@ -3055,11 +3054,11 @@ Darboux integration.
     \[
         L(f,P) > U(f)-\eps = \int_a^b f - \eps.
     \]
-    Therefore 
+    Therefore, 
     \[
         \int_a^b f -\eps < S < \int_a^b f+ \eps \implies \pa{S - \int_a^bf}< \eps.
     \]
-    ($\ \Longleftarrow\ $) Suppose $f$ is Riemann integrable. Consider $\eps>0$. $\exists \delta$ and $r$ s.t. $\mathrm{mesh}(P)<\delta$
+    ($\impliedby$) Suppose $f$ is Riemann integrable. Consider $\eps>0$. $\exists \delta$ and $r$ s.t. $\mathrm{mesh}(P)<\delta$
     and Riemann sum $S$, 
     \[
         \pa{S-r}<\eps.
@@ -3090,11 +3089,11 @@ Darboux integration.
     \[
         M(cf, [t_{k-1},t_k]) = cM(f,[t_{k-1},t_k]).
     \] 
-    Hence $U(cf,P) = cU(f,P)$. Therefore $U(cf) = cU(f)$.
+    Hence, $U(cf,P) = cU(f,P)$. Therefore, $U(cf) = cU(f)$.
     Similarly, $L(cf)=cL(f)$. This shows $\int_a^b cf = c\int_a^b f$.
     For negative $c$, you would have to flip $U$ and $L$.
 
-    (2) Choose $\eps>0$. $\exists$ partitions $P_1,P_2$ s..t 
+    (2) Choose $\eps>0$. $\exists$ partitions $P_1,P_2$ such that 
     \[
         U(f,P_1) - L(f,P_1) < \frac{\eps}{2}, \qquad U(g,P_2) - L(g,P_2) < \frac{\eps}{2}.
     \]
@@ -3112,7 +3111,7 @@ Darboux integration.
     \[
         L(f+g,P) \geq L(f,P)+ L(g,P), \qquad U(f+g,P) \leq U(f,P)+U(g,P).
     \]
-    Therefore 
+    Therefore, 
     \[
         U(f+g,P) - L(f+g,P) < \eps,
     \]
@@ -3122,7 +3121,7 @@ Darboux integration.
     \[
         U(f,P) + U(g,P) < L(f,P) + L(g,P) + \eps
     \]
-    by the last equation. Thus
+    by the last equation. Thus,
     \begin{align*}
         \int_a^b f+g &= U(f+g) \leq U(f+g,P) \\
         &\leq U(f,P)+U(g,P) < L(f,P) + L(g,P) + \eps \\
@@ -3167,7 +3166,7 @@ Darboux integration.
         &= \sup\ps{f(x) - f(y):x,y\in S} \\
         &= M(f,S) - m(f,S).
     \end{align*}
-    Thus 
+    Thus, 
     \[
         U(|f|,P) - L(|f|,P) \leq U(f,P) - L(f,P).
     \]
@@ -3221,11 +3220,11 @@ $f(x)$ is the averange value of the function on $[a,b]$.
     Let $m$ and $M$ be the minimum and maximum of $f$ on $[a,b]$ respectively.
     If $m=M$, then $f$ is constant and the result holds for all $x\in[a,b]$.
     
-    Otherwise $m<M$, and then $\exists x_0\neq y_0$ s.t. 
+    Otherwise, $m<M$, and then $\exists x_0\neq y_0$ s.t. 
     $f(x_0) = m, f(y_0) = M$. Consider $M-f$ and $f-m$, which are non-negative and not identically zero.
     By previous results, $\int_{a}^{b}M-f\geq 0$, $\int_{a}^{b}f-m\geq 0$.
-    Moreover the inequality strict, since $f$ is continuous (see HW8 Q1).
-    Therefore 
+    Moreover, the inequality is strict, since $f$ is continuous (see HW8 Q1).
+    Therefore, 
     \begin{align*}
         \int_{a}^{b}m < &\int_{a}^{b}f < \int_{a}^{b}M \\
         (b-a)m < &\int_{a}^{b}f<(b-a)M\\
@@ -3258,7 +3257,7 @@ $f(x)$ is the averange value of the function on $[a,b]$.
     \[
         (t_k-t_{k-1})g'(x_k) = g(t_k) - g(t_{k-1}).
     \]
-    Hence 
+    Hence, 
     \begin{align*}
         g(b)-g(a) &= \sum_{k=1}^{n}(g(t_k) - g(t_{k-1})) \\
         &= \sum_{k=1}^{n}g'(x_k)(t_k-t_{k-1}),
@@ -3273,7 +3272,7 @@ $f(x)$ is the averange value of the function on $[a,b]$.
         L(g',P) \leq \int_{a}^{b}g' &\leq  U(g',P),
     \end{align*}
     are both true. 
-    Therefore 
+    Therefore, 
     \[
         \pa{\int_{a}^{b}g' - (g(b)-g(a))} < \eps.
     \]
@@ -3333,7 +3332,7 @@ $f(x)$ is the averange value of the function on $[a,b]$.
     \end{align*}
     Choose $\eps>0$. Since $f$ continuous, $\exists \delta>0$ s.t. 
     $t\in(a,b)$ and $\pa{t-x_0} < \delta$, then $\pa{f(t)-f(x_0)}<\eps$.
-    Therefore 
+    Therefore, 
     \[
         \pa{\frac{F(x)-F(x_0)}{x-x_0}-f(x_0)} \leq \eps 
         \implies 
@@ -3508,14 +3507,14 @@ the typical definitions.
     \[
         d(s,s_0) < \delta \implies d^*(f(s),f(s_0)) < \eps \implies f(s) \in U \implies s\in f\inv(U).
     \]
-    In other words, $N_\delta(s_0) \subseteq U$. Hence $s_0$ is 
+    In other words, $N_\delta(s_0) \subseteq U$. Hence, $s_0$ is 
     an interior pt. and $f\inv(U)$ is open.
 
     Suppose that converse property holds. 
     Consider $s_0\in S$. Choose $\eps>0$, and examine
     $N_\eps(f(s_0))$. Then $F = f\inv(N_\eps(f(s_0)))$ is open 
     by the assumption. For any $s_0\in F$, $\exists \delta>0$ s.t. 
-    $N_\delta(s_0) \subseteq F$. Hence if $d(s,s_0) < \delta$, then 
+    $N_\delta(s_0) \subseteq F$. Hence, if $d(s,s_0) < \delta$, then 
     $d^*(f(s),f(s_0)) < \eps$.
 \end{proof}
 
@@ -3525,13 +3524,13 @@ the typical definitions.
     compact subset of $S$. Then 
     \begin{enumerate}
         \item $f(E)$ is a compact subset of $S^*$.
-        \item f is uniformly continuous on $E$.
+        \item $f$ is uniformly continuous on $E$.
     \end{enumerate}
 \end{theorem}
 
 \begin{proof}
     (1) Let $\mathcal U$ be an open cover of $f(E)$. For each 
-    $U\in \mathcal{U}$, $f\inv(U)$ is open in $S$. Also 
+    $U\in \mathcal{U}$, $f\inv(U)$ is open in $S$. Also, 
     $\ps{f\inv(U):U\in \mathcal{U}}$ is a cover of $E$. $x\in E \implies f(x)\in f(E)$ and $f(x)\in U'$ for some $U'$ so $x\in f\inv(U')$.
 
     Since $E$ is compact, $\exists U_1,\dots, U_m \in \mathcal{U}$ s.t. 
@@ -3551,7 +3550,7 @@ the typical definitions.
     \[
         d(t, s_k) \leq d(t,s) + d(s,s_k) < \delta+\frac{\delta_{s_k}}{2} < \delta_{s_k}.
     \]
-    Thus 
+    Thus, 
     \[
         d(t, s_k), d(s,s_k) < \delta_{s_k} \implies 
         d^*(f(s),f(s_k)), d^*(f(t),f(s_k)) < \frac{\eps}{2},
@@ -3579,7 +3578,7 @@ the typical definitions.
 \clearpage
 \appendix
 \section{Appendix}
-\subsection{p-norms}
+\subsection{$p$-norms}
 Let the \vocab{$p$-norm} of a vector $z$ be 
 \[\pn{z}_p = \sqrt[p]{\sum_{i=1}^{k}\pa{z_i}^p}. \]
 Note that the Euclidean norm is just the $2$-norm.
