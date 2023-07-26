@@ -2,14 +2,13 @@ baseURL = "https://pr4-kp.github.io"
 languageCode = "en-us"
 title = "pramana's blog"
 theme="archie"
-copyright = "© Athul"
+copyright = "© Pramana"
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 [Params]
 	mode="toggle"
 	useCDN=false
-	subtitle = "A **mathematics blog** on anything I'm studying"
 
 [[Params.Social]]
 name = "GitHub"

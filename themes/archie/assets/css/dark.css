@@ -1,41 +1,50 @@
 body {
-  color: white;
-  background-color: #202124;
+    color: var(--darkText);
+    background-color: var(--darkBg);
 }
 
 ::-moz-selection {
-  background: blue;
-  color: #fff;
-  text-shadow: none;
+    background: blue;
+    color: #fff;
+    text-shadow: none;
 }
 
 ::selection {
-  background: #998fc7;
-  color: #fff;
-  text-shadow: none;
+    background: #998fc7;
+    color: #fff;
+    text-shadow: none;
 }
+
+img {
+    border: 3px solid var(--lightText);
+    filter: brightness(.8) contrast(1.2);
+}
+
 
 hr {
-  border-top: 3px dotted blue;
-}
-code {
-  background-color: lightblue;
-  color: black;
-  text-decoration: bold;
-  padding: 0.1em 0.2em;
-}
-pre {
-  background-color: #272822;
-  line-height: 1.4;
-  overflow-x: auto;
-  padding: 1em;
-}
-blockquote {
-  color: white;
+    border-top: 3px dotted blue;
 }
 
-.Definition,
-.Proof {
+code {
+    background-color: lightblue;
+    color: black;
+    text-decoration: bold;
+    padding: 0.1em 0.2em;
+}
+
+pre {
+    background-color: #272822;
+    line-height: 1.4;
+    overflow-x: auto;
+    padding: 1em;
+}
+
+blockquote {
+    color: var(--darkText);
+}
+
+blockquote.Definition,
+blockquote.Proof {
     border: none;
     border-left: 3px solid white;
 }
@@ -46,9 +55,10 @@ h3,
 h4,
 h5,
 h6 {
-  color: #ddd;
+    color: #ffffff;
 }
-h1::before {
+
+/* h1::before {
   color: var(--darkMaincolor);
   content: "# ";
 }
@@ -71,97 +81,105 @@ h5::before {
 h6::before {
   color: var(--darkMaincolor);
   content: "###### ";
+} */
+
+a,
+#dark-mode-toggle {
+    text-decoration: none;
+    border-bottom: solid 1px #fff;
 }
 
-a, #dark-mode-toggle {
-    border-bottom: 3px solid var(--darkMaincolor);
-    color: inherit;
-}
-
-a:hover, #dark-mode-toggle:hover {
-    background-color: var(--darkMaincolor);
-    /* color: black; */
+a:hover,
+#dark-mode-toggle:hover {
     cursor: pointer;
 }
 
-.site-description a {
+/* .site-description a {
   color: #ddd;
 }
 .site-description a:hover {
   color: black;
-}
+} */
 
-.tags a {
+/* .tags a {
   border-bottom: 3px solid var(--darkMaincolor);
 }
 .tags a:hover {
   background-color: var(--darkMaincolor);
   color: black;
-}
+} */
 
 .site-title a {
-  color: white;
-  text-decoration: none !important;
+    color: white;
+    text-decoration: none !important;
 }
 
 .header nav,
 .footer {
-  border-color: #333;
+    border-color: #333;
 }
 
 .highlight {
-  background-color: #333;
+    background-color: #333;
 }
 
 .draft-label {
-  color: var(--darkMaincolor);
-  background-color: blue;
+    color: var(--maincolor);
+    background-color: blue;
 }
+
 .highlight pre code[class=language-javaScript]::before,
 .highlight pre code[class="language-js"]::before {
-  content: "js";
-  background: #f7df1e;
-  color: black;
+    content: "js";
+    background: #f7df1e;
+    color: black;
 }
+
 .highlight pre code[class*='language-yml']::before,
 .highlight pre code[class*='language-yaml']::before {
-  content: 'yaml';
-  background: #f71e6a;
-  color: white;
+    content: 'yaml';
+    background: #f71e6a;
+    color: white;
 }
+
 .highlight pre code[class*='language-shell']::before,
 .highlight pre code[class*='language-bash']::before,
 .highlight pre code[class*='language-sh']::before {
-  content: 'shell';
-  background: green;
-  color:white
+    content: 'shell';
+    background: green;
+    color: white
 }
-.highlight pre code[class*='language-json']::before{
-  content: 'json';
-  background: dodgerblue;
-   color: #000000 
+
+.highlight pre code[class*='language-json']::before {
+    content: 'json';
+    background: dodgerblue;
+    color: #000000
 }
+
 .highlight pre code[class*='language-python']::before,
 .highlight pre code[class*='language-py']::before {
-  content: 'py';
-  background: blue;
-  color: yellow ;
+    content: 'py';
+    background: blue;
+    color: yellow;
 }
-.highlight pre code[class*='language-css']::before{
-  content: 'css';
-  background: cyan;
-  color: black ;
+
+.highlight pre code[class*='language-css']::before {
+    content: 'css';
+    background: cyan;
+    color: black;
 }
-.highlight pre code[class*='language-go']::before{
-  content: 'Go';
-  background: cyan;
-  color: royalblue ;
+
+.highlight pre code[class*='language-go']::before {
+    content: 'Go';
+    background: cyan;
+    color: royalblue;
 }
+
 .highlight pre code[class*='language-md']::before,
-.highlight pre code[class*='language-md']::before{
-  content: 'Markdown';
-  background: royalblue;
-  color: whitesmoke ;
+.highlight pre code[class*='language-md']::before {
+    content: 'Markdown';
+    background: royalblue;
+    color: whitesmoke;
 }
 
 .invert img {
