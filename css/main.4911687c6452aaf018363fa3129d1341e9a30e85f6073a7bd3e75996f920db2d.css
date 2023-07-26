@@ -224,6 +224,7 @@ header .main {
 h1 {
     font-size: 1.3rem;
     margin-top: 2em;
+    padding-right: 1rem;
 }
 
 h2,
