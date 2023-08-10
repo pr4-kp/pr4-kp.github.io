@@ -11,7 +11,9 @@
 }
 
 html {
-    font-family: 'Inconsolata', monospace;
+    font-family: -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI";
     font-size: 18px;
     line-height: 1.6em;
     font-weight: 400;
@@ -44,11 +46,11 @@ p {
 }
 
 b {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 strong {
-    font-weight: 600;
+    font-weight: 500;
 }
 
 hr {
@@ -214,7 +216,7 @@ header {
     justify-content: space-between;
     margin: 1em 0;
     line-height: 2.5em;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 header .main {
@@ -225,6 +227,7 @@ h1 {
     font-size: 1.3rem;
     margin-top: 2em;
     padding-right: 1rem;
+    font-weight: 600;
 }
 
 h2,
@@ -232,6 +235,7 @@ h3,
 h4,
 h5,
 h6 {
+    font-weight: 500;
     font-size: 1.2rem;
     margin-top: 2em;
 }
