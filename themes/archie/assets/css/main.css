@@ -16,7 +16,7 @@ html {
         "Segoe UI";
     font-size: 18px;
     line-height: 1.6em;
-    counter-reset: css-counter 0;
+    font-weight: 400;
     /* transition: all 0.5s ease-in-out; */
 }
 
@@ -34,6 +34,10 @@ body {
 ::selection {
     background: var(--maincolor);
     color: #fff;
+}
+
+.katex {
+    font-size: 1.1em !important;
 }
 
 p {
@@ -127,10 +131,6 @@ ul li {
 ul>li::before {
     content: '‣ ';
     font-weight: bold;
-}
-
-nav {
-    padding-left: 3rem;
 }
 
 /* Images */
@@ -278,7 +278,7 @@ h6::before {
 /* Footer */
 footer {
     display: flex;
-    align-items: center;
+    align-items: left;
     border-top: 0.4rem dotted var(--bordercl);
     padding: 2rem 0rem;
     margin-top: 2rem;
@@ -344,7 +344,7 @@ article .title {
 }
 
 .tags li::before {
-    content: "🏷 ";
+    content: "🏷️ ";
 }
 
 /* .tags a {
