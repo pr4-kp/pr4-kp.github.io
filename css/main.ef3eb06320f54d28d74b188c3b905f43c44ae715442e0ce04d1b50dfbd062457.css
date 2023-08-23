@@ -15,9 +15,14 @@ html {
         BlinkMacSystemFont,
         "Segoe UI";
     font-size: 18px;
+    letter-spacing: 0.5px;
     line-height: 1.6em;
     font-weight: 400;
     /* transition: all 0.5s ease-in-out; */
+}
+
+nav a {
+    margin-left: 3px;
 }
 
 body {
@@ -60,12 +65,17 @@ hr {
 }
 
 blockquote {
+    counter-increment: thm-number 1;
     border: 1px solid #6CC493;
     color: var(--lightText);
     margin: 0;
     padding-left: 1em;
     padding-right: 1em;
     margin-bottom: 1em;
+}
+
+blockquote:not(.Proof) p b:first-of-type::after {
+    content: " " counter(thm-number);
 }
 
 blockquote.Theorem {
@@ -77,7 +87,7 @@ blockquote.Proposition {
     border: 1.5px solid dodgerblue;
 }
 
-blockquote.Definition,
+blockquote.Definition
 blockquote.Proof {
     border: none;
     border-left: 3px solid black;
