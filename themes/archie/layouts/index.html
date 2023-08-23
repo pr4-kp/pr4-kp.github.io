@@ -7,10 +7,10 @@
         {{ partial "head.html" . }}
 
         <main class="list">
-            <div class="site-description">
+            {{/*  <div class="site-description">
                 <p>A mathematics blog on anything I'm studying. You can read my blog posts below or check out the <a
                         href="/notes">notes</a>.</p>
-            </div>
+            </div>  */}}
 
             {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
             {{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}

@@ -27,6 +27,11 @@ url = "/about"
 weight = 100
 
 [[menu.main]]
+name = "now"
+url = "/now"
+weight = 102
+
+[[menu.main]]
 name = "tags"
 url = "/tags"
 weight = 4

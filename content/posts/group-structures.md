@@ -33,7 +33,7 @@ What is the condition? The groups had to be **simple**.
 
 ### Simple groups
 
-{{< thmbox class="Definition">}}
+{{< thmbox class="Definition" name="Simple group">}}
 A group is called **simple** if it has no *normal* subgroups except the trivial group and itself.
 {{</ thmbox>}}
 
@@ -51,7 +51,7 @@ The easiest simple groups to describe with an undergraduate knowledge of group t
 I'd recommend looking into these yourself if interested.
 
 ### Solvable groups
-{{< thmbox class="Definition">}}
+{{< thmbox class="Definition" name="Solvable group">}}
 A finite group $G$ is **solvable** if there is a finite chain of subgroups $G = N_0\supseteq N_1\supseteq\cdots \supseteq N_n$ such that 
 1. $N_i$ is a normal subgroup of $N_{i-1}$,
 2. $N_{i-1}/N_i$ is a prime cyclic group ($\mathbb{Z}/p\mathbb{Z}$),
@@ -64,7 +64,7 @@ Speaking very vaguely, we can mod out a normal subgroup of $G$ such that its quo
 
 There are many more series like the previous chain, which I hope to cover in a different post. A very important one is
 
-{{< thmbox class="Definition">}}
+{{< thmbox class="Definition" name="Composition series">}}
 A chain of subgroups for a group $G$ such that $G = N_0\supseteq N_1\supseteq\cdots \supseteq N_n$ and
 1. $N_i$ is a normal subgroup of $N_{i-1}$,
 2. $N_{i-1}/N_i$ is a *simple* group,
@@ -98,7 +98,7 @@ The proof of the Sylow Theorems relied on something with even more use, and I wo
 
 Group actions were the hardest thing for me to understand when I was learning group theory, so I hope to give a broad introduction to them.
 
-{{< thmbox class="Definition">}}
+{{< thmbox class="Definition" name="Group action">}}
 A group $G$ acts on a set $S$ by "moving" elements of $S$ in some predefined way. I write $G\curvearrowright S$. There are 2 traits that a group action must satisfy. For $s\in S$, and $g,h\in G$,
 1. $1\curvearrowright s = s$.
 2. $a\curvearrowright (b \curvearrowright s) = (ab) \curvearrowright s$.

@@ -6,6 +6,6 @@ TODO:
 
 - [x] Add theorem boxes
 - [x] Fix social media icons for fontawesome
-- [ ] Automatic numbering of thmboxes
+- [x] Automatic numbering of thmboxes
 - [ ] Implement macros
 - [x] Fix tags
