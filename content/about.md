@@ -7,7 +7,7 @@ author = "Pramana"
 
 👋🏽 Hello, and welcome to my website! I'm **Pramana**.  
 
-For the details of this site: I use [Hugo](https://gohugo.io/) with a modified [Archie theme](https://github.com/athul/archie). This site is deployed through [GitHub Pages](https://pages.github.com/), and is currently *not* indexed on Google search (I don't know why this is happening, Google support hasn't responded). 
+For the details of this site: I use [Hugo](https://gohugo.io/) with a modified [Archie theme](https://github.com/athul/archie). This site is deployed through [GitHub Pages](https://pages.github.com/).
 I'm always changing my mind on this blog's design, so don't be surprised if there are changes here and there.
 
 I have *no* commitment to a single subject for this blog. However, I do plan on keeping most posts **math and computer science** related.
