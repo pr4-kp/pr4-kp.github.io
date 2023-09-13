@@ -1,14 +1,14 @@
 baseURL = "https://pr4-kp.github.io"
 languageCode = "en-us"
 title = "pramana's blog"
-theme="archie"
+theme = "archie"
 copyright = "© Pramana"
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 [Params]
-	mode="toggle"
-	useCDN=false
+mode = "toggle"
+useCDN = false
 
 [[Params.Social]]
 name = "GitHub"
@@ -26,10 +26,10 @@ name = "about"
 url = "/about"
 weight = 100
 
-[[menu.main]]
-name = "now"
-url = "/now"
-weight = 102
+# [[menu.main]]
+# name = "now"
+# url = "/now"
+# weight = 102
 
 [[menu.main]]
 name = "tags"
