@@ -4,7 +4,6 @@ date: 2023-09-30
 tags:
     - ctf
 math: true
-draft: true
 description: "wOOfWoof wOOfWooF woOfwoof wOOFwoOf wOOFwOoF wOOFwoOf wOOfWOof"
 ---
 
