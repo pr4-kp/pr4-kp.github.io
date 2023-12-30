@@ -60,7 +60,7 @@ More options on the site open up, and the puzzle actually begins.
 
 I needed to solve the puzzles on the left side to get points (totaling to 10000).
 
-After the puzzle was closed, me and my friend Riju met up and compiled all of our answers for the puzzles we solved. So let's get started!
+After the puzzle was closed, me and my friend [Riju](https://github.com/UjirYed) met up and compiled all of our answers for the puzzles we solved. So let's get started!
 
 ## A quick introduction to Capture the Flag (CTF)
 
