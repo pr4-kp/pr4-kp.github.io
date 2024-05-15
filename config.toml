@@ -40,3 +40,7 @@ weight = 4
 name = "notes"
 url = "/notes"
 weight = 2
+
+[sitemap]
+changefreq = "daily"
+priority = 0.5

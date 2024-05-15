@@ -11,7 +11,7 @@ math = true
 
 # MATH 621: Introduction to manifolds
 
-- Final paper - Swan's theorem ([PDF](/pdf/math621/honorspaper.pdf))
+- Final paper - Swan's theorem ([PDF](/pdf/math621/swans-theorem.pdf))
   - **Abstract.** Swan’s theorem establishes a module structure on the set of smooth sections over a vector bundle $\pi\colon E\to M$.
     This allows us to study algebra by means
     of vector bundles and vice-versa. We conclude with an introductory result in K-theory that follows from this theorem
