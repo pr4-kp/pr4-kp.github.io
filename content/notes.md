@@ -9,6 +9,10 @@ math = true
 - Resultants and Elimination Theory ([PDF](/pdf/resultants_and_elimination_theory.pdf))
   - Expository paper from a directed study in algebraic geometry. The resultant allow us to check if the polynomials $f$ and $g$ share a root just using their coefficients. Using these ideas, we can prove a more general theorem in algebraic geometry called the _fundamental theorem of elimination theory_.
 
+# MATH 531: Probability Theory
+
+- Notes ([PDF](/pdf/math531/main_531.pdf))
+
 # MATH 621: Introduction to manifolds
 
 - Final paper - Swan's theorem ([PDF](/pdf/math621/swans-theorem.pdf))
