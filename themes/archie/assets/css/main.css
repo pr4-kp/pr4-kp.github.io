@@ -340,8 +340,8 @@ article .title {
 } */
 
 .site-description {
-    display: flex;
     justify-content: space-between;
+    border-bottom: 0.4rem dotted var(--bordercl);
 }
 
 .tags li::before {
