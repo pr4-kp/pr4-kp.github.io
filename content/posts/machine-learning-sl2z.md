@@ -5,7 +5,6 @@ tags:
   - machine learning
   - algebra
 math: true
-draft: true
 description: "A discussion of my research work last semester to use machine learning to answer questions in algebra"
 ---
 
