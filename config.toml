@@ -44,3 +44,9 @@ weight = 2
 [sitemap]
 changefreq = "daily"
 priority = 0.5
+
+[markup]
+defaultMarkdownHandler = 'goldmark'
+[goldmark]
+[Extensions]
+footnote = true
