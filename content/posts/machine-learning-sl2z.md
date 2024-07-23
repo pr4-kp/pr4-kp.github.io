@@ -1,6 +1,6 @@
 ---
 title: Can a machine learn mathematical structure?
-date: 2024-07-16
+date: 2024-07-23
 tags:
   - machine learning
   - algebra
