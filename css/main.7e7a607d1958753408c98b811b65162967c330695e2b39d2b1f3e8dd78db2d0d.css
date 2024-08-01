@@ -1,19 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 /* Markdown */
 :root {
     --maincolor: #998fc7;
     --bordercl: #6c71c4;
     --callouctcolor: dodgerblue;
-    --hovercolor: #998fc7;
+    --hovercolor: rgb(145, 130, 221);
     --lightText: #1f1f1f;
     --darkText: #ddd;
     --lightBg: #fff;
     --darkBg: #121212;
+    --grad: linear-gradient(90deg, rgb(205, 141, 179) 0%, rgba(193, 130, 219, 1) 20%, rgb(145, 130, 221) 100%);
 }
 
+
 html {
-    font-family: -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI";
+    font-family: "Hanken Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 18px;
     line-height: 1.6em;
     font-weight: 400;
@@ -28,7 +42,11 @@ body {
     display: block;
     margin: 8px;
     background-color: var(--lightBg);
-    /* transition: all 0.5s ease-in-out; */
+
+    /* transition */ 
+    animation: fadeInAnimation linear .2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
 }
 
 * {
@@ -97,7 +115,8 @@ a,
     /* border-bottom: 3px solid var(--maincolor); */
     color: inherit;
     text-decoration: none;
-    border-bottom: solid 2px var(--lightText);
+    border-bottom: dotted 2px var(--lightText);
+    transition: 0.2s linear;
 }
 
 a:hover,
@@ -106,6 +125,10 @@ a:hover,
     color: var(--hovercolor);
     cursor: pointer;
     border-color: var(--hovercolor);
+}
+
+a.footnote-ref {
+    vertical-align: super;
 }
 
 .list-item {
@@ -120,19 +143,19 @@ a:hover,
     padding-bottom: 0rem;
 }
 
-ul {
+/* ul {
     list-style: none;
     padding-left: 2ch;
 }
 
 ul li {
     text-indent: -2ch;
-}
+} */
 
-ul>li::before {
-    content: '‣ ';
+/* ul>li::before {
+    content: '• ';
     font-weight: bold;
-}
+} */
 
 /* Images */
 img {
@@ -221,12 +244,12 @@ header {
 }
 
 header .main {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 h1 {
     font-size: 1.3rem;
-    margin-top: 2em;
+    /* margin-top: 2em; */
     padding-right: 1rem;
     font-weight: 600;
 }
@@ -237,37 +260,43 @@ h4,
 h5,
 h6 {
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-top: 2em;
 }
 
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+    background: rgb(205, 141, 148);
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 h1::before {
-    color: var(--maincolor);
     content: '# ';
 }
 
 h2::before {
-    color: var(--maincolor);
     content: '## ';
 }
 
 h3::before {
-    color: var(--maincolor);
     content: '### ';
 }
 
 h4::before {
-    color: var(--maincolor);
     content: '#### ';
 }
 
 h5::before {
-    color: var(--maincolor);
     content: '##### ';
 }
 
 h6::before {
-    color: var(--maincolor);
     content: '###### ';
 }
 
