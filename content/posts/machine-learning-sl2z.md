@@ -135,9 +135,17 @@ One thing about these decision boundaries is that they are nearly linear. Since 
 
 So the machine seems to be learning this algorithm. What's the significance of this? Well, it is _exactly_ the textbook approach for proving that the Sanov subgroup has finite index![^4] So, the machine approximately created a **provably** correct algorithm that shows the Sanov subgroup has finite index. So, to some effect, the machine was starting to learn how to prove something about a group!
 
+### A caveat
+
+The model was doing a great job at _nearly_ getting a linear decision boundary, which may make it seem like most matrices will get back to a coset representative like in the algorithm for the written proof.
+
+However, in practice, we found that most matrices did _not_ find their way back to the representative when using the machine learning algorithm; small inaccuracies in the model led to wrong decisions "blowing up" and preventing us from reaching the coset representatives (thanks Jordan for reminding me of this!).
+
+Whether we can get around this obstacle is still a question to work on. Perhaps working with a model that creates linear decision boundaries would have panned out better for this specific subgroup, but we would have to see how it extends to other subgroups as well.
+
 ## Potential for mathematics
 
-I will admit that the last step - using human inference to get the decision boundaries - is at odds with to the dream of AI fully developing a mathematical proof. Moreover, the algorithm itself is obfuscated by the matrix multiplication and turns out to be quite simple: _take the vector and use twice the smaller value to decrease the absolute value of the larger value_. Given the right cost function, this would be easy for a machine to learn. However, learning this algorithm revealed to me that there is some potential of a machine understanding the algebraic structure of the modular group, which was far more than I expected coming into this research. Hopefully, we can apply this approach to subgroups with unknown index!
+I will admit that the last step - using human inference to get the decision boundaries - is at odds with to the dream of AI fully developi ng a mathematical proof. Moreover, the algorithm itself is obfuscated by the matrix multiplication and turns out to be quite simple: _take the vector and use twice the smaller value to decrease the absolute value of the larger value_. Given the right cost function, this would be easy for a machine to learn. However, learning this algorithm revealed to me that there is some potential of a machine understanding the algebraic structure of the modular group, which was far more than I expected coming into this research. Hopefully, we can apply this approach to subgroups with unknown index!
 
 Overall, this project has opened my mind to using machine learning techniques to verify mathematical problems. The people at DeepMind have shown [several](https://deepmind.google/discover/blog/discovering-novel-algorithms-with-alphatensor/) [examples](https://deepmind.google/discover/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/) of using AI models to make entirely new discoveries in math, using incredibly novel methods in artificial intelligence to do so. In contrast, I think our project prototyped how simple machine learning models could assist us in math research.
 
