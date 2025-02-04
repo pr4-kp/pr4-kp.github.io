@@ -4,6 +4,14 @@ description = "Repository of my notes for my classes"
 math = true
 +++
 
+# MATH 721: A First Course in Real Analysis
+
+- Notes ([PDF](/pdf/math721/main_721.pdf))
+
+# Modular forms
+
+- I gave a talk at UW's Undergraduate Math Club on modular forms. The talk is largely based on [Keith Conrad's CTNT summer school](https://www.youtube.com/playlist?list=PLJUSzeW191Qx_rdAS8sd4nTNlSyLt97Q4). ([Slides](/pdf/modular_forms.pdf))
+
 # Algebraic geometry
 
 - Resultants and Elimination Theory ([PDF](/pdf/resultants_and_elimination_theory.pdf))
