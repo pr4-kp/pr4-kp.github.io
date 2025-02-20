@@ -492,3 +492,7 @@ table td {
     padding: 6px 13px;
     border: 1px solid #dfe2e5;
 }
+
+.carousel {
+    border: 1px solid #1f1f1f
+}

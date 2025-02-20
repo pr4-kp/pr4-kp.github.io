@@ -5,6 +5,7 @@ aliases = ["about-us","contact"]
 author = "Pramana"
 +++
 
+{{< carousel items="1" height="100" unit="%" duration="7000" >}}
 👋🏽 Hello, and welcome to my website! I'm Pramana.
 
 For the details of this site: I use [Hugo](https://gohugo.io/) with a modified [Archie theme](https://github.com/athul/archie). This site is deployed through [GitHub Pages](https://pages.github.com/).

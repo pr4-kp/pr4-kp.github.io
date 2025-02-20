@@ -16,8 +16,12 @@ body {
 }
 
 img {
-    border: 3px solid var(--lightText);
+    border: 3px solid var(--darkText);
     filter: brightness(.8) contrast(1.2);
+}
+
+.carousel img {
+    border: none;
 }
 
 
@@ -184,4 +188,8 @@ a:hover,
 
 .invert img {
     filter: invert(1);
+}
+
+.carousel {
+    border: 1px solid var(--darkText);
 }
