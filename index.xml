@@ -41,7 +41,38 @@ specifically their chapter on Group structure (7), and I wanted to summarize wha
  Every group of order $p^a q^b$, where $p$ and $q$ are (not necessarily distinct) primes is solvable.
  &lt;/p></description></item><item><title>Graph ends and their purpose in geometric group theory</title><link>https://pr4-kp.github.io/posts/graphgroupends/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/graphgroupends/</guid><description>&lt;p>I&amp;rsquo;ll give an intuition for how mathematicians define what graph ends are, and explain their use in geometric group theory. However, before I can do that, I&amp;rsquo;ll explain what ends are in a graph theory perspective.&lt;/p>
 &lt;h1 id="what-are-ends">What are ends?&lt;/h1>
-&lt;p>The word &lt;strong>ends&lt;/strong> is a little confusing, because they don&amp;rsquo;t really represent the &amp;ldquo;end&amp;rdquo; of a graph, at least not how we would define an end in real life. Think of a rope. If two teams were playing tug of war on that rope, we know that it has two ends that the opposite teams would tug on. Now if this rope is of finite length (it probably is), then we would typically call the two points at the end of the rope the ends (obviously).&lt;/p></description></item><item><title/><link>https://pr4-kp.github.io/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/archives/</guid><description/></item><item><title>About this blog</title><link>https://pr4-kp.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/about/</guid><description>&lt;p>👋🏽 Hello, and welcome to my website! I&amp;rsquo;m Pramana.&lt;/p>
+&lt;p>The word &lt;strong>ends&lt;/strong> is a little confusing, because they don&amp;rsquo;t really represent the &amp;ldquo;end&amp;rdquo; of a graph, at least not how we would define an end in real life. Think of a rope. If two teams were playing tug of war on that rope, we know that it has two ends that the opposite teams would tug on. Now if this rope is of finite length (it probably is), then we would typically call the two points at the end of the rope the ends (obviously).&lt;/p></description></item><item><title/><link>https://pr4-kp.github.io/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/archives/</guid><description/></item><item><title>About this blog</title><link>https://pr4-kp.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/about/</guid><description>&lt;p>
+
+
+
+&lt;div id="carousel0" class="carousel" duration="7000">
+ &lt;ul>
+ 
+ &lt;li id="c0_slide1" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/machine-learning-sl2z/generators-paths-cosets.png" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
+ 
+ &lt;li id="c0_slide2" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/horospheres-project/Length3_Horosphere_2D.jpg" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
+ 
+ &lt;li id="c0_slide3" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/behrend-construction.png" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
+ 
+ &lt;li id="c0_slide4" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/reduce-rank15.png" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
+ 
+ &lt;/ul>
+ &lt;ol>
+ 
+ &lt;li>&lt;a href="#c0_slide1">&lt;/a>&lt;/li>
+ 
+ &lt;li>&lt;a href="#c0_slide2">&lt;/a>&lt;/li>
+ 
+ &lt;li>&lt;a href="#c0_slide3">&lt;/a>&lt;/li>
+ 
+ &lt;li>&lt;a href="#c0_slide4">&lt;/a>&lt;/li>
+ 
+ &lt;/ol>
+ &lt;div class="prev">&amp;lsaquo;&lt;/div>
+ &lt;div class="next">&amp;rsaquo;&lt;/div>
+&lt;/div>
+
+👋🏽 Hello, and welcome to my website! I&amp;rsquo;m Pramana.&lt;/p>
 &lt;p>For the details of this site: I use &lt;a href="https://gohugo.io/">Hugo&lt;/a> with a modified &lt;a href="https://github.com/athul/archie">Archie theme&lt;/a>. This site is deployed through &lt;a href="https://pages.github.com/">GitHub Pages&lt;/a>.
 I&amp;rsquo;m always changing my mind on this blog&amp;rsquo;s design, so don&amp;rsquo;t be surprised if there are changes here and there.&lt;/p>
 &lt;p>While I&amp;rsquo;m not set on a single section of math, I love using new discoveries in math and creating pictures. You can fairly accurately measure how excited I am to make a new post by how many photos are in it.&lt;/p></description></item><item><title>course guide</title><link>https://pr4-kp.github.io/courses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/courses/</guid><description>&lt;p>Some thoughts on UW courses. Inspired by &lt;a href="https://ruipan.xyz/wisc_courses.html">this&lt;/a>.&lt;/p>
