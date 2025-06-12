@@ -105,7 +105,8 @@ blockquote.Proposition {
 }
 
 blockquote.Proof,
-blockquote.Definition {
+blockquote.Definition,
+blockquote.Remark {
     border: none;
     border-left: 3px solid black;
 }

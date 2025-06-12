@@ -47,7 +47,8 @@ blockquote {
 }
 
 blockquote.Definition,
-blockquote.Proof {
+blockquote.Proof,
+blockquote.Remark {
     border: none;
     border-left: 3px solid white;
 }
