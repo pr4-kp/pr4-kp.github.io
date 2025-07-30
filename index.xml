@@ -72,10 +72,10 @@ specifically their chapter on Group structure (7), and I wanted to summarize wha
  &lt;div class="next">&amp;rsaquo;&lt;/div>
 &lt;/div>
 
-👋🏽 Hello, and welcome to my website! I&amp;rsquo;m Pramana.&lt;/p>
-&lt;p>For the details of this site: I use &lt;a href="https://gohugo.io/">Hugo&lt;/a> with a modified &lt;a href="https://github.com/athul/archie">Archie theme&lt;/a>. This site is deployed through &lt;a href="https://pages.github.com/">GitHub Pages&lt;/a>.
-I&amp;rsquo;m always changing my mind on this blog&amp;rsquo;s design, so don&amp;rsquo;t be surprised if there are changes here and there.&lt;/p>
-&lt;p>While I&amp;rsquo;m not set on a single section of math, I love using new discoveries in math and creating pictures. You can fairly accurately measure how excited I am to make a new post by how many photos are in it.&lt;/p></description></item><item><title>course guide</title><link>https://pr4-kp.github.io/courses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/courses/</guid><description>&lt;p>Some thoughts on UW courses. Inspired by &lt;a href="https://ruipan.xyz/wisc_courses.html">this&lt;/a>.&lt;/p>
+👋🏽 Hello, and welcome to my website! My name is Pramana Saldin and I am a fourth-year at the University of Wisconsin.
+I am a &lt;a href="https://goldwaterscholarship.gov/">Barry Goldwater Scholar&lt;/a>. I&amp;rsquo;m interested in algebra.&lt;/p>
+&lt;p>For the details of this site: I use &lt;a href="https://gohugo.io/">Hugo&lt;/a> with a modified &lt;a href="https://github.com/athul/archie">Archie theme&lt;/a>. This site is deployed through &lt;a href="https://pages.github.com/">GitHub Pages&lt;/a>.&lt;/p>
+&lt;p>If you want to reach out, you can contact me on my &lt;a href="https://mathstodon.xyz/@pramana">Mathstodon&lt;/a> or by email: &lt;code>[lastname] [at] wisc [dot] edu&lt;/code>.&lt;/p></description></item><item><title>course guide</title><link>https://pr4-kp.github.io/courses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/courses/</guid><description>&lt;p>Some thoughts on UW courses. Inspired by &lt;a href="https://ruipan.xyz/wisc_courses.html">this&lt;/a>.&lt;/p>
 &lt;figure>&lt;img src="https://pr4-kp.github.io/img/ANTHRO105.jpg"
  alt="bio credit ftw" height="250px">&lt;figcaption>
  &lt;h4>ANTHRO 105: Principles of biological anthropology&lt;/h4>&lt;p>bio credit ftw&lt;/p>
@@ -92,13 +92,13 @@ I&amp;rsquo;m always changing my mind on this blog&amp;rsquo;s design, so don&am
 &lt;/ul>
 &lt;h1 id="modular-forms">Modular forms&lt;/h1>
 &lt;ul>
-&lt;li>I gave a talk at UW&amp;rsquo;s Undergraduate Math Club on modular forms. The talk is largely based on &lt;a href="https://www.youtube.com/playlist?list=PLJUSzeW191Qx_rdAS8sd4nTNlSyLt97Q4">Keith Conrad&amp;rsquo;s CTNT summer school&lt;/a>. (&lt;a href="https://pr4-kp.github.io/pdf/modular_forms.pdf">Slides&lt;/a>)&lt;/li>
+&lt;li>I gave a talk at UW&amp;rsquo;s Undergraduate Math Club on modular forms. The talk is largely based on &lt;a href="https://www.youtube.com/playlist?list=PLJUSzeW191Qx_rdAS8sd4nTNlSyLt97Q4">Professor Keith Conrad&amp;rsquo;s CTNT summer school&lt;/a>. (&lt;a href="https://pr4-kp.github.io/pdf/modular_forms.pdf">Slides&lt;/a>)&lt;/li>
 &lt;/ul>
 &lt;h1 id="algebraic-geometry">Algebraic geometry&lt;/h1>
 &lt;ul>
 &lt;li>Resultants and Elimination Theory (&lt;a href="https://pr4-kp.github.io/pdf/resultants_and_elimination_theory.pdf">PDF&lt;/a>)
 &lt;ul>
-&lt;li>Expository paper from a directed study in algebraic geometry. The resultant allow us to check if the polynomials $f$ and $g$ share a root just using their coefficients. Using these ideas, we can prove a more general theorem in algebraic geometry called the &lt;em>fundamental theorem of elimination theory&lt;/em>.&lt;/li>
+&lt;li>Expository paper from a directed study in algebraic geometry under &lt;a href="https://people.math.wisc.edu/lawrence/">Professor Brian Lawrence&lt;/a>. The resultant allow us to check if the polynomials $f$ and $g$ share a root just using their coefficients. Using these ideas, we can prove a more general theorem in algebraic geometry called the &lt;em>fundamental theorem of elimination theory&lt;/em>.&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -148,4 +148,7 @@ state Gårding’s inequality and give one application.&lt;/li>
 &lt;h1 id="math-531-uwm-modern-algebra">MATH 531 (UWM): Modern Algebra&lt;/h1>
 &lt;ul>
 &lt;li>Notes (&lt;a href="https://pr4-kp.github.io/pdf/math531uwm/MATH-531-Notes.pdf">PDF&lt;/a>)&lt;/li>
+&lt;/ul></description></item><item><title>Papers</title><link>https://pr4-kp.github.io/papers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/papers/</guid><description>&lt;ul>
+&lt;li>Jillson, Noah, Daniel Levitin, Pramana Saldin, Katerina Stuopis, Qianruixi Wang, and Kaicheng Xue. 2025. “Finite-State Machines for Horospheres in Hyperbolic Right-Angled Coxeter Groups.” &lt;em>Geometriae Dedicata&lt;/em> 219 (2): 37.
+&lt;a href="https://doi.org/10.1007/s10711-024-00977-1">https://doi.org/10.1007/s10711-024-00977-1&lt;/a>.&lt;/li>
 &lt;/ul></description></item></channel></rss>
