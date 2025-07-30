@@ -10,12 +10,12 @@ math = true
 
 # Modular forms
 
-- I gave a talk at UW's Undergraduate Math Club on modular forms. The talk is largely based on [Keith Conrad's CTNT summer school](https://www.youtube.com/playlist?list=PLJUSzeW191Qx_rdAS8sd4nTNlSyLt97Q4). ([Slides](/pdf/modular_forms.pdf))
+- I gave a talk at UW's Undergraduate Math Club on modular forms. The talk is largely based on [Professor Keith Conrad's CTNT summer school](https://www.youtube.com/playlist?list=PLJUSzeW191Qx_rdAS8sd4nTNlSyLt97Q4). ([Slides](/pdf/modular_forms.pdf))
 
 # Algebraic geometry
 
 - Resultants and Elimination Theory ([PDF](/pdf/resultants_and_elimination_theory.pdf))
-  - Expository paper from a directed study in algebraic geometry. The resultant allow us to check if the polynomials $f$ and $g$ share a root just using their coefficients. Using these ideas, we can prove a more general theorem in algebraic geometry called the _fundamental theorem of elimination theory_.
+  - Expository paper from a directed study in algebraic geometry under [Professor Brian Lawrence](https://people.math.wisc.edu/lawrence/). The resultant allow us to check if the polynomials $f$ and $g$ share a root just using their coefficients. Using these ideas, we can prove a more general theorem in algebraic geometry called the _fundamental theorem of elimination theory_.
 
 # MATH 531: Probability Theory
 

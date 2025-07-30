@@ -22,6 +22,11 @@ url = "/posts"
 weight = 2
 
 [[menu.main]]
+name = "papers"
+url = "/papers"
+weight = 4
+
+[[menu.main]]
 name = "about"
 url = "/about"
 weight = 100
@@ -34,7 +39,7 @@ weight = 100
 [[menu.main]]
 name = "tags"
 url = "/tags"
-weight = 4
+weight = 99
 
 [[menu.main]]
 name = "notes"
