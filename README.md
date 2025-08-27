@@ -8,4 +8,5 @@ TODO:
 - [x] Fix social media icons for fontawesome
 - [x] Automatic numbering of thmboxes
 - [x] Fix tags
-- [ ] Add gallery to front page
+- [x] Add gallery to front page
+- [ ] Make a longer about page
