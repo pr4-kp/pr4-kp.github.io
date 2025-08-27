@@ -52,9 +52,11 @@ specifically their chapter on Group structure (7), and I wanted to summarize wha
  
  &lt;li id="c0_slide2" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/horospheres-project/Length3_Horosphere_2D.jpg" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
  
- &lt;li id="c0_slide3" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/behrend-construction.png" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
+ &lt;li id="c0_slide3" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/difference-graph-5.png" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
  
- &lt;li id="c0_slide4" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/reduce-rank15.png" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
+ &lt;li id="c0_slide4" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/behrend-construction.png" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
+ 
+ &lt;li id="c0_slide5" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/reduce-rank15.png" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
  
  &lt;/ul>
  &lt;ol>
@@ -67,14 +69,15 @@ specifically their chapter on Group structure (7), and I wanted to summarize wha
  
  &lt;li>&lt;a href="#c0_slide4">&lt;/a>&lt;/li>
  
+ &lt;li>&lt;a href="#c0_slide5">&lt;/a>&lt;/li>
+ 
  &lt;/ol>
  &lt;div class="prev">&amp;lsaquo;&lt;/div>
  &lt;div class="next">&amp;rsaquo;&lt;/div>
 &lt;/div>
 
-👋🏽 Hello, and welcome to my website! My name is Pramana Saldin and I am a fourth-year at the University of Wisconsin.
-I am a 2025 &lt;a href="https://goldwaterscholarship.gov/">Barry Goldwater Scholar&lt;/a>. This summer, I am conducting research for the &lt;a href="https://math.williams.edu/small/">SMALL REU&lt;/a> (number theory and probability). I&amp;rsquo;m interested in algebra.&lt;/p>
-&lt;p>For the details of this site: I use &lt;a href="https://gohugo.io/">Hugo&lt;/a> with a modified &lt;a href="https://github.com/athul/archie">Archie theme&lt;/a>. This site is deployed through &lt;a href="https://pages.github.com/">GitHub Pages&lt;/a>.&lt;/p></description></item><item><title>course guide</title><link>https://pr4-kp.github.io/courses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/courses/</guid><description>&lt;p>Some thoughts on UW courses. Inspired by &lt;a href="https://ruipan.xyz/wisc_courses.html">this&lt;/a>.&lt;/p>
+👋🏽 Hello, and welcome to my website! My name is Pramana Saldin and I am a fourth-year undergraduate at the University of Wisconsin.
+I am a 2025 &lt;a href="https://goldwaterscholarship.gov/">Barry Goldwater Scholar&lt;/a>. This summer, I am conducting research for the &lt;a href="https://math.williams.edu/small/">SMALL REU&lt;/a> (number theory and probability). I&amp;rsquo;m interested in algebra.&lt;/p></description></item><item><title>course guide</title><link>https://pr4-kp.github.io/courses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/courses/</guid><description>&lt;p>Some thoughts on UW courses. Inspired by &lt;a href="https://ruipan.xyz/wisc_courses.html">this&lt;/a>.&lt;/p>
 &lt;figure>&lt;img src="https://pr4-kp.github.io/img/ANTHRO105.jpg"
  alt="bio credit ftw" height="250px">&lt;figcaption>
  &lt;h4>ANTHRO 105: Principles of biological anthropology&lt;/h4>&lt;p>bio credit ftw&lt;/p>
@@ -85,7 +88,12 @@ I am a 2025 &lt;a href="https://goldwaterscholarship.gov/">Barry Goldwater Schol
  alt="Very tedious course. Know how to use basic wolfram/python code and you will pass." height="250px">&lt;figcaption>
  &lt;h4>MATH 475: Introduction to combinatorics&lt;/h4>&lt;p>Very tedious course. Know how to use basic &lt;a href="https://www.wolframalpha.com/">wolfram&lt;/a>/python code and you will pass.&lt;/p>
  &lt;/figcaption>
-&lt;/figure></description></item><item><title>Notes</title><link>https://pr4-kp.github.io/notes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/notes/</guid><description>&lt;h1 id="math-721-a-first-course-in-real-analysis">MATH 721: A First Course in Real Analysis&lt;/h1>
+&lt;/figure></description></item><item><title>Friends</title><link>https://pr4-kp.github.io/friends/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/friends/</guid><description>&lt;p>My friends (who have a website $\cap$ do mathematics).&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://kryptoknight73.github.io/Math-Blog/">Haran Mouli&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://xpoes123.github.io/davidJ/">David Jiang&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://www.vincedillon.com/">Vince Dillon&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Notes</title><link>https://pr4-kp.github.io/notes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/notes/</guid><description>&lt;h1 id="math-721-a-first-course-in-real-analysis">MATH 721: A First Course in Real Analysis&lt;/h1>
 &lt;ul>
 &lt;li>Notes (&lt;a href="https://pr4-kp.github.io/pdf/math721/main_721.pdf">PDF&lt;/a>)&lt;/li>
 &lt;/ul>
@@ -147,7 +155,8 @@ state Gårding’s inequality and give one application.&lt;/li>
 &lt;h1 id="math-531-uwm-modern-algebra">MATH 531 (UWM): Modern Algebra&lt;/h1>
 &lt;ul>
 &lt;li>Notes (&lt;a href="https://pr4-kp.github.io/pdf/math531uwm/MATH-531-Notes.pdf">PDF&lt;/a>)&lt;/li>
-&lt;/ul></description></item><item><title>Papers</title><link>https://pr4-kp.github.io/papers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/papers/</guid><description>&lt;ul>
-&lt;li>Jillson, Noah, Daniel Levitin, Pramana Saldin, Katerina Stuopis, Qianruixi Wang, and Kaicheng Xue. 2025. “Finite-State Machines for Horospheres in Hyperbolic Right-Angled Coxeter Groups.” &lt;em>Geometriae Dedicata&lt;/em> 219 (2): 37.
-&lt;a href="https://doi.org/10.1007/s10711-024-00977-1">https://doi.org/10.1007/s10711-024-00977-1&lt;/a>.&lt;/li>
+&lt;/ul></description></item><item><title>Research</title><link>https://pr4-kp.github.io/research/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/research/</guid><description>&lt;ul>
+&lt;li>&lt;a href="https://doi.org/10.1007/s10711-024-00977-1">&lt;strong>Finite-State Machines for Horospheres in Hyperbolic Right-Angled Coxeter Groups&lt;/strong>&lt;/a>&lt;br>
+&lt;em>with Noah Jillson, Daniel Levitin, Katerina Stuopis, Qianruixi Wang, and Kaicheng Xue.&lt;/em>&lt;br>
+&lt;em>Geometriae Dedicata&lt;/em>. Volume 219, article number 37 (2025).&lt;/li>
 &lt;/ul></description></item></channel></rss>
