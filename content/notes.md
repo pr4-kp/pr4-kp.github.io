@@ -4,7 +4,11 @@ description = "Repository of my notes for my classes"
 math = true
 +++
 
-# MATH 721: A First Course in Real Analysis
+# MATH 741 and 742: Abstract algebra I and II
+
+- Notes ([PDF](/pdf/math741/main_741-742.pdf))
+
+# MATH 721: A first course in real analysis
 
 - Notes ([PDF](/pdf/math721/main_721.pdf))
 
@@ -17,7 +21,7 @@ math = true
 - Resultants and Elimination Theory ([PDF](/pdf/resultants_and_elimination_theory.pdf))
   - Expository paper from a directed study in algebraic geometry under [Professor Brian Lawrence](https://people.math.wisc.edu/lawrence/). The resultant allow us to check if the polynomials $f$ and $g$ share a root just using their coefficients. Using these ideas, we can prove a more general theorem in algebraic geometry called the _fundamental theorem of elimination theory_.
 
-# MATH 531: Probability Theory
+# MATH 531: Probability theory
 
 - Notes ([PDF](/pdf/math531/main_531.pdf))
 
@@ -28,7 +32,7 @@ math = true
     This allows us to study algebra by means
     of vector bundles and vice-versa. We conclude with an introductory result in K-theory that follows from this theorem
 
-# MATH 542: Modern Algebra II
+# MATH 542: Modern algebra II
 
 - Notes ([PDF](/pdf/math542/main_542.pdf))
 
