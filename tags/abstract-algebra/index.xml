@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abstract Algebra on pramana's blog</title><link>https://pr4-kp.github.io/tags/abstract-algebra/</link><description>Recent content in Abstract Algebra on pramana's blog</description><generator>Hugo</generator><language>en-us</language><copyright>© Pramana</copyright><lastBuildDate>Wed, 07 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://pr4-kp.github.io/tags/abstract-algebra/index.xml" rel="self" type="application/rss+xml"/><item><title>Visualizing prime spectrums with graphs</title><link>https://pr4-kp.github.io/posts/visualizing-prime-spectrum/</link><pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/visualizing-prime-spectrum/</guid><description>&lt;p>In &lt;a href="https://www.amazon.com/Introduction-Commutative-Algebra-Addison-Wesley-Mathematics/dp/0201407515">Atiyah and Macdonald&amp;rsquo;s book&lt;/a> we construct a certain topological space from a &lt;a href="https://en.wikipedia.org/wiki/Ring_(mathematics)">ring&lt;/a> called the &lt;strong>prime spectrum&lt;/strong> of a ring. While working through the exercises, I saw an interesting way of viewing closed and open subsets of the prime spectrum that borrowed ideals from combinatorics.&lt;/p>
-&lt;h1 id="what-is-the-prime-spectrum-of-a-ring">What is the prime spectrum of a ring?&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abstract Algebra on pramana's blog</title><link>https://pr4-kp.github.io/tags/abstract-algebra/</link><description>Recent content in Abstract Algebra on pramana's blog</description><generator>Hugo</generator><language>en-us</language><copyright>© Pramana</copyright><lastBuildDate>Wed, 07 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://pr4-kp.github.io/tags/abstract-algebra/index.xml" rel="self" type="application/rss+xml"/><item><title>Visualizing prime spectrums with graphs</title><link>https://pr4-kp.github.io/posts/visualizing-prime-spectrum/</link><pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/visualizing-prime-spectrum/</guid><description>&lt;p&gt;In &lt;a href="https://www.amazon.com/Introduction-Commutative-Algebra-Addison-Wesley-Mathematics/dp/0201407515"&gt;Atiyah and Macdonald&amp;rsquo;s book&lt;/a&gt; we construct a certain topological space from a &lt;a href="https://en.wikipedia.org/wiki/Ring_(mathematics)"&gt;ring&lt;/a&gt; called the &lt;strong&gt;prime spectrum&lt;/strong&gt; of a ring. While working through the exercises, I saw an interesting way of viewing closed and open subsets of the prime spectrum that borrowed ideals from combinatorics.&lt;/p&gt;
+&lt;h1 id="what-is-the-prime-spectrum-of-a-ring"&gt;What is the prime spectrum of a ring?&lt;/h1&gt;
 &lt;blockquote 
- class="Definition">
- &lt;p>
- &lt;b>Definition&lt;/b>&lt;b> (Prime ideal)&lt;/b>&lt;b>.&lt;/b>
- &lt;p>An &lt;strong>ideal&lt;/strong> $\mathfrak{a}$ of a ring $A$ is a &lt;strong>subring&lt;/strong> (a subset of $A$ that is still a ring under $A$&amp;rsquo;s operations) that has the property that any $a\in A$ times $p\in \mathfrak{a}$ has $ap\in \mathfrak{a}$ as well. That is, the elements in the ideal stay in the ideal after multiplying by any element of $A$.&lt;/p></description></item><item><title>Group structures</title><link>https://pr4-kp.github.io/posts/group-structures/</link><pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/group-structures/</guid><description>&lt;p>I&amp;rsquo;ve been working on Beachy and Blair&amp;rsquo;s &lt;a href="https://www.johnabeachy.com/">Abstract Algebra Book&lt;/a>,
-specifically their chapter on Group structure (7), and I wanted to summarize what I&amp;rsquo;ve learned about group structures.&lt;/p>
-&lt;h2 id="finite-groups-and-structure">Finite groups and structure&lt;/h2>
-&lt;p>The problems and results derived from this chapter almost all concern with finite groups. We know &lt;em>a lot&lt;/em> about finite groups. For example, we have this result:&lt;/p>
+ class="Definition"&gt;
+ &lt;p&gt;
+ &lt;b&gt;Definition&lt;/b&gt;&lt;b&gt; (Prime ideal)&lt;/b&gt;&lt;b&gt;.&lt;/b&gt;
+ &lt;p&gt;An &lt;strong&gt;ideal&lt;/strong&gt; $\mathfrak{a}$ of a ring $A$ is a &lt;strong&gt;subring&lt;/strong&gt; (a subset of $A$ that is still a ring under $A$&amp;rsquo;s operations) that has the property that any $a\in A$ times $p\in \mathfrak{a}$ has $ap\in \mathfrak{a}$ as well. That is, the elements in the ideal stay in the ideal after multiplying by any element of $A$.&lt;/p&gt;</description></item><item><title>Group structures</title><link>https://pr4-kp.github.io/posts/group-structures/</link><pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/group-structures/</guid><description>&lt;p&gt;I&amp;rsquo;ve been working on Beachy and Blair&amp;rsquo;s &lt;a href="https://www.johnabeachy.com/"&gt;Abstract Algebra Book&lt;/a&gt;,
+specifically their chapter on Group structure (7), and I wanted to summarize what I&amp;rsquo;ve learned about group structures.&lt;/p&gt;
+&lt;h2 id="finite-groups-and-structure"&gt;Finite groups and structure&lt;/h2&gt;
+&lt;p&gt;The problems and results derived from this chapter almost all concern with finite groups. We know &lt;em&gt;a lot&lt;/em&gt; about finite groups. For example, we have this result:&lt;/p&gt;
 &lt;blockquote 
- class="Theorem">
- &lt;p>
- &lt;b>Theorem&lt;/b>&lt;b> (Burnside, 1904)&lt;/b>&lt;b>.&lt;/b>
+ class="Theorem"&gt;
+ &lt;p&gt;
+ &lt;b&gt;Theorem&lt;/b&gt;&lt;b&gt; (Burnside, 1904)&lt;/b&gt;&lt;b&gt;.&lt;/b&gt;
  Every group of order $p^a q^b$, where $p$ and $q$ are (not necessarily distinct) primes is solvable.
- &lt;/p></description></item></channel></rss>
+ &lt;/p&gt;</description></item></channel></rss>

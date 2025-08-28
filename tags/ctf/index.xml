@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ctf on pramana's blog</title><link>https://pr4-kp.github.io/tags/ctf/</link><description>Recent content in Ctf on pramana's blog</description><generator>Hugo</generator><language>en-us</language><copyright>© Pramana</copyright><lastBuildDate>Sat, 30 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://pr4-kp.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml"/><item><title>My first CTF: HackMIT 2023's puzzle</title><link>https://pr4-kp.github.io/posts/hackmit-solutions-2023/</link><pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/hackmit-solutions-2023/</guid><description>&lt;p>On July 4th, MIT emailed all applicants to their &lt;a href="https://en.wikipedia.org/wiki/Hackathon?oldformat=true">hackathon&lt;/a>, HackMIT, that they have started a puzzle, where the &lt;strong>top 50&lt;/strong> competitors would be granted admission into HackMIT.&lt;/p>
-&lt;figure>&lt;img src="https://pr4-kp.github.io/img/hackmit-solutions-2023/Screen%20Shot%202023-08-23%20at%2012.50.45%20AM.png">
-&lt;/figure>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ctf on pramana's blog</title><link>https://pr4-kp.github.io/tags/ctf/</link><description>Recent content in Ctf on pramana's blog</description><generator>Hugo</generator><language>en-us</language><copyright>© Pramana</copyright><lastBuildDate>Sat, 30 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://pr4-kp.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml"/><item><title>My first CTF: HackMIT 2023's puzzle</title><link>https://pr4-kp.github.io/posts/hackmit-solutions-2023/</link><pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/hackmit-solutions-2023/</guid><description>&lt;p&gt;On July 4th, MIT emailed all applicants to their &lt;a href="https://en.wikipedia.org/wiki/Hackathon?oldformat=true"&gt;hackathon&lt;/a&gt;, HackMIT, that they have started a puzzle, where the &lt;strong&gt;top 50&lt;/strong&gt; competitors would be granted admission into HackMIT.&lt;/p&gt;
+&lt;figure&gt;&lt;img src="https://pr4-kp.github.io/img/hackmit-solutions-2023/Screen%20Shot%202023-08-23%20at%2012.50.45%20AM.png"&gt;
+&lt;/figure&gt;
 
-&lt;p>Taking their advice, I went to checking the website. In the FAQ section, I noticed something new:&lt;/p>
-&lt;figure>&lt;img src="https://pr4-kp.github.io/img/hackmit-solutions-2023/is_there_admissions.png"
- alt="What does it mean?">&lt;figcaption>
- &lt;p>What does it mean?&lt;/p>
- &lt;/figcaption>
-&lt;/figure>
+&lt;p&gt;Taking their advice, I went to checking the website. In the FAQ section, I noticed something new:&lt;/p&gt;
+&lt;figure&gt;&lt;img src="https://pr4-kp.github.io/img/hackmit-solutions-2023/is_there_admissions.png"
+ alt="What does it mean?"&gt;&lt;figcaption&gt;
+ &lt;p&gt;What does it mean?&lt;/p&gt;
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
 
-&lt;p>The strange placement of upper/lowercase letters and the length of all words being the same made me think some message was being hidden here in binary. If we let uppercase letter $= 1$ and lowercase letter $=0$, then we get the strings&lt;/p></description></item></channel></rss>
+&lt;p&gt;The strange placement of upper/lowercase letters and the length of all words being the same made me think some message was being hidden here in binary. If we let uppercase letter $= 1$ and lowercase letter $=0$, then we get the strings&lt;/p&gt;</description></item></channel></rss>

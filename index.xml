@@ -1,162 +1,170 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>pramana's blog</title><link>https://pr4-kp.github.io/</link><description>Recent content on pramana's blog</description><generator>Hugo</generator><language>en-us</language><copyright>© Pramana</copyright><lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://pr4-kp.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>A presheaf which is not a sheaf</title><link>https://pr4-kp.github.io/posts/natural-presheaves-not-sheaves/</link><pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/natural-presheaves-not-sheaves/</guid><description>&lt;p>I&amp;rsquo;ve been reading Ravi Vakil&amp;rsquo;s &lt;a href="https://math.stanford.edu/~vakil/216blog/index.html">Rising Sea: Foundations of Algebraic Geometry&lt;/a> this semester, specifically the second chapter which gives an introduction to sheaf theory. While the first half of the chapter serves to introduce the idea of a sheaf and to convince you that it makes sense geometrically to define it, I would say the meat of the chapter is defining the &lt;em>sheafification&lt;/em> of a presheaf and explain how it helps us do homology on sheaves.&lt;/p></description></item><item><title>Can a machine learn mathematical structure?</title><link>https://pr4-kp.github.io/posts/machine-learning-sl2z/</link><pubDate>Tue, 23 Jul 2024 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/machine-learning-sl2z/</guid><description>&lt;p>When I think of machine learning, I tend to think about &lt;strong>estimation&lt;/strong>; a machine learning algorithm is a method of estimating a function given a (usually large) set of data. As a result, I&amp;rsquo;ve primarily seen machine learning used when the function we are trying to estimate is assumed to be continuous (or differentiable, smooth, etc.), because then you can use nice results from analysis to prove convergence. But algebraic structures like &lt;a href="https://en.wikipedia.org/wiki/Group_theory">&lt;strong>groups&lt;/strong>&lt;/a> can be discrete objects, where there is no way to smoothly interpolate between two group elements. Moreover, groups adhere to very strict rules that dictate how they can be studied, which makes this continuous way of thinking hard to apply &amp;ndash; I mean, it&amp;rsquo;s hard to imagine that a machine learning model, just armed with data about groups, functions between them, and some backpropagation, could reach the &lt;a href="https://en.wikipedia.org/wiki/Isomorphism_theorems">isomorphism theorems&lt;/a>. Despite this, the research I did last semester opened my mind more to using classical machine learning methods to get structure of discrete groups, given that we ask train the machine on the right questions.&lt;/p></description></item><item><title>Why homology is weaker than homotopy</title><link>https://pr4-kp.github.io/posts/same-homology-different-homotopy/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/same-homology-different-homotopy/</guid><description>&lt;p>The main two flavors of invariants in an introductory algebraic topology class are the homology groups associated with a space and the homotopy groups (typically just the first homotopy group, $\pi_1$). The fundamental group is formed by looking at loops starting at a certain point. Similarly, the homotopy groups look at cycles, which can be thought of as loops that commute. Because of these similarities, I wondered about which one was &amp;ldquo;better&amp;rdquo; at differentiating topological spaces.&lt;/p></description></item><item><title>Understanding exact sequences</title><link>https://pr4-kp.github.io/posts/exact-sequence/</link><pubDate>Thu, 28 Dec 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/exact-sequence/</guid><description>&lt;p>Let&amp;rsquo;s start with a motivating question I had from group theory: if $N \trianglelefteq G$ is a normal subgroup,
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>pramana's blog</title><link>https://pr4-kp.github.io/</link><description>Recent content on pramana's blog</description><generator>Hugo</generator><language>en-us</language><copyright>© Pramana</copyright><lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://pr4-kp.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>A presheaf which is not a sheaf</title><link>https://pr4-kp.github.io/posts/natural-presheaves-not-sheaves/</link><pubDate>Thu, 12 Jun 2025 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/natural-presheaves-not-sheaves/</guid><description>&lt;p&gt;I&amp;rsquo;ve been reading Ravi Vakil&amp;rsquo;s &lt;a href="https://math.stanford.edu/~vakil/216blog/index.html"&gt;Rising Sea: Foundations of Algebraic Geometry&lt;/a&gt; this semester, specifically the second chapter which gives an introduction to sheaf theory. While the first half of the chapter serves to introduce the idea of a sheaf and to convince you that it makes sense geometrically to define it, I would say the meat of the chapter is defining the &lt;em&gt;sheafification&lt;/em&gt; of a presheaf and explain how it helps us do homology on sheaves.&lt;/p&gt;</description></item><item><title>Can a machine learn mathematical structure?</title><link>https://pr4-kp.github.io/posts/machine-learning-sl2z/</link><pubDate>Tue, 23 Jul 2024 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/machine-learning-sl2z/</guid><description>&lt;p&gt;When I think of machine learning, I tend to think about &lt;strong&gt;estimation&lt;/strong&gt;; a machine learning algorithm is a method of estimating a function given a (usually large) set of data. As a result, I&amp;rsquo;ve primarily seen machine learning used when the function we are trying to estimate is assumed to be continuous (or differentiable, smooth, etc.), because then you can use nice results from analysis to prove convergence. But algebraic structures like &lt;a href="https://en.wikipedia.org/wiki/Group_theory"&gt;&lt;strong&gt;groups&lt;/strong&gt;&lt;/a&gt; can be discrete objects, where there is no way to smoothly interpolate between two group elements. Moreover, groups adhere to very strict rules that dictate how they can be studied, which makes this continuous way of thinking hard to apply &amp;ndash; I mean, it&amp;rsquo;s hard to imagine that a machine learning model, just armed with data about groups, functions between them, and some backpropagation, could reach the &lt;a href="https://en.wikipedia.org/wiki/Isomorphism_theorems"&gt;isomorphism theorems&lt;/a&gt;. Despite this, the research I did last semester opened my mind more to using classical machine learning methods to get structure of discrete groups, given that we ask train the machine on the right questions.&lt;/p&gt;</description></item><item><title>Why homology is weaker than homotopy</title><link>https://pr4-kp.github.io/posts/same-homology-different-homotopy/</link><pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/same-homology-different-homotopy/</guid><description>&lt;p&gt;The main two flavors of invariants in an introductory algebraic topology class are the homology groups associated with a space and the homotopy groups (typically just the first homotopy group, $\pi_1$). The fundamental group is formed by looking at loops starting at a certain point. Similarly, the homotopy groups look at cycles, which can be thought of as loops that commute. Because of these similarities, I wondered about which one was &amp;ldquo;better&amp;rdquo; at differentiating topological spaces.&lt;/p&gt;</description></item><item><title>Understanding exact sequences</title><link>https://pr4-kp.github.io/posts/exact-sequence/</link><pubDate>Thu, 28 Dec 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/exact-sequence/</guid><description>&lt;p&gt;Let&amp;rsquo;s start with a motivating question I had from group theory: if $N \trianglelefteq G$ is a normal subgroup,
 is it necessarily true that $G\cong G/N\times N$? Looking at non-abelian groups quickly shows that the answer is no (take the dihedral group $D_3=\langle r,t \mid r^3=t^2=1, rt=tr^{-1}\rangle$ and
-the normal subgroup $\langle r\rangle\cong \mathbb{Z}/3$).&lt;/p>
-&lt;p>I later learned about &lt;strong>semidirect products&lt;/strong> $\rtimes_\phi$, which generalize the direct product $\times$. But even this was
-insufficient to describe group decompositions.&lt;/p></description></item><item><title>My first CTF: HackMIT 2023's puzzle</title><link>https://pr4-kp.github.io/posts/hackmit-solutions-2023/</link><pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/hackmit-solutions-2023/</guid><description>&lt;p>On July 4th, MIT emailed all applicants to their &lt;a href="https://en.wikipedia.org/wiki/Hackathon?oldformat=true">hackathon&lt;/a>, HackMIT, that they have started a puzzle, where the &lt;strong>top 50&lt;/strong> competitors would be granted admission into HackMIT.&lt;/p>
-&lt;figure>&lt;img src="https://pr4-kp.github.io/img/hackmit-solutions-2023/Screen%20Shot%202023-08-23%20at%2012.50.45%20AM.png">
-&lt;/figure>
+the normal subgroup $\langle r\rangle\cong \mathbb{Z}/3$).&lt;/p&gt;
+&lt;p&gt;I later learned about &lt;strong&gt;semidirect products&lt;/strong&gt; $\rtimes_\phi$, which generalize the direct product $\times$. But even this was
+insufficient to describe group decompositions.&lt;/p&gt;</description></item><item><title>My first CTF: HackMIT 2023's puzzle</title><link>https://pr4-kp.github.io/posts/hackmit-solutions-2023/</link><pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/hackmit-solutions-2023/</guid><description>&lt;p&gt;On July 4th, MIT emailed all applicants to their &lt;a href="https://en.wikipedia.org/wiki/Hackathon?oldformat=true"&gt;hackathon&lt;/a&gt;, HackMIT, that they have started a puzzle, where the &lt;strong&gt;top 50&lt;/strong&gt; competitors would be granted admission into HackMIT.&lt;/p&gt;
+&lt;figure&gt;&lt;img src="https://pr4-kp.github.io/img/hackmit-solutions-2023/Screen%20Shot%202023-08-23%20at%2012.50.45%20AM.png"&gt;
+&lt;/figure&gt;
 
-&lt;p>Taking their advice, I went to checking the website. In the FAQ section, I noticed something new:&lt;/p>
-&lt;figure>&lt;img src="https://pr4-kp.github.io/img/hackmit-solutions-2023/is_there_admissions.png"
- alt="What does it mean?">&lt;figcaption>
- &lt;p>What does it mean?&lt;/p>
- &lt;/figcaption>
-&lt;/figure>
+&lt;p&gt;Taking their advice, I went to checking the website. In the FAQ section, I noticed something new:&lt;/p&gt;
+&lt;figure&gt;&lt;img src="https://pr4-kp.github.io/img/hackmit-solutions-2023/is_there_admissions.png"
+ alt="What does it mean?"&gt;&lt;figcaption&gt;
+ &lt;p&gt;What does it mean?&lt;/p&gt;
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
 
-&lt;p>The strange placement of upper/lowercase letters and the length of all words being the same made me think some message was being hidden here in binary. If we let uppercase letter $= 1$ and lowercase letter $=0$, then we get the strings&lt;/p></description></item><item><title>Now</title><link>https://pr4-kp.github.io/now/</link><pubDate>Wed, 06 Sep 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/now/</guid><description>&lt;p>Following the ideas behind a &lt;a href="https://nownownow.com/about">now page&lt;/a>, I am&amp;hellip;&lt;/p>
-&lt;ul>
-&lt;li>Going through my second year of undergrad.&lt;/li>
-&lt;li>Building &lt;a href="https://react.dev/">React&lt;/a> apps in preparation for hackathons.&lt;/li>
-&lt;li>Getting better at digital art, starting with &lt;strong>anatomy&lt;/strong>.&lt;/li>
-&lt;li>Learning a new program for video editing, &lt;a href="https://www.adobe.com/products/premiere.html">Premiere Pro&lt;/a>.&lt;/li>
-&lt;/ul></description></item><item><title>Visualizing prime spectrums with graphs</title><link>https://pr4-kp.github.io/posts/visualizing-prime-spectrum/</link><pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/visualizing-prime-spectrum/</guid><description>&lt;p>In &lt;a href="https://www.amazon.com/Introduction-Commutative-Algebra-Addison-Wesley-Mathematics/dp/0201407515">Atiyah and Macdonald&amp;rsquo;s book&lt;/a> we construct a certain topological space from a &lt;a href="https://en.wikipedia.org/wiki/Ring_(mathematics)">ring&lt;/a> called the &lt;strong>prime spectrum&lt;/strong> of a ring. While working through the exercises, I saw an interesting way of viewing closed and open subsets of the prime spectrum that borrowed ideals from combinatorics.&lt;/p>
-&lt;h1 id="what-is-the-prime-spectrum-of-a-ring">What is the prime spectrum of a ring?&lt;/h1>
+&lt;p&gt;The strange placement of upper/lowercase letters and the length of all words being the same made me think some message was being hidden here in binary. If we let uppercase letter $= 1$ and lowercase letter $=0$, then we get the strings&lt;/p&gt;</description></item><item><title>Now</title><link>https://pr4-kp.github.io/now/</link><pubDate>Wed, 06 Sep 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/now/</guid><description>&lt;p&gt;Following the ideas behind a &lt;a href="https://nownownow.com/about"&gt;now page&lt;/a&gt;, I am&amp;hellip;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Going through my second year of undergrad.&lt;/li&gt;
+&lt;li&gt;Building &lt;a href="https://react.dev/"&gt;React&lt;/a&gt; apps in preparation for hackathons.&lt;/li&gt;
+&lt;li&gt;Getting better at digital art, starting with &lt;strong&gt;anatomy&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Learning a new program for video editing, &lt;a href="https://www.adobe.com/products/premiere.html"&gt;Premiere Pro&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Visualizing prime spectrums with graphs</title><link>https://pr4-kp.github.io/posts/visualizing-prime-spectrum/</link><pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/visualizing-prime-spectrum/</guid><description>&lt;p&gt;In &lt;a href="https://www.amazon.com/Introduction-Commutative-Algebra-Addison-Wesley-Mathematics/dp/0201407515"&gt;Atiyah and Macdonald&amp;rsquo;s book&lt;/a&gt; we construct a certain topological space from a &lt;a href="https://en.wikipedia.org/wiki/Ring_(mathematics)"&gt;ring&lt;/a&gt; called the &lt;strong&gt;prime spectrum&lt;/strong&gt; of a ring. While working through the exercises, I saw an interesting way of viewing closed and open subsets of the prime spectrum that borrowed ideals from combinatorics.&lt;/p&gt;
+&lt;h1 id="what-is-the-prime-spectrum-of-a-ring"&gt;What is the prime spectrum of a ring?&lt;/h1&gt;
 &lt;blockquote 
- class="Definition">
- &lt;p>
- &lt;b>Definition&lt;/b>&lt;b> (Prime ideal)&lt;/b>&lt;b>.&lt;/b>
- &lt;p>An &lt;strong>ideal&lt;/strong> $\mathfrak{a}$ of a ring $A$ is a &lt;strong>subring&lt;/strong> (a subset of $A$ that is still a ring under $A$&amp;rsquo;s operations) that has the property that any $a\in A$ times $p\in \mathfrak{a}$ has $ap\in \mathfrak{a}$ as well. That is, the elements in the ideal stay in the ideal after multiplying by any element of $A$.&lt;/p></description></item><item><title>Visualizing horospheres on hyperbolic groups</title><link>https://pr4-kp.github.io/posts/horospheres-project/</link><pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/horospheres-project/</guid><description>&lt;p>This semester I was able to participate in our undergradute research lab, and, relevant to my past work,
+ class="Definition"&gt;
+ &lt;p&gt;
+ &lt;b&gt;Definition&lt;/b&gt;&lt;b&gt; (Prime ideal)&lt;/b&gt;&lt;b&gt;.&lt;/b&gt;
+ &lt;p&gt;An &lt;strong&gt;ideal&lt;/strong&gt; $\mathfrak{a}$ of a ring $A$ is a &lt;strong&gt;subring&lt;/strong&gt; (a subset of $A$ that is still a ring under $A$&amp;rsquo;s operations) that has the property that any $a\in A$ times $p\in \mathfrak{a}$ has $ap\in \mathfrak{a}$ as well. That is, the elements in the ideal stay in the ideal after multiplying by any element of $A$.&lt;/p&gt;</description></item><item><title>Visualizing horospheres on hyperbolic groups</title><link>https://pr4-kp.github.io/posts/horospheres-project/</link><pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/horospheres-project/</guid><description>&lt;p&gt;This semester I was able to participate in our undergradute research lab, and, relevant to my past work,
 our project was in the field of geometric group
 theory. I plan on introducing our project and go over some topics in geometric group theory I haven&amp;rsquo;t covered before.
-This project was joint work with Noah Jillson and Katerina Stuopis with our advisors Daniel Levitin and Tullia Dymarz.&lt;/p>
-&lt;p>If you want to skip the mathematical jargon and see the results, skip to the end.&lt;/p></description></item><item><title>Weak solutions to dirichlet boundary problems</title><link>https://pr4-kp.github.io/posts/dirichlet-boundary-problems-weak/</link><pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/dirichlet-boundary-problems-weak/</guid><description>&lt;p>For the final project in Analysis I, my professor asked us to write a paper on a topic adjacent to analysis. Being an applied mathematician, he recommended I study a very specific inequality called Gårding’s inequality.&lt;/p>
-&lt;p>If you would like to learn more about Gårding’s inequality itself, my &lt;a href="https://pr4-kp.github.io/pdf/math521/gardings_inequality_521.pdf">paper&lt;/a> has all the details about it, the prerequisites to understand it, and an application. In fact, most of the paper covers the necessary material needed to understand what the inequality is even saying (PDE analysis seems to be a lot less abstract than other fields, considering all the machinery I needed). However, for a blog post, I don&amp;rsquo;t want to bog down any actual interesting results by trying to describe how this inequality functions. This will only focus on the broader subject of weak solutions to PDEs.&lt;/p></description></item><item><title>Group structures</title><link>https://pr4-kp.github.io/posts/group-structures/</link><pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/group-structures/</guid><description>&lt;p>I&amp;rsquo;ve been working on Beachy and Blair&amp;rsquo;s &lt;a href="https://www.johnabeachy.com/">Abstract Algebra Book&lt;/a>,
-specifically their chapter on Group structure (7), and I wanted to summarize what I&amp;rsquo;ve learned about group structures.&lt;/p>
-&lt;h2 id="finite-groups-and-structure">Finite groups and structure&lt;/h2>
-&lt;p>The problems and results derived from this chapter almost all concern with finite groups. We know &lt;em>a lot&lt;/em> about finite groups. For example, we have this result:&lt;/p>
+This project was joint work with Noah Jillson and Katerina Stuopis with our advisors Daniel Levitin and Tullia Dymarz.&lt;/p&gt;
+&lt;p&gt;If you want to skip the mathematical jargon and see the results, skip to the end.&lt;/p&gt;</description></item><item><title>Weak solutions to dirichlet boundary problems</title><link>https://pr4-kp.github.io/posts/dirichlet-boundary-problems-weak/</link><pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/dirichlet-boundary-problems-weak/</guid><description>&lt;p&gt;For the final project in Analysis I, my professor asked us to write a paper on a topic adjacent to analysis. Being an applied mathematician, he recommended I study a very specific inequality called Gårding’s inequality.&lt;/p&gt;
+&lt;p&gt;If you would like to learn more about Gårding’s inequality itself, my &lt;a href="https://pr4-kp.github.io/pdf/math521/gardings_inequality_521.pdf"&gt;paper&lt;/a&gt; has all the details about it, the prerequisites to understand it, and an application. In fact, most of the paper covers the necessary material needed to understand what the inequality is even saying (PDE analysis seems to be a lot less abstract than other fields, considering all the machinery I needed). However, for a blog post, I don&amp;rsquo;t want to bog down any actual interesting results by trying to describe how this inequality functions. This will only focus on the broader subject of weak solutions to PDEs.&lt;/p&gt;</description></item><item><title>Group structures</title><link>https://pr4-kp.github.io/posts/group-structures/</link><pubDate>Wed, 09 Nov 2022 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/group-structures/</guid><description>&lt;p&gt;I&amp;rsquo;ve been working on Beachy and Blair&amp;rsquo;s &lt;a href="https://www.johnabeachy.com/"&gt;Abstract Algebra Book&lt;/a&gt;,
+specifically their chapter on Group structure (7), and I wanted to summarize what I&amp;rsquo;ve learned about group structures.&lt;/p&gt;
+&lt;h2 id="finite-groups-and-structure"&gt;Finite groups and structure&lt;/h2&gt;
+&lt;p&gt;The problems and results derived from this chapter almost all concern with finite groups. We know &lt;em&gt;a lot&lt;/em&gt; about finite groups. For example, we have this result:&lt;/p&gt;
 &lt;blockquote 
- class="Theorem">
- &lt;p>
- &lt;b>Theorem&lt;/b>&lt;b> (Burnside, 1904)&lt;/b>&lt;b>.&lt;/b>
+ class="Theorem"&gt;
+ &lt;p&gt;
+ &lt;b&gt;Theorem&lt;/b&gt;&lt;b&gt; (Burnside, 1904)&lt;/b&gt;&lt;b&gt;.&lt;/b&gt;
  Every group of order $p^a q^b$, where $p$ and $q$ are (not necessarily distinct) primes is solvable.
- &lt;/p></description></item><item><title>Graph ends and their purpose in geometric group theory</title><link>https://pr4-kp.github.io/posts/graphgroupends/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/graphgroupends/</guid><description>&lt;p>I&amp;rsquo;ll give an intuition for how mathematicians define what graph ends are, and explain their use in geometric group theory. However, before I can do that, I&amp;rsquo;ll explain what ends are in a graph theory perspective.&lt;/p>
-&lt;h1 id="what-are-ends">What are ends?&lt;/h1>
-&lt;p>The word &lt;strong>ends&lt;/strong> is a little confusing, because they don&amp;rsquo;t really represent the &amp;ldquo;end&amp;rdquo; of a graph, at least not how we would define an end in real life. Think of a rope. If two teams were playing tug of war on that rope, we know that it has two ends that the opposite teams would tug on. Now if this rope is of finite length (it probably is), then we would typically call the two points at the end of the rope the ends (obviously).&lt;/p></description></item><item><title/><link>https://pr4-kp.github.io/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/archives/</guid><description/></item><item><title>About this blog</title><link>https://pr4-kp.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/about/</guid><description>&lt;p>
+ &lt;/p&gt;</description></item><item><title>Graph ends and their purpose in geometric group theory</title><link>https://pr4-kp.github.io/posts/graphgroupends/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/graphgroupends/</guid><description>&lt;p&gt;I&amp;rsquo;ll give an intuition for how mathematicians define what graph ends are, and explain their use in geometric group theory. However, before I can do that, I&amp;rsquo;ll explain what ends are in a graph theory perspective.&lt;/p&gt;
+&lt;h1 id="what-are-ends"&gt;What are ends?&lt;/h1&gt;
+&lt;p&gt;The word &lt;strong&gt;ends&lt;/strong&gt; is a little confusing, because they don&amp;rsquo;t really represent the &amp;ldquo;end&amp;rdquo; of a graph, at least not how we would define an end in real life. Think of a rope. If two teams were playing tug of war on that rope, we know that it has two ends that the opposite teams would tug on. Now if this rope is of finite length (it probably is), then we would typically call the two points at the end of the rope the ends (obviously).&lt;/p&gt;</description></item><item><title/><link>https://pr4-kp.github.io/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/archives/</guid><description/></item><item><title>About this blog</title><link>https://pr4-kp.github.io/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/about/</guid><description>&lt;p&gt;
 
 
 
-&lt;div id="carousel0" class="carousel" duration="7000">
- &lt;ul>
+&lt;div id="carousel0" class="carousel" duration="7000"&gt;
+ &lt;ul&gt;
  
- &lt;li id="c0_slide1" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/machine-learning-sl2z/generators-paths-cosets.png" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
+ &lt;li id="c0_slide1" style="min-width: calc(100%/1); padding-bottom: 100%;"&gt;&lt;img src="https://pr4-kp.github.io/img/machine-learning-sl2z/generators-paths-cosets.png" alt="" /&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/li&gt;
  
- &lt;li id="c0_slide2" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/horospheres-project/Length3_Horosphere_2D.jpg" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
+ &lt;li id="c0_slide2" style="min-width: calc(100%/1); padding-bottom: 100%;"&gt;&lt;img src="https://pr4-kp.github.io/img/horospheres-project/Length3_Horosphere_2D.jpg" alt="" /&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/li&gt;
  
- &lt;li id="c0_slide3" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/difference-graph-5.png" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
+ &lt;li id="c0_slide3" style="min-width: calc(100%/1); padding-bottom: 100%;"&gt;&lt;img src="https://pr4-kp.github.io/img/difference-graph-5.png" alt="" /&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/li&gt;
  
- &lt;li id="c0_slide4" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/behrend-construction.png" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
+ &lt;li id="c0_slide4" style="min-width: calc(100%/1); padding-bottom: 100%;"&gt;&lt;img src="https://pr4-kp.github.io/img/behrend-construction.png" alt="" /&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/li&gt;
  
- &lt;li id="c0_slide5" style="min-width: calc(100%/1); padding-bottom: 100%;">&lt;img src="https://pr4-kp.github.io/img/reduce-rank15.png" alt="" />&lt;div>&lt;div>&lt;/div>&lt;/div>&lt;/li>
+ &lt;li id="c0_slide5" style="min-width: calc(100%/1); padding-bottom: 100%;"&gt;&lt;img src="https://pr4-kp.github.io/img/reduce-rank15.png" alt="" /&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/li&gt;
  
- &lt;/ul>
- &lt;ol>
+ &lt;/ul&gt;
+ &lt;ol&gt;
  
- &lt;li>&lt;a href="#c0_slide1">&lt;/a>&lt;/li>
+ &lt;li&gt;&lt;a href="#c0_slide1"&gt;&lt;/a&gt;&lt;/li&gt;
  
- &lt;li>&lt;a href="#c0_slide2">&lt;/a>&lt;/li>
+ &lt;li&gt;&lt;a href="#c0_slide2"&gt;&lt;/a&gt;&lt;/li&gt;
  
- &lt;li>&lt;a href="#c0_slide3">&lt;/a>&lt;/li>
+ &lt;li&gt;&lt;a href="#c0_slide3"&gt;&lt;/a&gt;&lt;/li&gt;
  
- &lt;li>&lt;a href="#c0_slide4">&lt;/a>&lt;/li>
+ &lt;li&gt;&lt;a href="#c0_slide4"&gt;&lt;/a&gt;&lt;/li&gt;
  
- &lt;li>&lt;a href="#c0_slide5">&lt;/a>&lt;/li>
+ &lt;li&gt;&lt;a href="#c0_slide5"&gt;&lt;/a&gt;&lt;/li&gt;
  
- &lt;/ol>
- &lt;div class="prev">&amp;lsaquo;&lt;/div>
- &lt;div class="next">&amp;rsaquo;&lt;/div>
-&lt;/div>
+ &lt;/ol&gt;
+ &lt;div class="prev"&gt;&amp;lsaquo;&lt;/div&gt;
+ &lt;div class="next"&gt;&amp;rsaquo;&lt;/div&gt;
+&lt;/div&gt;
 
 👋🏽 Hello, and welcome to my website! My name is Pramana Saldin and I am a fourth-year undergraduate at the University of Wisconsin.
-I am a 2025 &lt;a href="https://goldwaterscholarship.gov/">Barry Goldwater Scholar&lt;/a>. This summer, I am conducting research for the &lt;a href="https://math.williams.edu/small/">SMALL REU&lt;/a> (number theory and probability). I&amp;rsquo;m interested in algebra.&lt;/p></description></item><item><title>course guide</title><link>https://pr4-kp.github.io/courses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/courses/</guid><description>&lt;p>Some thoughts on UW courses. Inspired by &lt;a href="https://ruipan.xyz/wisc_courses.html">this&lt;/a>.&lt;/p>
-&lt;figure>&lt;img src="https://pr4-kp.github.io/img/ANTHRO105.jpg"
- alt="bio credit ftw" height="250px">&lt;figcaption>
- &lt;h4>ANTHRO 105: Principles of biological anthropology&lt;/h4>&lt;p>bio credit ftw&lt;/p>
- &lt;/figcaption>
-&lt;/figure>
+I am a 2025 &lt;a href="https://goldwaterscholarship.gov/"&gt;Barry Goldwater Scholar&lt;/a&gt;. This summer, I am conducting research for the &lt;a href="https://math.williams.edu/small/"&gt;SMALL REU&lt;/a&gt; (number theory and probability). I&amp;rsquo;m interested in algebra.&lt;/p&gt;</description></item><item><title>course guide</title><link>https://pr4-kp.github.io/courses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/courses/</guid><description>&lt;p&gt;Some thoughts on UW courses. Inspired by &lt;a href="https://ruipan.xyz/wisc_courses.html"&gt;this&lt;/a&gt;.&lt;/p&gt;
+&lt;figure&gt;&lt;img src="https://pr4-kp.github.io/img/ANTHRO105.jpg"
+ alt="bio credit ftw" height="250px"&gt;&lt;figcaption&gt;
+ &lt;h4&gt;ANTHRO 105: Principles of biological anthropology&lt;/h4&gt;&lt;p&gt;bio credit ftw&lt;/p&gt;
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
 
-&lt;figure>&lt;img src="https://pr4-kp.github.io/img/MATH475.png"
- alt="Very tedious course. Know how to use basic wolfram/python code and you will pass." height="250px">&lt;figcaption>
- &lt;h4>MATH 475: Introduction to combinatorics&lt;/h4>&lt;p>Very tedious course. Know how to use basic &lt;a href="https://www.wolframalpha.com/">wolfram&lt;/a>/python code and you will pass.&lt;/p>
- &lt;/figcaption>
-&lt;/figure></description></item><item><title>Friends</title><link>https://pr4-kp.github.io/friends/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/friends/</guid><description>&lt;p>My friends (who have a website $\cap$ do mathematics).&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://kryptoknight73.github.io/Math-Blog/">Haran Mouli&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://xpoes123.github.io/davidJ/">David Jiang&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://www.vincedillon.com/">Vince Dillon&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Notes</title><link>https://pr4-kp.github.io/notes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/notes/</guid><description>&lt;h1 id="math-721-a-first-course-in-real-analysis">MATH 721: A First Course in Real Analysis&lt;/h1>
-&lt;ul>
-&lt;li>Notes (&lt;a href="https://pr4-kp.github.io/pdf/math721/main_721.pdf">PDF&lt;/a>)&lt;/li>
-&lt;/ul>
-&lt;h1 id="modular-forms">Modular forms&lt;/h1>
-&lt;ul>
-&lt;li>I gave a talk at UW&amp;rsquo;s Undergraduate Math Club on modular forms. The talk is largely based on &lt;a href="https://www.youtube.com/playlist?list=PLJUSzeW191Qx_rdAS8sd4nTNlSyLt97Q4">Professor Keith Conrad&amp;rsquo;s CTNT summer school&lt;/a>. (&lt;a href="https://pr4-kp.github.io/pdf/modular_forms.pdf">Slides&lt;/a>)&lt;/li>
-&lt;/ul>
-&lt;h1 id="algebraic-geometry">Algebraic geometry&lt;/h1>
-&lt;ul>
-&lt;li>Resultants and Elimination Theory (&lt;a href="https://pr4-kp.github.io/pdf/resultants_and_elimination_theory.pdf">PDF&lt;/a>)
-&lt;ul>
-&lt;li>Expository paper from a directed study in algebraic geometry under &lt;a href="https://people.math.wisc.edu/lawrence/">Professor Brian Lawrence&lt;/a>. The resultant allow us to check if the polynomials $f$ and $g$ share a root just using their coefficients. Using these ideas, we can prove a more general theorem in algebraic geometry called the &lt;em>fundamental theorem of elimination theory&lt;/em>.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h1 id="math-531-probability-theory">MATH 531: Probability Theory&lt;/h1>
-&lt;ul>
-&lt;li>Notes (&lt;a href="https://pr4-kp.github.io/pdf/math531/main_531.pdf">PDF&lt;/a>)&lt;/li>
-&lt;/ul>
-&lt;h1 id="math-621-introduction-to-manifolds">MATH 621: Introduction to manifolds&lt;/h1>
-&lt;ul>
-&lt;li>Final paper - Swan&amp;rsquo;s theorem (&lt;a href="https://pr4-kp.github.io/pdf/math621/swans-theorem.pdf">PDF&lt;/a>)
-&lt;ul>
-&lt;li>&lt;strong>Abstract.&lt;/strong> Swan’s theorem establishes a module structure on the set of smooth sections over a vector bundle $\pi\colon E\to M$.
+&lt;figure&gt;&lt;img src="https://pr4-kp.github.io/img/MATH475.png"
+ alt="Very tedious course. Know how to use basic wolfram/python code and you will pass." height="250px"&gt;&lt;figcaption&gt;
+ &lt;h4&gt;MATH 475: Introduction to combinatorics&lt;/h4&gt;&lt;p&gt;Very tedious course. Know how to use basic &lt;a href="https://www.wolframalpha.com/"&gt;wolfram&lt;/a&gt;/python code and you will pass.&lt;/p&gt;
+ &lt;/figcaption&gt;
+&lt;/figure&gt;</description></item><item><title>Friends</title><link>https://pr4-kp.github.io/friends/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/friends/</guid><description>&lt;p&gt;My friends (who have a website $\cap$ do mathematics).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://kryptoknight73.github.io/Math-Blog/"&gt;Haran Mouli&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://xpoes123.github.io/davidJ/"&gt;David Jiang&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.vincedillon.com/"&gt;Vince Dillon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Notes</title><link>https://pr4-kp.github.io/notes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/notes/</guid><description>&lt;h1 id="math-741-and-742-abstract-algebra-i-and-ii"&gt;MATH 741 and 742: Abstract algebra I and II&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Notes (&lt;a href="https://pr4-kp.github.io/pdf/math741/main_741-742.pdf"&gt;PDF&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="math-721-a-first-course-in-real-analysis"&gt;MATH 721: A first course in real analysis&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Notes (&lt;a href="https://pr4-kp.github.io/pdf/math721/main_721.pdf"&gt;PDF&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="modular-forms"&gt;Modular forms&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;I gave a talk at UW&amp;rsquo;s Undergraduate Math Club on modular forms. The talk is largely based on &lt;a href="https://www.youtube.com/playlist?list=PLJUSzeW191Qx_rdAS8sd4nTNlSyLt97Q4"&gt;Professor Keith Conrad&amp;rsquo;s CTNT summer school&lt;/a&gt;. (&lt;a href="https://pr4-kp.github.io/pdf/modular_forms.pdf"&gt;Slides&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="algebraic-geometry"&gt;Algebraic geometry&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Resultants and Elimination Theory (&lt;a href="https://pr4-kp.github.io/pdf/resultants_and_elimination_theory.pdf"&gt;PDF&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;Expository paper from a directed study in algebraic geometry under &lt;a href="https://people.math.wisc.edu/lawrence/"&gt;Professor Brian Lawrence&lt;/a&gt;. The resultant allow us to check if the polynomials $f$ and $g$ share a root just using their coefficients. Using these ideas, we can prove a more general theorem in algebraic geometry called the &lt;em&gt;fundamental theorem of elimination theory&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="math-531-probability-theory"&gt;MATH 531: Probability theory&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Notes (&lt;a href="https://pr4-kp.github.io/pdf/math531/main_531.pdf"&gt;PDF&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="math-621-introduction-to-manifolds"&gt;MATH 621: Introduction to manifolds&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Final paper - Swan&amp;rsquo;s theorem (&lt;a href="https://pr4-kp.github.io/pdf/math621/swans-theorem.pdf"&gt;PDF&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Abstract.&lt;/strong&gt; Swan’s theorem establishes a module structure on the set of smooth sections over a vector bundle $\pi\colon E\to M$.
 This allows us to study algebra by means
-of vector bundles and vice-versa. We conclude with an introductory result in K-theory that follows from this theorem&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h1 id="math-542-modern-algebra-ii">MATH 542: Modern Algebra II&lt;/h1>
-&lt;ul>
-&lt;li>Notes (&lt;a href="https://pr4-kp.github.io/pdf/math542/main_542.pdf">PDF&lt;/a>)&lt;/li>
-&lt;/ul>
-&lt;h1 id="math-522-analysis-ii">MATH 522: Analysis II&lt;/h1>
-&lt;ul>
-&lt;li>Notes (&lt;a href="https://pr4-kp.github.io/pdf/math522/main_522.pdf">PDF&lt;/a>)&lt;/li>
-&lt;/ul>
-&lt;h1 id="math-514-numerical-analysis">MATH 514: Numerical analysis&lt;/h1>
-&lt;ul>
-&lt;li>Notes (&lt;a href="https://pr4-kp.github.io/pdf/math514/main_514.pdf">PDF&lt;/a>)&lt;/li>
-&lt;/ul>
-&lt;h1 id="math-521-analysis-i">MATH 521: Analysis I&lt;/h1>
-&lt;ul>
-&lt;li>Notes (&lt;a href="https://pr4-kp.github.io/pdf/math521/main_521.pdf">PDF&lt;/a>) (&lt;a href="https://pr4-kp.github.io/pdf/math521/main_521.tex">TeX&lt;/a>)&lt;/li>
-&lt;li>Final paper – Gårding&amp;rsquo;s Inequality (&lt;a href="https://pr4-kp.github.io/pdf/math521/gardings_inequality_521.pdf">PDF&lt;/a>) (&lt;a href="https://pr4-kp.github.io/pdf/math521/main_honors_paper.tex">TeX&lt;/a>)
-&lt;ul>
-&lt;li>&lt;strong>Abstract.&lt;/strong> This is an expository paper on the prerequisites for Gårding’s inequality.
+of vector bundles and vice-versa. We conclude with an introductory result in K-theory that follows from this theorem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="math-542-modern-algebra-ii"&gt;MATH 542: Modern algebra II&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Notes (&lt;a href="https://pr4-kp.github.io/pdf/math542/main_542.pdf"&gt;PDF&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="math-522-analysis-ii"&gt;MATH 522: Analysis II&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Notes (&lt;a href="https://pr4-kp.github.io/pdf/math522/main_522.pdf"&gt;PDF&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="math-514-numerical-analysis"&gt;MATH 514: Numerical analysis&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Notes (&lt;a href="https://pr4-kp.github.io/pdf/math514/main_514.pdf"&gt;PDF&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="math-521-analysis-i"&gt;MATH 521: Analysis I&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Notes (&lt;a href="https://pr4-kp.github.io/pdf/math521/main_521.pdf"&gt;PDF&lt;/a&gt;) (&lt;a href="https://pr4-kp.github.io/pdf/math521/main_521.tex"&gt;TeX&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Final paper – Gårding&amp;rsquo;s Inequality (&lt;a href="https://pr4-kp.github.io/pdf/math521/gardings_inequality_521.pdf"&gt;PDF&lt;/a&gt;) (&lt;a href="https://pr4-kp.github.io/pdf/math521/main_honors_paper.tex"&gt;TeX&lt;/a&gt;)
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Abstract.&lt;/strong&gt; This is an expository paper on the prerequisites for Gårding’s inequality.
 Proposed by Lars Gårding, this inequality has applications in the
 study of weak solutions to elliptic partial differential equations.
 We will give the prerequisites to
-state Gårding’s inequality and give one application.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h1 id="math-475-introduction-to-combinatorics">MATH 475: Introduction to combinatorics&lt;/h1>
-&lt;ul>
-&lt;li>Notes (Chapter 14: Burnside&amp;rsquo;s Lemma and Polya Counting) (&lt;a href="https://pr4-kp.github.io/pdf/math475/main_475.pdf">PDF&lt;/a>)&lt;/li>
-&lt;/ul>
-&lt;h1 id="math-531-uwm-modern-algebra">MATH 531 (UWM): Modern Algebra&lt;/h1>
-&lt;ul>
-&lt;li>Notes (&lt;a href="https://pr4-kp.github.io/pdf/math531uwm/MATH-531-Notes.pdf">PDF&lt;/a>)&lt;/li>
-&lt;/ul></description></item><item><title>Research</title><link>https://pr4-kp.github.io/research/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/research/</guid><description>&lt;ul>
-&lt;li>&lt;a href="https://doi.org/10.1007/s10711-024-00977-1">&lt;strong>Finite-State Machines for Horospheres in Hyperbolic Right-Angled Coxeter Groups&lt;/strong>&lt;/a>&lt;br>
-&lt;em>with Noah Jillson, Daniel Levitin, Katerina Stuopis, Qianruixi Wang, and Kaicheng Xue.&lt;/em>&lt;br>
-&lt;em>Geometriae Dedicata&lt;/em>. Volume 219, article number 37 (2025).&lt;/li>
-&lt;/ul></description></item></channel></rss>
+state Gårding’s inequality and give one application.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="math-475-introduction-to-combinatorics"&gt;MATH 475: Introduction to combinatorics&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Notes (Chapter 14: Burnside&amp;rsquo;s Lemma and Polya Counting) (&lt;a href="https://pr4-kp.github.io/pdf/math475/main_475.pdf"&gt;PDF&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="math-531-uwm-modern-algebra"&gt;MATH 531 (UWM): Modern Algebra&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Notes (&lt;a href="https://pr4-kp.github.io/pdf/math531uwm/MATH-531-Notes.pdf"&gt;PDF&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Research</title><link>https://pr4-kp.github.io/research/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/research/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://doi.org/10.1007/s10711-024-00977-1"&gt;&lt;strong&gt;Finite-State Machines for Horospheres in Hyperbolic Right-Angled Coxeter Groups&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;
+&lt;em&gt;with Noah Jillson, Daniel Levitin, Katerina Stuopis, Qianruixi Wang, and Kaicheng Xue.&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;Geometriae Dedicata&lt;/em&gt;. Volume 219, article number 37 (2025).
+&lt;ul&gt;
+&lt;li&gt;Advised by &lt;a href="https://people.math.wisc.edu/~dymarz/"&gt;Tullia Dymarz&lt;/a&gt; and &lt;a href="https://sites.google.com/wisc.edu/daniel-levitin"&gt;Daniel Levitin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
