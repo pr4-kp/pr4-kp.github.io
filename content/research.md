@@ -9,8 +9,10 @@ math = true
 ## Papers
 
 - [**Classification of Finite Groups With Equal Left and Right Quotient Sets**](https://arxiv.org/abs/2509.04717)\
-  _with Haran Mouli_.\
-  _Submitted to Communications in Algebra_.
+   _with Haran Mouli_.\
+   _Preprint_.
+
+  - We have been made aware of the paper by Marcel Herzog, Gil Kaplan, Patrizia Longobardi, and Mercede Maj: ["Products of subsets of groups by their inverses,"](https://doi.org/10.1007/s13366-013-0141-y) which agrees with our main result and extends it to infinite groups. We are grateful to Liubomir Chiriac for showing us this result.
 
 - [**Comparing Left and Right Quotient Sets in Groups**](https://arxiv.org/abs/2509.00611)\
   _with June Duvivier, Xiaoyao Huang, Ava Kennon, Say-Yeon Kwon, Steven J. Miller, Arman Rysmakhanov, and Ren Watson_.\
@@ -24,11 +26,11 @@ math = true
 
   - Advised by [Steven J. Miller](https://web.williams.edu/Mathematics/sjmiller/public_html/)
 
-<!-- - **Centered Moments of Weighted One-Level Densities of $\mathrm{GL}(2)$ $L$-Functions**\
+- [**Centered Moments of Weighted One-Level Densities of $\mathrm{GL}(2)$ $L$-Functions**](https://arxiv.org/abs/2509.05810)\
   _with Lawrence Dillon, Xiaoyao Huang, Say-Yeon Kwon, Meiling Laurence, Steven J. Miller, Vishal Muthuvel, Luke Rowen, and Steven Zanetti_.\
-  _In preparation_.
+  _Submitted to Canadian Journal of Mathematics_.
 
-  - Advised by [Steven J. Miller](https://web.williams.edu/Mathematics/sjmiller/public_html/) -->
+  - Advised by [Steven J. Miller](https://web.williams.edu/Mathematics/sjmiller/public_html/)
 
 <!-- - **Cylinder Rigit Orbit Closures in Genus Two**\
   _with Ruocheng Yang_.\
