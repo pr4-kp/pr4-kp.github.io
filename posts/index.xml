@@ -8,9 +8,9 @@ insufficient to describe group decompositions.&lt;/p&gt;</description></item><it
 
 &lt;p&gt;Taking their advice, I went to checking the website. In the FAQ section, I noticed something new:&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://pr4-kp.github.io/img/hackmit-solutions-2023/is_there_admissions.png"
- alt="What does it mean?"&gt;&lt;figcaption&gt;
- &lt;p&gt;What does it mean?&lt;/p&gt;
- &lt;/figcaption&gt;
+			alt="What does it mean?"&gt;&lt;figcaption&gt;
+			&lt;p&gt;What does it mean?&lt;/p&gt;
+		&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;The strange placement of upper/lowercase letters and the length of all words being the same made me think some message was being hidden here in binary. If we let uppercase letter $= 1$ and lowercase letter $=0$, then we get the strings&lt;/p&gt;</description></item><item><title>Visualizing prime spectrums with graphs</title><link>https://pr4-kp.github.io/posts/visualizing-prime-spectrum/</link><pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/posts/visualizing-prime-spectrum/</guid><description>&lt;p&gt;In &lt;a href="https://www.amazon.com/Introduction-Commutative-Algebra-Addison-Wesley-Mathematics/dp/0201407515"&gt;Atiyah and Macdonald&amp;rsquo;s book&lt;/a&gt; we construct a certain topological space from a &lt;a href="https://en.wikipedia.org/wiki/Ring_(mathematics)"&gt;ring&lt;/a&gt; called the &lt;strong&gt;prime spectrum&lt;/strong&gt; of a ring. While working through the exercises, I saw an interesting way of viewing closed and open subsets of the prime spectrum that borrowed ideals from combinatorics.&lt;/p&gt;

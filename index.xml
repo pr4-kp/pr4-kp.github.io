@@ -8,9 +8,9 @@ insufficient to describe group decompositions.&lt;/p&gt;</description></item><it
 
 &lt;p&gt;Taking their advice, I went to checking the website. In the FAQ section, I noticed something new:&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://pr4-kp.github.io/img/hackmit-solutions-2023/is_there_admissions.png"
- alt="What does it mean?"&gt;&lt;figcaption&gt;
- &lt;p&gt;What does it mean?&lt;/p&gt;
- &lt;/figcaption&gt;
+			alt="What does it mean?"&gt;&lt;figcaption&gt;
+			&lt;p&gt;What does it mean?&lt;/p&gt;
+		&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;The strange placement of upper/lowercase letters and the length of all words being the same made me think some message was being hidden here in binary. If we let uppercase letter $= 1$ and lowercase letter $=0$, then we get the strings&lt;/p&gt;</description></item><item><title>Now</title><link>https://pr4-kp.github.io/now/</link><pubDate>Wed, 06 Sep 2023 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/now/</guid><description>&lt;p&gt;Following the ideas behind a &lt;a href="https://nownownow.com/about"&gt;now page&lt;/a&gt;, I am&amp;hellip;&lt;/p&gt;
@@ -78,15 +78,15 @@ specifically their chapter on Group structure (7), and I wanted to summarize wha
 
 👋🏽 Hello, and welcome to my website! My name is Pramana Saldin and I will be a PhD student at &lt;a href="https://math.berkeley.edu/home"&gt;UC-Berkeley&lt;/a&gt; in Fall 2026. Before this, I recieved my B.S. in Mathematics from &lt;a href="https://www.math.wisc.edu/"&gt;UW-Madison&lt;/a&gt; (my home state!) and took part in a study abroad semester at the National University of Singapore.&lt;/p&gt;</description></item><item><title>course guide</title><link>https://pr4-kp.github.io/courses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/courses/</guid><description>&lt;p&gt;Some thoughts on UW courses. Inspired by &lt;a href="https://ruipan.xyz/wisc_courses.html"&gt;this&lt;/a&gt;.&lt;/p&gt;
 &lt;figure&gt;&lt;img src="https://pr4-kp.github.io/img/ANTHRO105.jpg"
- alt="bio credit ftw" height="250px"&gt;&lt;figcaption&gt;
- &lt;h4&gt;ANTHRO 105: Principles of biological anthropology&lt;/h4&gt;&lt;p&gt;bio credit ftw&lt;/p&gt;
- &lt;/figcaption&gt;
+			alt="bio credit ftw" height="250px"&gt;&lt;figcaption&gt;
+			&lt;h4&gt;ANTHRO 105: Principles of biological anthropology&lt;/h4&gt;&lt;p&gt;bio credit ftw&lt;/p&gt;
+		&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure&gt;&lt;img src="https://pr4-kp.github.io/img/MATH475.png"
- alt="Very tedious course. Know how to use basic wolfram/python code and you will pass." height="250px"&gt;&lt;figcaption&gt;
- &lt;h4&gt;MATH 475: Introduction to combinatorics&lt;/h4&gt;&lt;p&gt;Very tedious course. Know how to use basic &lt;a href="https://www.wolframalpha.com/"&gt;wolfram&lt;/a&gt;/python code and you will pass.&lt;/p&gt;
- &lt;/figcaption&gt;
+			alt="Very tedious course. Know how to use basic wolfram/python code and you will pass." height="250px"&gt;&lt;figcaption&gt;
+			&lt;h4&gt;MATH 475: Introduction to combinatorics&lt;/h4&gt;&lt;p&gt;Very tedious course. Know how to use basic &lt;a href="https://www.wolframalpha.com/"&gt;wolfram&lt;/a&gt;/python code and you will pass.&lt;/p&gt;
+		&lt;/figcaption&gt;
 &lt;/figure&gt;</description></item><item><title>Friends</title><link>https://pr4-kp.github.io/friends/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://pr4-kp.github.io/friends/</guid><description>&lt;p&gt;My friends (who have a website $\cap$ do mathematics).&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://kryptoknight73.github.io/Math-Blog/"&gt;Haran Mouli&lt;/a&gt;&lt;/li&gt;
