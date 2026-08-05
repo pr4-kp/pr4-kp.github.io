@@ -5,6 +5,7 @@ tags:
   - algebraic geometry
   - complex analysis
 math: true
+draft: true
 description: "What makes some presheaves so badly behaved?"
 ---
 

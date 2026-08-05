@@ -5,6 +5,7 @@ tags:
   - algebra
   - algebraic topology
 math: true
+draft: true
 description: "How to come up with two spaces that have isomorphic homology groups, but not the same fundamental groups"
 ---
 

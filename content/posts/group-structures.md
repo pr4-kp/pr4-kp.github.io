@@ -7,7 +7,7 @@ tags:
   - sylow
   - group actions
 math: true
-draft: false
+draft: true
 description: "Introductory methods I've gathered for studying the structure of finite groups."
 ---
 

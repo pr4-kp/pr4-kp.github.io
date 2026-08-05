@@ -4,6 +4,7 @@ date: 2023-12-28
 tags:
   - algebra
 math: true
+draft: true
 description: "Through examples in groups and differential geometry"
 ---
 
