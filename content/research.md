@@ -8,6 +8,12 @@ math = true
 
 ## Papers
 
+- [**Rank 2 Affine Invariant Subvarieties in H(6)**](https://arxiv.org/abs/2608.02855)\
+  _with Ruocheng Yang_.\
+  _Submitted to Commentarii Mathematici Helvetici_.
+
+  - Advised by [Paul Apisa](https://people.math.wisc.edu/~apisa/) and [Ruocheng Yang](https://sites.google.com/wisc.edu/yrc/home?authuser=0)
+
 - [**Classification of Finite Groups With Equal Left and Right Quotient Sets**](https://arxiv.org/abs/2509.04717)\
    _with Haran Mouli_.\
    _Preprint_.
@@ -31,12 +37,6 @@ math = true
   _Submitted to Canadian Journal of Mathematics_.
 
   - Advised by [Steven J. Miller](https://web.williams.edu/Mathematics/sjmiller/public_html/)
-
-<!-- - **Cylinder Rigit Orbit Closures in Genus Two**\
-  _with Ruocheng Yang_.\
-  _In preparation_.
-
-  - Advised by [Paul Apisa](https://people.math.wisc.edu/~apisa/) and [Ruocheng Yang](https://sites.google.com/wisc.edu/yrc/home?authuser=0) -->
 
 - [**Finite-State Machines for Horospheres in Hyperbolic Right-Angled Coxeter Groups**](https://doi.org/10.1007/s10711-024-00977-1) ([arXiv](https://arxiv.org/abs/2406.18774))\
   _with Noah Jillson, Daniel Levitin, Katerina Stuopis, Qianruixi Wang, and Kaicheng Xue._\
