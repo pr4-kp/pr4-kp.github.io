@@ -14,7 +14,7 @@ math = true
 
 # Modular forms
 
-- I gave a talk for my Analytic Number Theory course at the National University of Singapore on Ramanujan's tau function, with a proof of some properties using Hecke operators. ([Slides](/pdf/ramanujan_tau_presentation.pdf))
+- I gave a talk for my Analytic Number Theory course at the National University of Singapore on Ramanujan's tau function, with a proof of some properties using Hecke operators. ([Slides](/pdf/ramanujan_tau_presentation.pdf), [Notes](/pdf/ramanujan_tau_presentation_notes.pdf))
 - I gave a talk at UW's Undergraduate Math Club on modular forms. The talk is largely based on [Professor Keith Conrad's CTNT summer school](https://www.youtube.com/playlist?list=PLJUSzeW191Qx_rdAS8sd4nTNlSyLt97Q4). ([Slides](/pdf/modular_forms.pdf))
 
 # Algebraic geometry
