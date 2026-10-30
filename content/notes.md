@@ -6,7 +6,7 @@ math = true
 
 # MA4263 (NUS): Analytic number theory
 
-- Notes([PDF](/pdf/ma4263/main_ma4263.pdf))
+- Notes ([PDF](/pdf/ma4263/main_ma4263.pdf))
 
 # MATH 741 and 742: Abstract algebra I and II
 
